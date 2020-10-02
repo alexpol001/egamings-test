@@ -148,6 +148,36 @@
           "style": "scss"
         }
       }
+    },
+    "feature-main": {
+      "projectType": "library",
+      "root": "libs/feature-main",
+      "sourceRoot": "libs/feature-main/src",
+      "prefix": "egamings-main",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/feature-main/tsconfig.lib.json",
+              "libs/feature-main/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/feature-main/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/feature-main/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

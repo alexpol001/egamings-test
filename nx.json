@@ -31,6 +31,9 @@
     },
     "feature-shell": {
       "tags": []
+    },
+    "feature-main": {
+      "tags": []
     }
   }
 }

@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@egamings/feature-shell": ["libs/feature-shell/src/index.ts"]
+      "@egamings/feature-shell": ["libs/feature-shell/src/index.ts"],
+      "@egamings/feature-main": ["libs/feature-main/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
