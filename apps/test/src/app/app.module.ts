@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { EgamingsShellComponent, EgamingsShellModule } from '@egamings/feature-shell';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule],
-  providers: [],
-  bootstrap: [AppComponent],
+  imports: [BrowserModule, EgamingsShellModule],
+  exports: [EgamingsShellModule],
+  bootstrap: [EgamingsShellComponent],
 })
 export class AppModule {}

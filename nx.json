@@ -28,6 +28,9 @@
     "test-e2e": {
       "tags": [],
       "implicitDependencies": ["test"]
+    },
+    "feature-shell": {
+      "tags": []
     }
   }
 }
