@@ -40,6 +40,9 @@
     },
     "models": {
       "tags": []
+    },
+    "data-access": {
+      "tags": []
     }
   }
 }

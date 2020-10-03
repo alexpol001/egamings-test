@@ -19,7 +19,8 @@
       "@egamings/feature-shell": ["libs/feature-shell/src/index.ts"],
       "@egamings/feature-main": ["libs/feature-main/src/index.ts"],
       "@egamings/shared/ui": ["libs/shared/ui/src/index.ts"],
-      "@egamings/models": ["libs/models/src/index.ts"]
+      "@egamings/models": ["libs/models/src/index.ts"],
+      "@egamings/data-access": ["libs/data-access/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
