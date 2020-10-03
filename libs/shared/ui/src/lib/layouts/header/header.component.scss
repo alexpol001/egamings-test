@@ -1,0 +1,8 @@
+@import 'libs/shared/scss/theming';
+
+:host {
+  @include fx-layout(row, start center);
+  @include mat-elevation(5);
+
+  padding: 12px 8px;
+}

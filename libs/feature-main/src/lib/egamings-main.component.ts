@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./egamings-main.component.scss'],
 })
 export class EgamingsMainComponent implements OnInit {
+  games = [
+    'https://static.egamings.com/games/betsoft/primal_hunt.jpg',
+    'https://static.egamings.com/games/betsoft/dim_sum_prize.jpg',
+  ];
+  
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,0 +1,13 @@
+@import 'libs/shared/scss/theming';
+
+@include egamings-core();
+
+body {
+  @include mat-theme(
+    $colors: (
+      primary: mat-palette($mat-indigo),
+      accent: mat-palette($mat-pink),
+      warn: mat-palette($mat-red),
+    )
+  );
+}

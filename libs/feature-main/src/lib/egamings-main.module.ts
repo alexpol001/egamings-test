@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UiModule } from '@egamings/ui';
+import { SharedUiModule } from '@egamings/shared/ui';
 
 import { EgamingsMainComponent } from './egamings-main.component';
 
 @NgModule({
-  imports: [CommonModule, UiModule],
+  imports: [CommonModule, SharedUiModule],
   declarations: [EgamingsMainComponent],
   exports: [EgamingsMainComponent],
 })

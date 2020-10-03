@@ -10,16 +10,30 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@egamings/feature-shell": ["libs/feature-shell/src/index.ts"],
-      "@egamings/feature-main": ["libs/feature-main/src/index.ts"],
-      "@egamings/ui": ["libs/ui/src/index.ts"]
+      "@egamings/feature-shell": [
+        "libs/feature-shell/src/index.ts"
+      ],
+      "@egamings/feature-main": [
+        "libs/feature-main/src/index.ts"
+      ],
+      "@egamings/shared/ui": [
+        "libs/shared/ui/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
