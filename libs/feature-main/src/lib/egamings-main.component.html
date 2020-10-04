@@ -4,12 +4,7 @@
   <div class="filter-game-list">
     <egamings-ui-filter class="filter"></egamings-ui-filter>
     <div class="games">
-      <mat-paginator
-        [length]="100"
-        [pageSize]="10"
-        [pageSizeOptions]="[10, 25, 50, 100]"
-      >
-      </mat-paginator>
+      <egamings-ui-paginator class="paginator"></egamings-ui-paginator>
       <egamings-ui-game-list [games]="games | async"></egamings-ui-game-list>
     </div>
   </div>

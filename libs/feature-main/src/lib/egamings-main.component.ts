@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatPaginatorIntl } from '@angular/material/paginator';
 import { GamesQuery } from '@egamings/data-access';
 
 @Component({
@@ -10,12 +9,7 @@ import { GamesQuery } from '@egamings/data-access';
 export class EgamingsMainComponent implements OnInit {
   games = this.gamesQuery.selectAll();
 
-  constructor(
-    private gamesQuery: GamesQuery,
-    private matPaginatorIntl: MatPaginatorIntl
-  ) {}
+  constructor(private gamesQuery: GamesQuery) {}
 
-  ngOnInit(): void {
-    this.matPaginatorIntl.itemsPerPageLabel = 'ItemsPerPageLabel'
-  }
+  ngOnInit(): void {}
 }

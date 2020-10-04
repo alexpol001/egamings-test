@@ -6,6 +6,7 @@ import {
   FilterModule,
   GamesModule,
   LayoutsModule,
+  PaginatorModule,
   SortingModule,
 } from '@egamings/shared/ui';
 
@@ -18,6 +19,7 @@ import { EgamingsMainComponent } from './egamings-main.component';
     GamesModule,
     FilterModule,
     SortingModule,
+    PaginatorModule,
     DataAccessModule,
   ],
   declarations: [EgamingsMainComponent],
