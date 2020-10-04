@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IGame } from '@egamings/models';
 
 @Component({
   selector: 'egamings-ui-game-list',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./game-list.component.scss'],
 })
 export class GameListComponent implements OnInit {
-  @Input() games: string[];
+  @Input() games: IGame[];
 
   constructor() {}
 

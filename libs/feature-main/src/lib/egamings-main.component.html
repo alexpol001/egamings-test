@@ -1,5 +1,16 @@
 <egamings-ui-header></egamings-ui-header>
 <main class="content">
-  <egamings-ui-filter class="filter"></egamings-ui-filter>
-  <egamings-ui-game-list [games]="games"></egamings-ui-game-list>
+  <egamings-ui-sorting class="sorting"></egamings-ui-sorting>
+  <div class="filter-game-list">
+    <egamings-ui-filter class="filter"></egamings-ui-filter>
+    <div class="games">
+      <mat-paginator
+        [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[10, 25, 50, 100]"
+      >
+      </mat-paginator>
+      <egamings-ui-game-list [games]="games | async"></egamings-ui-game-list>
+    </div>
+  </div>
 </main>

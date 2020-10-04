@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { GamesQuery } from '@egamings/data-access';
 
 @Component({
   selector: 'egamings-main',
@@ -6,14 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./egamings-main.component.scss'],
 })
 export class EgamingsMainComponent implements OnInit {
-  games = [
-    'https://static.egamings.com/games/betsoft/primal_hunt.jpg',
-    'https://static.egamings.com/games/betsoft/dim_sum_prize.jpg',
-    'https://static.egamings.com/games/betsoft/stampede.jpg',
-    'https://static.egamings.com/games/betsoft/tigers_claw.jpg',
-  ];
+  games = this.gamesQuery.selectAll();
 
-  constructor() {}
+  constructor(
+    private gamesQuery: GamesQuery,
+    private matPaginatorIntl: MatPaginatorIntl
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.matPaginatorIntl.itemsPerPageLabel = 'ItemsPerPageLabel'
+  }
 }

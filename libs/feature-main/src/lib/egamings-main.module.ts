@@ -2,7 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DataAccessModule } from '@egamings/data-access';
-import { FilterModule, GamesModule, LayoutsModule } from '@egamings/shared/ui';
+import {
+  FilterModule,
+  GamesModule,
+  LayoutsModule,
+  SortingModule,
+} from '@egamings/shared/ui';
 
 import { EgamingsMainComponent } from './egamings-main.component';
 
@@ -12,6 +17,7 @@ import { EgamingsMainComponent } from './egamings-main.component';
     LayoutsModule,
     GamesModule,
     FilterModule,
+    SortingModule,
     DataAccessModule,
   ],
   declarations: [EgamingsMainComponent],

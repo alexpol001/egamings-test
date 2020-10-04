@@ -2,10 +2,17 @@
 
 :host {
   > .content {
+    padding: 16px;
+  }
+
+  > .content > .sorting {
+    margin-bottom: 16px;
+  }
+
+  > .content > .filter-game-list {
     display: grid;
     grid-template-columns: 240px 4fr;
     gap: 16px;
-    padding: 16px;
 
     @include lt-breakpoint(sm) {
       grid-template-columns: 1fr;

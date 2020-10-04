@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { GamesService } from './games';
 
 @NgModule({
   imports: [CommonModule, HttpClientModule],
 })
 export class DataAccessModule {
-  constructor(private httpClient: HttpClient) {
-    this.httpClient.get('/assets/api.json').subscribe((data) => {
-      console.log(data, 'This is api data');
-    });
+  constructor(private gamesService: GamesService) {
+    this.gamesService.getGames();
   }
 }
