@@ -1,0 +1,25 @@
+<mat-card class="filter-container">
+  <div class="title">Filter</div>
+  <mat-form-field>
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="enter the name of game" name="search" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Categories</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Merchants</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-card>

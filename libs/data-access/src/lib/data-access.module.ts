@@ -7,10 +7,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class DataAccessModule {
   constructor(private httpClient: HttpClient) {
-    this.httpClient
-      .get('https://www.rost.bet/api/v1/games?lang=en')
-      .subscribe((data) => {
-        console.log(data);
-      });
+    this.httpClient.get('/assets/api.json').subscribe((data) => {
+      console.log(data, 'This is api data');
+    });
   }
 }

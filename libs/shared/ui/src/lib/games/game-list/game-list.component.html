@@ -1,3 +1,7 @@
-<ng-container *ngFor="let game of games">
-  <egamings-ui-game [img]="game"></egamings-ui-game>
+<ng-container *ngIf="games?.length">
+  <div class="games">
+    <ng-container *ngFor="let game of games">
+      <egamings-ui-game [img]="game"></egamings-ui-game>
+    </ng-container>
+  </div>
 </ng-container>
