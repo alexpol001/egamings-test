@@ -1,7 +1,10 @@
 <ng-container *ngIf="games?.length">
   <div class="games">
     <ng-container *ngFor="let game of games">
-      <egamings-ui-game [img]="game.image"></egamings-ui-game>
+      <egamings-ui-game-card
+        [image]="game.image"
+        [id]="game.id"
+      ></egamings-ui-game-card>
     </ng-container>
   </div>
 </ng-container>

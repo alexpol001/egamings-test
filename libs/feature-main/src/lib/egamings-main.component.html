@@ -1,11 +1,4 @@
 <egamings-ui-header></egamings-ui-header>
 <main class="content">
-  <egamings-ui-sorting class="sorting"></egamings-ui-sorting>
-  <div class="filter-game-list">
-    <egamings-ui-filter class="filter"></egamings-ui-filter>
-    <div class="games">
-      <egamings-ui-paginator class="paginator"></egamings-ui-paginator>
-      <egamings-ui-game-list [games]="games | async"></egamings-ui-game-list>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </main>

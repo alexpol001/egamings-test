@@ -1,6 +1,8 @@
 @import 'libs/shared/scss/theming';
 
 :host {
+  display: block;
+
   .filter-container {
     @include fx-layout(column);
   }

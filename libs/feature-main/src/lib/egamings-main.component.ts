@@ -7,9 +7,6 @@ import { GamesQuery } from '@egamings/data-access';
   styleUrls: ['./egamings-main.component.scss'],
 })
 export class EgamingsMainComponent implements OnInit {
-  games = this.gamesQuery.selectAll();
-
-  constructor(private gamesQuery: GamesQuery) {}
 
   ngOnInit(): void {}
 }
