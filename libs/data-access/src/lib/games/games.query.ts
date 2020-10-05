@@ -3,7 +3,7 @@ import { QueryEntity } from '@datorama/akita';
 import { IGame } from '@egamings/models';
 import { GamesStore, GamesState } from './games.store';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class GamesQuery extends QueryEntity<GamesState, IGame> {
   constructor(protected store: GamesStore) {
     super(store);

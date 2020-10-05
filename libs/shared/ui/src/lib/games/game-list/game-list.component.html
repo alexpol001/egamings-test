@@ -1,10 +1,15 @@
-<ng-container *ngIf="games?.length">
+<ng-container *ngIf="games?.length; else notFound">
   <div class="games">
     <ng-container *ngFor="let game of games">
       <egamings-ui-game-card
+        [name]="game.name"
         [image]="game.image"
         [id]="game.id"
       ></egamings-ui-game-card>
     </ng-container>
   </div>
 </ng-container>
+
+<ng-template #notFound>
+  <div class="games-not-found">Not found</div>
+</ng-template>

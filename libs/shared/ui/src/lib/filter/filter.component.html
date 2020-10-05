@@ -8,8 +8,8 @@
   <mat-form-field>
     <mat-label>Categories</mat-label>
     <mat-select multiple>
-      <mat-option *ngFor="let category of categories" [value]="category">
-        {{ category }}
+      <mat-option *ngFor="let category of categories" [value]="category.id">
+        {{ category.name }}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -17,8 +17,8 @@
   <mat-form-field>
     <mat-label>Merchants</mat-label>
     <mat-select multiple>
-      <mat-option *ngFor="let category of categories" [value]="category">
-        {{ category }}
+      <mat-option *ngFor="let merchant of merchants" [value]="merchant.id">
+        {{ merchant.name }}
       </mat-option>
     </mat-select>
   </mat-form-field>

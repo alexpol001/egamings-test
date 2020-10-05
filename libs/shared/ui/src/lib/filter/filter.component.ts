@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IMerchant, ICategory } from '@egamings/models';
 
 @Component({
   selector: 'egamings-ui-filter',
@@ -6,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit {
-  @Input() categories: string[];
+  @Input() categories: ICategory[];
+  @Input() merchants: IMerchant[];
 
   constructor() {}
 

@@ -1,37 +1,32 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
 
 import { IGame } from '@egamings/models';
 import { GamesStore } from './games.store';
+import { ApiDataQuery } from '../api-data/api-data.query';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class GamesService {
-  constructor(private gamesStore: GamesStore, private httpClient: HttpClient) {}
+  constructor(
+    private apiDataQuery: ApiDataQuery,
+    private gamesStore: GamesStore
+  ) {}
 
   getGames() {
-    this.httpClient
-      .get('/assets/api.json')
-      .pipe(
-        map((apiData) => {
-          let games: IGame[] = [];
-          for (let game of apiData['games']) {
-            games.push({
-              id: game['ID'],
-              categoryId: game['CategoryID'],
-              merchantId: game['MerchantID'],
-              image: game['ImageFullPath'],
-            });
-          }
-          if (games?.length > 100) {
-            games = games.slice(0, 100);
-          }
-          return games;
-        })
-      )
-      .subscribe((games: IGame[]) => {
-        // console.log(games);
-        this.gamesStore.add(games);
+    const apiGames = this.apiDataQuery.getValue().games;
+
+    let games: IGame[] = [];
+    for (let game of apiGames) {
+      games.push({
+        id: game.ID,
+        categoryId: game.CategoryID,
+        merchantId: game.MerchantID,
+        name: game.Name['en'],
+        image: game.ImageFullPath,
       });
+    }
+    if (games?.length > 100) {
+      games = games.slice(0, 100);
+    }
+    this.gamesStore.set(games);
   }
 }

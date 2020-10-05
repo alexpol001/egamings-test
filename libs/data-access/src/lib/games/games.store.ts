@@ -10,7 +10,7 @@ import { IGame } from '@egamings/models';
 
 export interface GamesState extends EntityState<IGame>, ActiveState {}
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 @StoreConfig({ name: 'games' })
 export class GamesStore extends EntityStore<GamesState, IGame> {
   constructor() {

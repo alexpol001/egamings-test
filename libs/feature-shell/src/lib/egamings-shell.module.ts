@@ -7,6 +7,7 @@ import {
 } from '@egamings/feature-main';
 
 import { EgamingsShellComponent } from './egamings-shell.component';
+import { DataAccessModule } from '@egamings/data-access';
 
 const ROUTES: Routes = [
   {
@@ -20,7 +21,12 @@ const ROUTES: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot(ROUTES), EgamingsMainModule],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(ROUTES),
+    DataAccessModule.forRoot(),
+    EgamingsMainModule,
+  ],
   declarations: [EgamingsShellComponent],
   exports: [EgamingsShellComponent],
 })

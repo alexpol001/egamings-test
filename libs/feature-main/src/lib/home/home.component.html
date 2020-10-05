@@ -1,10 +1,14 @@
 <egamings-ui-sorting class="sorting"></egamings-ui-sorting>
 <div class="filter-game-list">
   <div class="filter-wrap">
-    <egamings-ui-filter class="filter"></egamings-ui-filter>
+    <egamings-ui-filter
+      [categories]="categories$ | async"
+      [merchants]="merchants$ | async"
+      class="filter"
+    ></egamings-ui-filter>
   </div>
   <div class="games">
     <egamings-ui-paginator class="paginator"></egamings-ui-paginator>
-    <egamings-ui-game-list [games]="games | async"></egamings-ui-game-list>
+    <egamings-ui-game-list [games]="games$ | async"></egamings-ui-game-list>
   </div>
 </div>
