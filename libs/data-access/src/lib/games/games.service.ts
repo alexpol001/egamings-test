@@ -26,9 +26,6 @@ export class GamesService {
         image: game.ImageFullPath,
       });
     }
-    if (games?.length > 100) {
-      games = games.slice(0, 100);
-    }
     this.gamesStore.set(games);
   }
 }

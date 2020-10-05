@@ -1,4 +1,7 @@
-<egamings-ui-sorting class="sorting"></egamings-ui-sorting>
+<egamings-ui-sorting
+  class="sorting"
+  (sortEvent)="onSort($event)"
+></egamings-ui-sorting>
 <div class="filter-game-list">
   <div class="filter-wrap">
     <egamings-ui-filter

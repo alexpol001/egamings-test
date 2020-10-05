@@ -18,9 +18,14 @@ import { GamesStore } from './games/games.store';
 import { CategoriesQuery } from './categories/categories.query';
 import { CategoriesService } from './categories/categories.service';
 import { CategoriesStore } from './categories/categories.store';
+
 import { MerchantsQuery } from './merchants/merchants.query';
 import { MerchantsService } from './merchants/merchants.service';
 import { MerchantsStore } from './merchants/merchants.store';
+
+import { GamesPageQuery } from './games/page/page.query';
+import { GamesPageService } from './games/page/page.service';
+import { GamesPageStore } from './games/page/page.store';
 
 @NgModule({
   imports: [HttpClientModule],
@@ -32,7 +37,7 @@ export class DataAccessModule {
   ) {
     if (parentModule) {
       throw new Error(
-        'DataAccessModule is already loaded. Import it in the ShellModule only!'
+        'DataAccessModule is already loaded. Import it in the RootModule only!'
       );
     }
 
@@ -50,6 +55,10 @@ export class DataAccessModule {
         GamesQuery,
         GamesService,
         GamesStore,
+
+        GamesPageQuery,
+        GamesPageService,
+        GamesPageStore,
 
         CategoriesQuery,
         CategoriesService,

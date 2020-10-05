@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Sort } from '@angular/material/sort';
 import {
   CategoriesQuery,
-  GamesQuery,
+  GamesPageQuery,
+  GamesPageService,
   MerchantsQuery,
 } from '@egamings/data-access';
 
@@ -11,15 +13,20 @@ import {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  games$ = this.gamesQuery.selectAll();
+  games$ = this.gamesPageQuery.getPage();
   categories$ = this.categoriesQuery.selectAll();
   merchants$ = this.merchantsQuery.selectAll();
 
   constructor(
-    private gamesQuery: GamesQuery,
+    private gamesPageQuery: GamesPageQuery,
+    private gamesPageService: GamesPageService,
     private categoriesQuery: CategoriesQuery,
     private merchantsQuery: MerchantsQuery
   ) {}
 
   ngOnInit(): void {}
+
+  onSort(sort: Sort) {
+    this.gamesPageService.update({ sort });
+  }
 }

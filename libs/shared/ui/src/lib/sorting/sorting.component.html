@@ -1,10 +1,9 @@
 <mat-card class="sorting-card">
-  <div matSort class="sorting-container">
+  <div matSort class="sorting-container" (matSortChange)="onSort($event)">
     <div class="title">Sorting</div>
     <div class="wrap">
       <div class="sorting">
         <div mat-sort-header="name">Name</div>
-        <div mat-sort-header="category">Category</div>
         <div mat-sort-header="merchant">
           Merchant
         </div>
