@@ -1,7 +1,9 @@
+import { IMerchant } from './merchant';
+
 export interface IGame {
   id: number;
   name: string;
   categoryId: number[];
-  merchantId: number;
+  merchant: IMerchant;
   image: string;
 }

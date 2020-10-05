@@ -21,9 +21,9 @@ export class ApiDataService {
     this.httpClient.get('/assets/api.json').subscribe((data: IApiData) => {
       console.log(data);
       this.apiDataStore.update(data);
-      this.gamesService.getGames();
       this.categoriesService.getCategories();
       this.merchantService.getMerchants();
+      this.gamesService.getGames();
     });
   }
 }

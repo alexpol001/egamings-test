@@ -3,8 +3,10 @@
     <ng-container *ngFor="let game of games">
       <egamings-ui-game-card
         [name]="game.name"
+        [mechant]="game.merchant.name"
         [image]="game.image"
         [id]="game.id"
+        class="game-card"
       ></egamings-ui-game-card>
     </ng-container>
   </div>

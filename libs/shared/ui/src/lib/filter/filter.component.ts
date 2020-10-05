@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IMerchant, ICategory } from '@egamings/models';
 
 @Component({
@@ -10,7 +10,13 @@ export class FilterComponent implements OnInit {
   @Input() categories: ICategory[];
   @Input() merchants: IMerchant[];
 
+  @Output() changeEvent = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onChange(event) {
+    console.log(event);
+  }
 }

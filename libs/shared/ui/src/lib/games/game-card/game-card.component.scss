@@ -1,4 +1,28 @@
-:host {
+@import 'libs/shared/scss/theming';
+
+egamings-ui-game-card {
+  > .game-card {
+    @include fx-layout(column);
+    height: 100%;
+  }
+
+  > .game-card > .header {
+    @include fx-flex();
+  }
+
+  > .game-card > .header > .mat-card-header-text {
+    @include fx-layout(column);
+    @include fx-flex();
+  }
+
+  > .game-card > .header > .mat-card-header-text > .title {
+    @include fx-flex();
+  }
+
+  > .game-card > .image {
+    @include fx-flex();
+  }
+
   > .game-card > .actions > .button-launch {
     width: 100%;
   }
