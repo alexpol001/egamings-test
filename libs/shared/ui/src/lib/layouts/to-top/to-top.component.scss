@@ -1,0 +1,10 @@
+@import 'libs/shared/scss/theming';
+
+:host {
+  @include fx-layout(row, center center);
+
+  > .step {
+      font-size: 16px;
+      font-weight: 500;
+  }
+}

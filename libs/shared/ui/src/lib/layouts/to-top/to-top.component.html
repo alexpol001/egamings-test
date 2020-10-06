@@ -1,0 +1,9 @@
+<div class="step">{{ step }}</div>
+<button
+  mat-icon-button
+  class="button-to-top"
+  (click)="up()"
+  (contextmenu)="down($event)"
+>
+  <mat-icon>swap_vert</mat-icon>
+</button>

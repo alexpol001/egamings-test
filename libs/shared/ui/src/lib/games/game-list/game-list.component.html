@@ -8,6 +8,8 @@
         [image]="game.image"
         [id]="game.id"
         [favorite]="isFavorite(game.id)"
+        [step]="game?.step ? game?.step : 0"
+        (stepChangeEvent)="onStep(game.id, $event)"
         (favoriteToggleEvent)="onFavorite($event)"
       ></egamings-ui-game-card>
     </ng-container>

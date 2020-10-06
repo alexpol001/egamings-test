@@ -24,7 +24,11 @@ export class GameCardComponent implements OnInit {
 
   @Input() favorite: boolean;
 
+  @Input() step: number;
+
   @Output() favoriteToggleEvent: EventEmitter<number> = new EventEmitter();
+
+  @Output() stepChangeEvent: EventEmitter<number> = new EventEmitter();
 
   playHover: boolean;
 
@@ -42,5 +46,9 @@ export class GameCardComponent implements OnInit {
 
   onToggle() {
     this.favoriteToggleEvent.emit(this.id);
+  }
+
+  onStepChange(step: number) {
+    this.stepChangeEvent.emit(step);
   }
 }

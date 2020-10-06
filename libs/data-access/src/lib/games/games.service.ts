@@ -41,6 +41,7 @@ export class GamesService {
         merchant: this.merchantsQuery.getEntity(game.MerchantID),
         name: game.Name['en'],
         image: game.ImageFullPath,
+        step: 0,
       });
     }
     this.store.set(games);
@@ -53,6 +54,12 @@ export class GamesService {
       'favorites',
       JSON.stringify(this.query.getActiveId())
     );
+  }
+
+  setStep(id: ID, step: number) {
+    this.store.update(id, () => {
+      return { step };
+    });
   }
 
   private async favoritesInit() {

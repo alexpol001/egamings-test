@@ -30,6 +30,7 @@
       [games]="games$ | async"
       [favorites]="favorites$ | async"
       (favoriteEvent)="onFavorite($event)"
+      (stepEvent)="onStep($event)"
     ></egamings-ui-game-list>
   </div>
 </div>

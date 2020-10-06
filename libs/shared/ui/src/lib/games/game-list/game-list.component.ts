@@ -12,14 +12,23 @@ export class GameListComponent implements OnInit {
 
   @Input() favorites: ID[] = [];
 
-  @Output() favoriteEvent: EventEmitter<number> = new EventEmitter();
+  @Output() favoriteEvent: EventEmitter<ID> = new EventEmitter();
+
+  @Output() stepEvent: EventEmitter<{
+    id: ID;
+    step: number;
+  }> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onFavorite(id: number) {
+  onFavorite(id: ID) {
     this.favoriteEvent.emit(id);
+  }
+
+  onStep(id: ID, step: number) {
+    this.stepEvent.emit({ id, step });
   }
 
   isFavorite(gameId: ID) {

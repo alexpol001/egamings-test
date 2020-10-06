@@ -91,6 +91,12 @@ export class GamesParamsQuery extends Query<IGamesParams> {
         }
       }
 
+      if (a.step > b.step) {
+        return -1;
+      } else if (a.step < b.step) {
+        return 1;
+      }
+
       let dir = sort?.direction;
       let active = sort?.active;
       let fieldA;
@@ -118,32 +124,5 @@ export class GamesParamsQuery extends Query<IGamesParams> {
 
       return 0;
     });
-
-    // const dir = (() => {
-    //   switch (sort?.direction) {
-    //     case 'asc':
-    //       return 'asc';
-    //     case 'desc':
-    //       return 'desc';
-    //     default:
-    //       return null;
-    //   }
-    // })();
-
-    // if (dir) {
-    //   const fieldName = (() => {
-    //     const active = sort.active;
-    //     switch (active) {
-    //       case 'merchant':
-    //         return 'merchant.name';
-    //       default:
-    //         return active;
-    //     }
-    //   })();
-
-    // return _.orderBy(games, fieldName, dir);
-    // }
-
-    return games;
   }
 }

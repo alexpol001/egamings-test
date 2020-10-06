@@ -12,6 +12,7 @@ export interface IGame {
   categories: ICategory[];
   merchant: IMerchant;
   image: string;
+  step?: number;
 }
 
 export interface IGamesParams {

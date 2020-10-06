@@ -8,7 +8,16 @@
         (toggleEvent)="onToggle()"
       ></egamings-ui-favorite-toggle>
     </mat-card-title>
-    <mat-card-subtitle class="subtitle">{{ mechant }}</mat-card-subtitle>
+    <mat-card-subtitle class="subtitle">
+      <div class="merchant">
+        {{ mechant }}
+      </div>
+      <egamings-ui-to-top
+        class="button-to-top"
+        [step]="step"
+        (stepEvent)="onStepChange($event)"
+      ></egamings-ui-to-top>
+    </mat-card-subtitle>
   </mat-card-header>
   <img [src]="image" mat-card-image class="image" alt="" />
   <mat-card-actions class="actions">

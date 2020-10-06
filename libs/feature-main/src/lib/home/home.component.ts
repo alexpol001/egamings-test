@@ -116,6 +116,11 @@ export class HomeComponent implements OnInit {
     this.gamesService.toggleFavorite(id);
   }
 
+  onStep(stepEvent: { id: ID; step: number }) {
+    const { id, step } = stepEvent;
+    this.gamesService.setStep(id, step);
+  }
+
   private updateParams(params: Partial<IGamesParams>) {
     this.gamesParamsService.update(params);
   }

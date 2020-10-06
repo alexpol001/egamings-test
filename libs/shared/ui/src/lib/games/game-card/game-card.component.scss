@@ -16,12 +16,20 @@ egamings-ui-game-card {
   }
 
   > .game-card > .header > .mat-card-header-text > .title {
-    @include fx-layout(row, space-between start);
+    @include fx-layout(row, space-between center);
     @include fx-flex();
   }
 
   > .game-card > .header > .mat-card-header-text > .title > .button-favorite {
-    margin-right: -20px;  
+    margin-right: -20px;
+  }
+
+  > .game-card > .header > .mat-card-header-text > .subtitle {
+    @include fx-layout(row, space-between center);
+  }
+
+  > .game-card > .header > .mat-card-header-text > .subtitle > .button-to-top {
+    margin-right: -20px;
   }
 
   > .game-card > .image {
