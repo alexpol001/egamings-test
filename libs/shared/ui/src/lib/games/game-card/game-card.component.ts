@@ -4,7 +4,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'egamings-ui-game-card',
   templateUrl: './game-card.component.html',
   styleUrls: ['./game-card.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class GameCardComponent implements OnInit {
   @Input() id: number;
@@ -14,6 +14,8 @@ export class GameCardComponent implements OnInit {
   @Input() name: string;
 
   @Input() image: string;
+
+  @Input() favorite: boolean;
 
   playHover: boolean;
 
@@ -27,5 +29,9 @@ export class GameCardComponent implements OnInit {
 
   playMouseleave() {
     this.playHover = false;
+  }
+
+  favoriteToggle() {
+    this.favorite = !this.favorite;
   }
 }

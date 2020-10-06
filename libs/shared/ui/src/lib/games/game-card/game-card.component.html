@@ -1,6 +1,16 @@
 <mat-card class="game-card">
   <mat-card-header class="header">
-    <mat-card-title class="title">{{ name }}</mat-card-title>
+    <mat-card-title class="title">
+      <div class="name">{{ name }}</div>
+      <button
+        mat-icon-button
+        class="button-favorite"
+        [color]="favorite ? 'accent' : 'primary'"
+        (click)="favoriteToggle()"
+      >
+        <mat-icon>{{ favorite ? 'star' : 'star_border' }}</mat-icon>
+      </button>
+    </mat-card-title>
     <mat-card-subtitle class="subtitle">{{ mechant }}</mat-card-subtitle>
   </mat-card-header>
   <img [src]="image" mat-card-image class="image" alt="" />
