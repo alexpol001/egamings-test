@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 
-import { ICategory, IGame } from '@egamings/shared/models';
+import { IApiGame, ICategory, IGame } from '@egamings/shared/models';
 import { GamesStore } from './games.store';
-import { ApiDataQuery } from '../api-data/api-data.query';
-import { MerchantsQuery } from '../merchants';
-import { CategoriesQuery } from '../categories';
+import { MerchantsQuery } from '../merchants/merchants.query';
+import { CategoriesQuery } from '../categories/categories.query';
 import { ID } from '@datorama/akita';
 import { GamesQuery } from './games.query';
 
@@ -15,15 +14,12 @@ export class GamesService {
   constructor(
     private store: GamesStore,
     private query: GamesQuery,
-    private apiDataQuery: ApiDataQuery,
     private merchantsQuery: MerchantsQuery,
     private categoriesQuery: CategoriesQuery,
     private localStorageService: LocalStorageService
   ) {}
 
-  getGames() {
-    const apiGames = this.apiDataQuery.getValue().games;
-
+  initGames(apiGames: IApiGame[]) {
     let games: IGame[] = [];
     for (let game of apiGames) {
       games.push({

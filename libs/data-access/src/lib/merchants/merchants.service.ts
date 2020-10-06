@@ -1,20 +1,14 @@
 import { Injectable } from '@angular/core';
 
-import { IMerchant } from '@egamings/shared/models';
+import { IApiMerchant, IMerchant } from '@egamings/shared/models';
 import { MerchantsStore } from './merchants.store';
-import { ApiDataQuery } from '../api-data/api-data.query';
 import * as _ from 'lodash-es';
 
 @Injectable()
 export class MerchantsService {
-  constructor(
-    private apiDataQuery: ApiDataQuery,
-    private merchantsStore: MerchantsStore
-  ) {}
+  constructor(private merchantsStore: MerchantsStore) {}
 
-  getMerchants() {
-    const apiMerchants = _.values(this.apiDataQuery.getValue().merchants);
-
+  initMerchants(apiMerchants: IApiMerchant[]) {
     let merchants: IMerchant[] = [];
 
     for (let merchant of apiMerchants) {

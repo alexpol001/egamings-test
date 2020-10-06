@@ -1,19 +1,14 @@
 import { Injectable } from '@angular/core';
 
-import { ICategory } from '@egamings/shared/models';
+import { IApiCategory, ICategory } from '@egamings/shared/models';
+
 import { CategoriesStore } from './categories.store';
-import { ApiDataQuery } from '../api-data/api-data.query';
 
 @Injectable()
 export class CategoriesService {
-  constructor(
-    private apiDataQuery: ApiDataQuery,
-    private categoriesStore: CategoriesStore
-  ) {}
+  constructor(private categoriesStore: CategoriesStore) {}
 
-  getCategories() {
-    const apiCategories = this.apiDataQuery.getValue().categories;
-
+  initCategories(apiCategories: IApiCategory[]) {
     let categories: ICategory[] = [];
     for (let category of apiCategories) {
       categories.push({

@@ -1,45 +1,47 @@
 import {
+  Inject,
+  InjectionToken,
   ModuleWithProviders,
   NgModule,
   Optional,
   SkipSelf,
 } from '@angular/core';
 
-import { HttpClientModule } from '@angular/common/http';
+import * as _ from 'lodash-es';
 
-import { ApiDataService } from './api-data/api-data.service';
-import { ApiDataQuery } from './api-data/api-data.query';
-import { ApiDataStore } from './api-data/api-data.store';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-import { GamesQuery } from './games/games.query';
+import { IApiData } from '@egamings/shared/models';
+
+import { StorageModule } from './storage/storage.module';
+
+import { MerchantsModule } from './merchants/merchants.module';
+import { CategoriesModule } from './categories/categories.module';
+import { GamesModule } from './games/games.module';
+
 import { GamesService } from './games/games.service';
-import { GamesStore } from './games/games.store';
-
-import { CategoriesQuery } from './categories/categories.query';
 import { CategoriesService } from './categories/categories.service';
-import { CategoriesStore } from './categories/categories.store';
-
-import { MerchantsQuery } from './merchants/merchants.query';
 import { MerchantsService } from './merchants/merchants.service';
-import { MerchantsStore } from './merchants/merchants.store';
 
-import { GamesParamsQuery } from './games/params/params.query';
-import { GamesParamsService } from './games/params/params.service';
-import { GamesParamsStore } from './games/params/params.store';
-import { GamesPaginationQuery } from './games/pagination/pagination.query';
-import { GamesPaginationService } from './games/pagination/pagination.service';
-import { GamesPaginationStore } from './games/pagination/pagination.store';
-
-import { LocalStorageService } from './storage/local-storage/local-storage.service';
-import { MemoryStorageService } from './storage/memory-storage/memory-storage.service';
+const API_URL_TOKEN = new InjectionToken<string>('api.url.token');
 
 @NgModule({
-  imports: [HttpClientModule],
+  imports: [
+    HttpClientModule,
+    StorageModule,
+    MerchantsModule,
+    CategoriesModule,
+    GamesModule,
+  ],
 })
 export class DataAccessModule {
   constructor(
     @Optional() @SkipSelf() parentModule: DataAccessModule,
-    private apiDataService: ApiDataService
+    @Inject(API_URL_TOKEN) apiUrl: string,
+    private httpClient: HttpClient,
+    private gamesService: GamesService,
+    private categoriesService: CategoriesService,
+    private merchantsService: MerchantsService
   ) {
     if (parentModule) {
       throw new Error(
@@ -47,39 +49,23 @@ export class DataAccessModule {
       );
     }
 
-    this.apiDataService.getData();
+    this.httpClient.get(apiUrl).subscribe((apiData: IApiData) => {
+      this.categoriesService.initCategories(apiData.categories);
+      this.merchantsService.initMerchants(_.values(apiData.merchants));
+      this.gamesService.initGames(apiData.games);
+    });
   }
 
-  static forRoot(): ModuleWithProviders<DataAccessModule> {
+  static forRoot(
+    apiUrl = '/assets/api.json'
+  ): ModuleWithProviders<DataAccessModule> {
     return {
       ngModule: DataAccessModule,
       providers: [
-        ApiDataQuery,
-        ApiDataService,
-        ApiDataStore,
-
-        GamesQuery,
-        GamesService,
-        GamesStore,
-
-        GamesParamsQuery,
-        GamesParamsService,
-        GamesParamsStore,
-
-        GamesPaginationQuery,
-        GamesPaginationService,
-        GamesPaginationStore,
-
-        CategoriesQuery,
-        CategoriesService,
-        CategoriesStore,
-
-        MerchantsQuery,
-        MerchantsService,
-        MerchantsStore,
-
-        LocalStorageService,
-        MemoryStorageService,
+        {
+          provide: API_URL_TOKEN,
+          useValue: apiUrl,
+        },
       ],
     };
   }
