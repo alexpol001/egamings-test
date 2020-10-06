@@ -6,6 +6,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { FilterComponent } from './filter.component';
 
@@ -17,6 +19,8 @@ import { FilterComponent } from './filter.component';
     MatFormFieldModule,
     MatListModule,
     MatCardModule,
+    MatButtonModule,
+    MatIconModule,
     FormsModule,
     ReactiveFormsModule,
   ],

@@ -1,6 +1,11 @@
 <mat-card class="filter-container">
-  <div class="title">Filter</div>
   <form [formGroup]="formGroup" class="filter-form">
+    <div class="header">
+      <div class="title">Filter</div>
+      <button *ngIf="isNotEmpty()" mat-icon-button type="reset">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </div>
     <mat-form-field>
       <mat-label>Search</mat-label>
       <input

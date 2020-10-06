@@ -19,7 +19,6 @@ export class ApiDataService {
 
   getData() {
     this.httpClient.get('/assets/api.json').subscribe((data: IApiData) => {
-      // console.log(data);
       this.apiDataStore.update(data);
       this.categoriesService.getCategories();
       this.merchantService.getMerchants();

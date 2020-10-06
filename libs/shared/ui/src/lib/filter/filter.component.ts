@@ -51,4 +51,12 @@ export class FilterComponent implements OnInit, OnDestroy {
     this.unsubscribeAll.next();
     this.unsubscribeAll.complete();
   }
+
+  isNotEmpty() {
+    return (
+      this.search ||
+      this.selectedCategories?.length ||
+      this.selectedMerchants?.length
+    );
+  }
 }

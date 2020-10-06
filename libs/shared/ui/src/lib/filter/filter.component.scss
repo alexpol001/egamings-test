@@ -3,13 +3,16 @@
 :host {
   display: block;
 
-  .filter-container > .title {
+  .filter-container > .filter-form {
+    @include fx-layout(column);
+  }
+
+  .filter-container > .filter-form > .header {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 8px;
-  }
+    min-height: 40px;
 
-  .filter-container > .filter-form {
-    @include fx-layout(column);
+    @include fx-layout(row, space-between center);
   }
 }
