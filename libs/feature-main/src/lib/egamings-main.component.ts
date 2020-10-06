@@ -14,8 +14,7 @@ export class EgamingsMainComponent implements OnInit {
   filtered$: Observable<number>;
 
   constructor(
-    private gamesQuery: GamesQuery,
-    private gamesParamsQuery: GamesParamsQuery
+    private gamesQuery: GamesQuery
   ) {}
 
   ngOnInit(): void {
@@ -23,8 +22,8 @@ export class EgamingsMainComponent implements OnInit {
       .selectAll()
       .pipe(map((games) => games?.length));
 
-    this.filtered$ = this.gamesParamsQuery
-      .getParamedGames()
+    this.filtered$ = this.gamesQuery
+      .paramedGames$
       .pipe(map((games) => games?.length));
   }
 }

@@ -29,9 +29,9 @@ export class HomeComponent implements OnInit {
   categories$ = this.categoriesQuery.selectAll();
   merchants$ = this.merchantsQuery.selectAll();
 
-  games$ = this.gamesPaginationQuery.getPaginatedGames();
+  games$ = this.gamesQuery.paginatedGames$;
 
-  pageSizeOptions = [10, 25, 50, 100];
+  pageSizeOptions = [25, 50, 75, 100];
 
   length$: Observable<number>;
   pageIndex$: Observable<number>;
@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
 
     this.pageSize$ = pagination.pipe(map((pagination) => pagination.pageSize));
 
-    this.length$ = this.gamesParamsQuery.getParamedGames().pipe(
+    this.length$ = this.gamesQuery.paramedGames$.pipe(
       map((games) => {
         return games.length;
       })
