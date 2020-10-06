@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { Query } from '@datorama/akita';
 
-import { IGame, IGamesFilter, IGamesParams } from '@egamings/models';
+import { IGame, IGamesFilter, IGamesParams } from '@egamings/shared/models';
 import * as _ from 'lodash-es';
 import { map, mergeMap } from 'rxjs/operators';
 import { GamesQuery } from '../games.query';

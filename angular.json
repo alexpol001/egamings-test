@@ -27,8 +27,13 @@
             "polyfills": "apps/test/src/polyfills.ts",
             "tsConfig": "apps/test/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/test/src/favicon.ico", "apps/test/src/assets"],
-            "styles": ["libs/styles/styles.scss"],
+            "assets": [
+              "apps/test/src/favicon.ico",
+              "apps/test/src/assets"
+            ],
+            "styles": [
+              "libs/styles/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -92,7 +97,10 @@
               "apps/test/tsconfig.app.json",
               "apps/test/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/test/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/test/**/*"
+            ]
           }
         },
         "test": {
@@ -125,8 +133,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/test-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/test-e2e/**/*"]
+            "tsConfig": [
+              "apps/test-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/test-e2e/**/*"
+            ]
           }
         }
       }
@@ -144,7 +157,10 @@
               "libs/feature-shell/tsconfig.lib.json",
               "libs/feature-shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/feature-shell/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/feature-shell/**/*"
+            ]
           }
         },
         "test": {
@@ -174,7 +190,10 @@
               "libs/feature-main/tsconfig.lib.json",
               "libs/feature-main/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/feature-main/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/feature-main/**/*"
+            ]
           }
         },
         "test": {
@@ -204,43 +223,16 @@
               "libs/shared/ui/tsconfig.lib.json",
               "libs/shared/ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/ui/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "models": {
-      "projectType": "library",
-      "root": "libs/models",
-      "sourceRoot": "libs/models/src",
-      "prefix": "egamings",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/models/tsconfig.lib.json",
-              "libs/models/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/models/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/models/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -264,13 +256,49 @@
               "libs/data-access/tsconfig.lib.json",
               "libs/data-access/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/data-access/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/data-access/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-models": {
+      "projectType": "library",
+      "root": "libs/shared/models",
+      "sourceRoot": "libs/shared/models/src",
+      "prefix": "egamings",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/models/tsconfig.lib.json",
+              "libs/shared/models/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/models/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/models/jest.config.js",
             "passWithNoTests": true
           }
         }

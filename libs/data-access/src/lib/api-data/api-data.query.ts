@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
 
-import { IApiData } from '@egamings/models';
+import { IApiData } from '@egamings/shared/models';
 
 import { ApiDataStore } from './api-data.store';
 

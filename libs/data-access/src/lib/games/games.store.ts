@@ -6,7 +6,7 @@ import {
   MultiActiveState,
 } from '@datorama/akita';
 
-import { IGame } from '@egamings/models';
+import { IGame } from '@egamings/shared/models';
 
 const initialState = { active: [] };
 

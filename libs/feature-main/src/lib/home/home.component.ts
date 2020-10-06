@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 
-import { IGamesFilter, IGamesParams } from '@egamings/models';
+import { IGamesFilter, IGamesParams } from '@egamings/shared/models';
 
 import {
   CategoriesQuery,

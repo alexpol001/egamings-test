@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IGame } from '@egamings/models';
+import { IGame } from '@egamings/shared/models';
 
 @Component({
   selector: 'egamings-ui-game-screen',

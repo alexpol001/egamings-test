@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ID } from '@datorama/akita';
-import { IGame } from '@egamings/models';
+import { IGame } from '@egamings/shared/models';
 
 @Component({
   selector: 'egamings-ui-game-list',

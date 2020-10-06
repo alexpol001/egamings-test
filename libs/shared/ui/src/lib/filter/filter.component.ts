@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ID } from '@datorama/akita';
-import { IMerchant, ICategory, IGamesFilter } from '@egamings/models';
+import { IMerchant, ICategory, IGamesFilter } from '@egamings/shared/models';
 import * as _ from 'lodash-es';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';

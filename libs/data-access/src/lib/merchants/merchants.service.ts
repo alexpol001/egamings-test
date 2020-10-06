@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { IMerchant } from '@egamings/models';
+import { IMerchant } from '@egamings/shared/models';
 import { MerchantsStore } from './merchants.store';
 import { ApiDataQuery } from '../api-data/api-data.query';
 import * as _ from 'lodash-es';

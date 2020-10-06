@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StoreConfig, Store } from '@datorama/akita';
 
-import { IApiData } from '@egamings/models';
+import { IApiData } from '@egamings/shared/models';
 
 export function createInitialState(): IApiData {
   return {

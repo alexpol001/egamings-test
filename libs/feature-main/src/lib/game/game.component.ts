@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GamesQuery } from '@egamings/data-access';
-import { IGame } from '@egamings/models';
+import { IGame } from '@egamings/shared/models';
 import { Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 

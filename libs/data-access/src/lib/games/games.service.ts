@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { ICategory, IGame } from '@egamings/models';
+import { ICategory, IGame } from '@egamings/shared/models';
 import { GamesStore } from './games.store';
 import { ApiDataQuery } from '../api-data/api-data.query';
 import { MerchantsQuery } from '../merchants';

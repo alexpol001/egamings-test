@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { IGamesParams } from '@egamings/models';
+import { IGamesParams } from '@egamings/shared/models';
 import * as _ from 'lodash-es';
 import { GamesPaginationService } from '../pagination/pagination.service';
 import { GamesParamsStore } from './params.store';

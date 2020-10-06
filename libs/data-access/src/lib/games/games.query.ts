@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Order, QueryConfig, QueryEntity } from '@datorama/akita';
-import { IGame } from '@egamings/models';
+import { IGame } from '@egamings/shared/models';
 import { GamesStore, GamesState } from './games.store';
 
 @Injectable()

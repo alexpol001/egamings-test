@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { IApiData } from '@egamings/models';
+import { IApiData } from '@egamings/shared/models';
 import { ApiDataStore } from './api-data.store';
 import { GamesService } from '../games/games.service';
 import { CategoriesService } from '../categories';

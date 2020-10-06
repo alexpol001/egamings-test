@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { ICategory } from '@egamings/models';
+import { ICategory } from '@egamings/shared/models';
 import { CategoriesStore } from './categories.store';
 import { ApiDataQuery } from '../api-data/api-data.query';
 
