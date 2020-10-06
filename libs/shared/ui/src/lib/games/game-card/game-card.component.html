@@ -8,7 +8,7 @@
     <a
       (mouseenter)="playMouseenter()"
       (mouseleave)="playMouseleave()"
-      [routerLink]="['id' + id]"
+      [routerLink]="['game', id]"
       mat-raised-button
       class="button-launch {{ !playHover ? '_primary' : '_primary-400' }}"
     >

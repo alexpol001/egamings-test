@@ -14,6 +14,7 @@ import {
 import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'egamings-main-home',
@@ -39,6 +40,7 @@ export class HomeComponent implements OnInit {
   selectedMerchants$: Observable<number[]>;
 
   constructor(
+    private titleService: Title,
     private gamesPaginationQuery: GamesPaginationQuery,
     private gamesPaginationService: GamesPaginationService,
     private gamesParamsService: GamesParamsService,
@@ -48,6 +50,8 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('Egamings | Home');
+
     const pagination = this.gamesPaginationQuery.select();
 
     this.pageIndex$ = pagination.pipe(
