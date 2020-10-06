@@ -30,9 +30,8 @@ import { GamesPaginationQuery } from './games/pagination/pagination.query';
 import { GamesPaginationService } from './games/pagination/pagination.service';
 import { GamesPaginationStore } from './games/pagination/pagination.store';
 
-// import { GamesPageQuery } from './games/page/page.query';
-// import { GamesPageService } from './games/page/page.service';
-// import { GamesPageStore } from './games/page/page.store';
+import { LocalStorageService } from './storage/local-storage/local-storage.service';
+import { MemoryStorageService } from './storage/memory-storage/memory-storage.service';
 
 @NgModule({
   imports: [HttpClientModule],
@@ -78,6 +77,9 @@ export class DataAccessModule {
         MerchantsQuery,
         MerchantsService,
         MerchantsStore,
+
+        LocalStorageService,
+        MemoryStorageService,
       ],
     };
   }

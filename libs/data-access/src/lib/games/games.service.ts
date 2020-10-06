@@ -8,6 +8,8 @@ import { CategoriesQuery } from '../categories';
 import { ID } from '@datorama/akita';
 import { GamesQuery } from './games.query';
 
+import { LocalStorageService } from '../storage/local-storage/local-storage.service';
+
 @Injectable()
 export class GamesService {
   constructor(
@@ -15,7 +17,8 @@ export class GamesService {
     private query: GamesQuery,
     private apiDataQuery: ApiDataQuery,
     private merchantsQuery: MerchantsQuery,
-    private categoriesQuery: CategoriesQuery
+    private categoriesQuery: CategoriesQuery,
+    private localStorageService: LocalStorageService
   ) {}
 
   getGames() {
@@ -41,9 +44,21 @@ export class GamesService {
       });
     }
     this.store.set(games);
+    this.favoritesInit();
   }
 
   toggleFavorite(id: ID) {
     this.store.toggleActive([id]);
+    this.localStorageService.setItem(
+      'favorites',
+      JSON.stringify(this.query.getActiveId())
+    );
+  }
+
+  private async favoritesInit() {
+    const favorites = await this.localStorageService.getItem('favorites');
+    if (favorites?.length) {
+      this.store.setActive(JSON.parse(favorites));
+    }
   }
 }
