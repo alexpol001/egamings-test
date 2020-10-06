@@ -48,6 +48,9 @@ export class GamesParamsQuery extends Query<IGamesParams> {
   private filterCategories(game: IGame, categoryIds: number[]) {
     if (categoryIds?.length) {
       for (let categoryId of categoryIds) {
+        if (categoryId === -1 && this.gamesQuery.hasActive(game.id)) {
+          return true;
+        }
         for (let gameCategory of game.categories) {
           if (categoryId === gameCategory.id) {
             return true;

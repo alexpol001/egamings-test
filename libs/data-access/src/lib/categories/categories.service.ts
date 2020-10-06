@@ -14,12 +14,7 @@ export class CategoriesService {
   getCategories() {
     const apiCategories = this.apiDataQuery.getValue().categories;
 
-    let categories: ICategory[] = [
-      {
-        id: -1,
-        name: 'Favorites',
-      },
-    ];
+    let categories: ICategory[] = [];
     for (let category of apiCategories) {
       categories.push({
         id: category.ID,
