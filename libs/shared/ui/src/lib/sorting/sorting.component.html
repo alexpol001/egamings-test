@@ -1,5 +1,12 @@
 <mat-card class="sorting-card">
-  <div matSort class="sorting-container" (matSortChange)="onSort($event)">
+  <div
+    matSort
+    [matSortStart]="'desc'"
+    [matSortActive]="sort?.active"
+    [matSortDirection]="sort?.direction"
+    class="sorting-container"
+    (matSortChange)="onSort($event)"
+  >
     <div class="title">Sorting</div>
     <div class="wrap">
       <div class="sorting">

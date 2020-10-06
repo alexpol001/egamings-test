@@ -1,17 +1,29 @@
 <egamings-ui-sorting
   class="sorting"
+  [sort]="sort$ | async"
   (sortEvent)="onSort($event)"
 ></egamings-ui-sorting>
 <div class="filter-game-list">
   <div class="filter-wrap">
     <egamings-ui-filter
+      class="filter"
       [categories]="categories$ | async"
       [merchants]="merchants$ | async"
-      class="filter"
+      [search]="search$ | async"
+      [selectedCategories]="selectedCategories$ | async"
+      [selectedMerchants]="selectedMerchants$ | async"
+      (changeEvent)="onFilters($event)"
     ></egamings-ui-filter>
   </div>
   <div class="games">
-    <egamings-ui-paginator class="paginator"></egamings-ui-paginator>
+    <egamings-ui-paginator
+      class="paginator"
+      [length]="length$ | async"
+      [pageIndex]="pageIndex$ | async"
+      [pageSize]="pageSize$ | async"
+      [pageSizeOptions]="pageSizeOptions"
+      (pageEvent)="onPage($event)"
+    ></egamings-ui-paginator>
     <egamings-ui-game-list [games]="games$ | async"></egamings-ui-game-list>
   </div>
 </div>

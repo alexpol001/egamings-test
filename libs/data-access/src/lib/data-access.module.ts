@@ -23,9 +23,16 @@ import { MerchantsQuery } from './merchants/merchants.query';
 import { MerchantsService } from './merchants/merchants.service';
 import { MerchantsStore } from './merchants/merchants.store';
 
-import { GamesPageQuery } from './games/page/page.query';
-import { GamesPageService } from './games/page/page.service';
-import { GamesPageStore } from './games/page/page.store';
+import { GamesParamsQuery } from './games/params/params.query';
+import { GamesParamsService } from './games/params/params.service';
+import { GamesParamsStore } from './games/params/params.store';
+import { GamesPaginationQuery } from './games/pagination/pagination.query';
+import { GamesPaginationService } from './games/pagination/pagination.service';
+import { GamesPaginationStore } from './games/pagination/pagination.store';
+
+// import { GamesPageQuery } from './games/page/page.query';
+// import { GamesPageService } from './games/page/page.service';
+// import { GamesPageStore } from './games/page/page.store';
 
 @NgModule({
   imports: [HttpClientModule],
@@ -56,9 +63,13 @@ export class DataAccessModule {
         GamesService,
         GamesStore,
 
-        GamesPageQuery,
-        GamesPageService,
-        GamesPageStore,
+        GamesParamsQuery,
+        GamesParamsService,
+        GamesParamsStore,
+
+        GamesPaginationQuery,
+        GamesPaginationService,
+        GamesPaginationStore,
 
         CategoriesQuery,
         CategoriesService,

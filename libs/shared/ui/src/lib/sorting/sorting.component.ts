@@ -16,6 +16,7 @@ import { Sort } from '@angular/material/sort';
 })
 export class SortingComponent implements OnInit {
   @Input() categories: string[];
+  @Input() sort: Sort;
 
   @Output() sortEvent: EventEmitter<Sort> = new EventEmitter();
 

@@ -1,24 +1,30 @@
 import { Sort } from '@angular/material/sort';
+import { PageEvent } from '@angular/material/paginator';
+
+import { ICategory } from './category';
 
 import { IMerchant } from './merchant';
 
 export interface IGame {
   id: number;
   name: string;
-  categoryId: number[];
+  categories: ICategory[];
   merchant: IMerchant;
   image: string;
 }
 
-export interface IGamesPageParams {
+export interface IGamesParams {
   sort: Sort;
-  itemPerPage: number;
-  page: number;
-  filters: IGamePageFilter;
+  filters: IGamesFilter;
 }
 
-export interface IGamePageFilter {
-  name: string;
-  categoryIds: number[];
-  merchantIds: number[];
+export interface IGamesFilter {
+  search: string;
+  categories: number[];
+  merchants: number[];
+}
+
+export interface IGamesPagination {
+  pageIndex: number;
+  pageSize: number;
 }
