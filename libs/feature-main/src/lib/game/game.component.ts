@@ -25,13 +25,12 @@ export class GameComponent implements OnInit {
       mergeMap((params) => {
         return this.gamesQuery.selectEntity(params?.id).pipe(
           map((game) => {
-            const title = game ? game.name : 'Not found'
+            const title = game ? game.name : 'Not found';
             this.titleService.setTitle(`Egamings | ${title}`);
             return game;
           })
         );
       })
     );
-    // this.game = this.gamesQuery.getEntity(id);
   }
 }

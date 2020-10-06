@@ -2,11 +2,13 @@
   <div class="games">
     <ng-container *ngFor="let game of games">
       <egamings-ui-game-card
+        class="game-card"
         [name]="game.name"
         [mechant]="game.merchant.name"
         [image]="game.image"
         [id]="game.id"
-        class="game-card"
+        [favorite]="isFavorite(game.id)"
+        (favoriteEvent)="onFavorite($event)"
       ></egamings-ui-game-card>
     </ng-container>
   </div>

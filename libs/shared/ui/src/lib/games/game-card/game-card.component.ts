@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'egamings-ui-game-card',
@@ -17,6 +24,8 @@ export class GameCardComponent implements OnInit {
 
   @Input() favorite: boolean;
 
+  @Output() favoriteEvent: EventEmitter<number> = new EventEmitter();
+
   playHover: boolean;
 
   constructor() {}
@@ -33,5 +42,6 @@ export class GameCardComponent implements OnInit {
 
   favoriteToggle() {
     this.favorite = !this.favorite;
+    this.favoriteEvent.emit(this.id);
   }
 }

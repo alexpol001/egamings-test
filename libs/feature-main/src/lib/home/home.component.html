@@ -24,6 +24,10 @@
       [pageSizeOptions]="pageSizeOptions"
       (pageEvent)="onPage($event)"
     ></egamings-ui-paginator>
-    <egamings-ui-game-list [games]="games$ | async"></egamings-ui-game-list>
+    <egamings-ui-game-list
+      [games]="games$ | async"
+      [favorites]="favorites$ | async"
+      (favoriteEvent)="onFavorite($event)"
+    ></egamings-ui-game-list>
   </div>
 </div>

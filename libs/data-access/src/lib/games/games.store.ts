@@ -2,18 +2,20 @@ import { Injectable } from '@angular/core';
 import {
   StoreConfig,
   EntityState,
-  ActiveState,
   EntityStore,
+  MultiActiveState,
 } from '@datorama/akita';
 
 import { IGame } from '@egamings/models';
 
-export interface GamesState extends EntityState<IGame>, ActiveState {}
+const initialState = { active: [] };
+
+export interface GamesState extends EntityState<IGame>, MultiActiveState {}
 
 @Injectable()
 @StoreConfig({ name: 'games' })
 export class GamesStore extends EntityStore<GamesState, IGame> {
   constructor() {
-    super();
+    super(initialState);
   }
 }

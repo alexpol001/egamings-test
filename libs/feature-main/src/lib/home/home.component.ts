@@ -9,12 +9,15 @@ import {
   GamesPaginationService,
   GamesParamsQuery,
   GamesParamsService,
+  GamesQuery,
+  GamesService,
   MerchantsQuery,
 } from '@egamings/data-access';
 import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
+import { ID } from '@datorama/akita';
 
 @Component({
   selector: 'egamings-main-home',
@@ -36,11 +39,15 @@ export class HomeComponent implements OnInit {
   sort$: Observable<Sort>;
 
   search$: Observable<string>;
-  selectedCategories$: Observable<number[]>;
-  selectedMerchants$: Observable<number[]>;
+  selectedCategories$: Observable<ID[]>;
+  selectedMerchants$: Observable<ID[]>;
+
+  favorites$: Observable<ID[]>;
 
   constructor(
     private titleService: Title,
+    private gamesQuery: GamesQuery,
+    private gamesService: GamesService,
     private gamesPaginationQuery: GamesPaginationQuery,
     private gamesPaginationService: GamesPaginationService,
     private gamesParamsService: GamesParamsService,
@@ -76,6 +83,15 @@ export class HomeComponent implements OnInit {
     this.selectedMerchants$ = params.pipe(
       map((params) => params.filters?.merchants)
     );
+
+    // this.favorites$ = this.gamesQuery.selectActiveId();
+
+    this.favorites$ = this.gamesQuery.selectActiveId().pipe(
+      map((favIds) => {
+        console.log(favIds);
+        return favIds;
+      })
+    );
   }
 
   onSort(sort: Sort) {
@@ -91,6 +107,10 @@ export class HomeComponent implements OnInit {
       pageIndex: page.pageIndex,
       pageSize: page.pageSize,
     });
+  }
+
+  onFavorite(id: number) {
+    this.gamesService.toggleFavorite(id);
   }
 
   private updateParams(params: Partial<IGamesParams>) {

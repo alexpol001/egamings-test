@@ -4,9 +4,10 @@ import { PageEvent } from '@angular/material/paginator';
 import { ICategory } from './category';
 
 import { IMerchant } from './merchant';
+import { ID } from '@datorama/akita';
 
 export interface IGame {
-  id: number;
+  id: ID;
   name: string;
   categories: ICategory[];
   merchant: IMerchant;

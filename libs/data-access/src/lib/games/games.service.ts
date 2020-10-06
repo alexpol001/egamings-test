@@ -5,14 +5,17 @@ import { GamesStore } from './games.store';
 import { ApiDataQuery } from '../api-data/api-data.query';
 import { MerchantsQuery } from '../merchants';
 import { CategoriesQuery } from '../categories';
+import { ID } from '@datorama/akita';
+import { GamesQuery } from './games.query';
 
 @Injectable()
 export class GamesService {
   constructor(
+    private store: GamesStore,
+    private query: GamesQuery,
     private apiDataQuery: ApiDataQuery,
     private merchantsQuery: MerchantsQuery,
-    private categoriesQuery: CategoriesQuery,
-    private gamesStore: GamesStore
+    private categoriesQuery: CategoriesQuery
   ) {}
 
   getGames() {
@@ -37,6 +40,10 @@ export class GamesService {
         image: game.ImageFullPath,
       });
     }
-    this.gamesStore.set(games);
+    this.store.set(games);
+  }
+
+  toggleFavorite(id: ID) {
+    this.store.toggleActive([id]);
   }
 }

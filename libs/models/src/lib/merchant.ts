@@ -1,4 +1,6 @@
+import { ID } from '@datorama/akita';
+
 export interface IMerchant {
-  id: number;
+  id: ID;
   name: string;
 }
