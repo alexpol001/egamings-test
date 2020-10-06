@@ -5,9 +5,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-import { GameCardComponent } from './game-card';
-import { GameListComponent } from './game-list';
-import { GameScreenComponent } from './game-screen';
+import { GameCardComponent } from './game-card/game-card.component';
+import { GameListComponent } from './game-list/game-list.component';
+import { GameScreenComponent } from './game-screen/game-screen.component';
 import { LayoutsModule } from '../layouts/layouts.module';
 
 @NgModule({

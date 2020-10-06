@@ -65,7 +65,7 @@ export class FilterComponent implements OnInit, OnDestroy {
         text.push('Favorite');
       }
     }
-    
+
     return _.join(text, ', ');
   }
 

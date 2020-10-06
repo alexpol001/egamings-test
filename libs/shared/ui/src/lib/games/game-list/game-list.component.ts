@@ -36,4 +36,8 @@ export class GameListComponent implements OnInit {
       ? this.favorites.indexOf(gameId) != -1
       : false;
   }
+
+  identify(index, item) {
+    return item.name;
+  }
 }

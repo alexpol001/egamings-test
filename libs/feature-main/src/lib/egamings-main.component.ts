@@ -9,21 +9,11 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./egamings-main.component.scss'],
 })
 export class EgamingsMainComponent implements OnInit {
-  total$: Observable<number>;
+  total$ = this.gamesQuery.selectCount();
 
-  filtered$: Observable<number>;
+  filtered$ = this.gamesQuery.filteredGamesCount$;
 
-  constructor(
-    private gamesQuery: GamesQuery
-  ) {}
+  constructor(private gamesQuery: GamesQuery) {}
 
-  ngOnInit(): void {
-    this.total$ = this.gamesQuery
-      .selectAll()
-      .pipe(map((games) => games?.length));
-
-    this.filtered$ = this.gamesQuery
-      .filteredGames$
-      .pipe(map((games) => games?.length));
-  }
+  ngOnInit(): void {}
 }
