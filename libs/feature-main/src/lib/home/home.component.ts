@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
 
     this.pageSize$ = pagination.pipe(map((pagination) => pagination.pageSize));
 
-    this.length$ = this.gamesParamsService.getParamedGames().pipe(
+    this.length$ = this.gamesParamsQuery.getParamedGames().pipe(
       map((games) => {
         return games.length;
       })
