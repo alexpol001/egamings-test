@@ -1,4 +1,4 @@
-@import 'libs/shared/scss/theming';
+@import '~@egamings/theming';
 
 :host {
   @include fx-layout(row, center center);
