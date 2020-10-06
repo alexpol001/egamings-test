@@ -6,6 +6,7 @@ import { IGamesParams } from '@egamings/models';
 function createInitialState(): IGamesParams {
   return {
     sort: null,
+    sortFavorite: false,
     filters: {
       search: '',
       categories: [],

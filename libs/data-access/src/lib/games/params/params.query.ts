@@ -23,7 +23,7 @@ export class GamesParamsQuery extends Query<IGamesParams> {
         return this.gamesQuery.selectAll().pipe(
           map((games) => {
             games = this.filterGames(games, params.filters);
-            games = this.sortGames(games, params.sort);
+            games = this.sortGames(games, params.sort, params.sortFavorite);
             return games;
           })
         );
@@ -76,31 +76,73 @@ export class GamesParamsQuery extends Query<IGamesParams> {
     return true;
   }
 
-  private sortGames(games: IGame[], sort: Sort) {
-    const dir = (() => {
-      switch (sort?.direction) {
-        case 'asc':
-          return 'asc';
-        case 'desc':
-          return 'desc';
-        default:
-          return null;
-      }
-    })();
+  private sortGames(games: IGame[], sort: Sort, sortFavorite: boolean) {
+    return games.sort((a, b) => {
+      if (sortFavorite) {
+        const activeA = this.gamesQuery.hasActive(a.id);
+        const activeB = this.gamesQuery.hasActive(b.id);
 
-    if (dir) {
-      const fieldName = (() => {
-        const active = sort.active;
-        switch (active) {
-          case 'merchant':
-            return 'merchant.name';
-          default:
-            return active;
+        if (activeA && !activeB) {
+          return -1;
         }
-      })();
 
-      return _.orderBy(games, fieldName, dir);
-    }
+        if (activeB && !activeA) {
+          return 1;
+        }
+      }
+
+      let dir = sort?.direction;
+      let active = sort?.active;
+      let fieldA;
+      let fieldB;
+
+      if (dir) {
+        fieldA = _.get(a, active);
+        fieldB = _.get(b, active);
+      } else {
+        dir = 'asc';
+        fieldA = a.name;
+        fieldB = b.name;
+      }
+
+      if (typeof fieldA === 'string') {
+        fieldA = fieldA.toLowerCase();
+        fieldB = fieldB.toLowerCase();
+      }
+
+      if (fieldA < fieldB) {
+        return dir === 'asc' ? -1 : 1;
+      } else if (fieldA > fieldB) {
+        return dir === 'asc' ? 1 : -1;
+      }
+
+      return 0;
+    });
+
+    // const dir = (() => {
+    //   switch (sort?.direction) {
+    //     case 'asc':
+    //       return 'asc';
+    //     case 'desc':
+    //       return 'desc';
+    //     default:
+    //       return null;
+    //   }
+    // })();
+
+    // if (dir) {
+    //   const fieldName = (() => {
+    //     const active = sort.active;
+    //     switch (active) {
+    //       case 'merchant':
+    //         return 'merchant.name';
+    //       default:
+    //         return active;
+    //     }
+    //   })();
+
+    // return _.orderBy(games, fieldName, dir);
+    // }
 
     return games;
   }
