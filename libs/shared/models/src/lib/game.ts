@@ -15,13 +15,13 @@ export interface IGame {
   step?: number;
 }
 
-export interface IGamesParams {
+export interface IGamesOptions {
   sort: Sort;
   sortFavorite: boolean;
-  filters: IGamesFilter;
+  filters: IGamesFilters;
 }
 
-export interface IGamesFilter {
+export interface IGamesFilters {
   search: string;
   categories: number[];
   merchants: number[];

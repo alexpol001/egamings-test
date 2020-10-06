@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ID } from '@datorama/akita';
-import { IMerchant, ICategory, IGamesFilter } from '@egamings/shared/models';
+import { IMerchant, ICategory, IGamesFilters } from '@egamings/shared/models';
 import * as _ from 'lodash-es';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -26,7 +26,7 @@ export class FilterComponent implements OnInit, OnDestroy {
   @Input() selectedCategories: number[] = [];
   @Input() selectedMerchants: number[] = [];
 
-  @Output() changeEvent: EventEmitter<IGamesFilter> = new EventEmitter();
+  @Output() changeEvent: EventEmitter<IGamesFilters> = new EventEmitter();
 
   private formBuilder: FormBuilder = new FormBuilder();
   private unsubscribeAll = new Subject();

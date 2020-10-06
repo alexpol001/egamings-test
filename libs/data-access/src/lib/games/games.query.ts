@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { Order, QueryConfig, QueryEntity } from '@datorama/akita';
-import { IGame, IGamesFilter } from '@egamings/shared/models';
+import { IGame, IGamesFilters } from '@egamings/shared/models';
 import * as _ from 'lodash-es';
 import { map, mergeMap } from 'rxjs/operators';
 import { GamesStore, GamesState } from './games.store';
 import { GamesPaginationQuery } from './pagination';
-import { GamesParamsQuery } from './params';
+import { GamesOptionsQuery } from './options/options.query';
 
 @Injectable()
 @QueryConfig({
@@ -16,13 +16,13 @@ import { GamesParamsQuery } from './params';
 export class GamesQuery extends QueryEntity<GamesState, IGame> {
   constructor(
     protected store: GamesStore,
-    private gamesParamsQuery: GamesParamsQuery,
+    private gamesOptionsQuery: GamesOptionsQuery,
     private gamesPaginationQuery: GamesPaginationQuery
   ) {
     super(store);
   }
 
-  paramedGames$ = this.gamesParamsQuery.select().pipe(
+  paramedGames$ = this.gamesOptionsQuery.select().pipe(
     mergeMap((params) => {
       return this.selectAll().pipe(
         map((games) => {
@@ -46,7 +46,7 @@ export class GamesQuery extends QueryEntity<GamesState, IGame> {
     })
   );
 
-  private filterGames(games: IGame[], filters: IGamesFilter) {
+  private filterGames(games: IGame[], filters: IGamesFilters) {
     return games.filter((game) => {
       return (
         this.filterName(game, filters?.search) &&

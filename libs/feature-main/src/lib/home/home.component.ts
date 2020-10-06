@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 
-import { IGamesFilter, IGamesParams } from '@egamings/shared/models';
+import { IGamesFilters, IGamesOptions } from '@egamings/shared/models';
 
 import {
   CategoriesQuery,
+  GamesOptionsQuery,
   GamesPaginationQuery,
   GamesPaginationService,
-  GamesParamsQuery,
-  GamesParamsService,
+  GamesOptionsService,
   GamesQuery,
   GamesService,
   MerchantsQuery,
@@ -52,8 +52,8 @@ export class HomeComponent implements OnInit {
     private gamesService: GamesService,
     private gamesPaginationQuery: GamesPaginationQuery,
     private gamesPaginationService: GamesPaginationService,
-    private gamesParamsService: GamesParamsService,
-    private gamesParamsQuery: GamesParamsQuery,
+    private gamesOptionsService: GamesOptionsService,
+    private gamesOptionsQuery: GamesOptionsQuery,
     private categoriesQuery: CategoriesQuery,
     private merchantsQuery: MerchantsQuery
   ) {}
@@ -75,7 +75,7 @@ export class HomeComponent implements OnInit {
       })
     );
 
-    const params = this.gamesParamsQuery.select();
+    const params = this.gamesOptionsQuery.select();
 
     this.sort$ = params.pipe(map((params) => params.sort));
     this.sortFavorite$ = params.pipe(map((params) => params.sortFavorite));
@@ -88,8 +88,6 @@ export class HomeComponent implements OnInit {
       map((params) => params.filters?.merchants)
     );
 
-    // this.favorites$ = this.gamesQuery.selectActiveId();
-
     this.favorites$ = this.gamesQuery.selectActiveId();
   }
 
@@ -101,7 +99,7 @@ export class HomeComponent implements OnInit {
     this.updateParams({ sortFavorite });
   }
 
-  onFilters(filters: IGamesFilter) {
+  onFilters(filters: IGamesFilters) {
     this.updateParams({ filters });
   }
 
@@ -121,7 +119,7 @@ export class HomeComponent implements OnInit {
     this.gamesService.setStep(id, step);
   }
 
-  private updateParams(params: Partial<IGamesParams>) {
-    this.gamesParamsService.update(params);
+  private updateParams(params: Partial<IGamesOptions>) {
+    this.gamesOptionsService.update(params);
   }
 }

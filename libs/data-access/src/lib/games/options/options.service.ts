@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 
-import { IGamesParams } from '@egamings/shared/models';
+import { IGamesOptions } from '@egamings/shared/models';
 import * as _ from 'lodash-es';
 import { GamesPaginationService } from '../pagination/pagination.service';
-import { GamesParamsStore } from './params.store';
+import { GamesOptionsStore } from './options.store';
 
 @Injectable()
-export class GamesParamsService {
+export class GamesOptionsService {
   constructor(
-    private store: GamesParamsStore,
+    private store: GamesOptionsStore,
     private gamesPaginationService: GamesPaginationService
   ) {}
 
-  update(params: Partial<IGamesParams>) {
+  update(params: Partial<IGamesOptions>) {
     this.store.update(params);
     this.gamesPaginationService.reset();
   }

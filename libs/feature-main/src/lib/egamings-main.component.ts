@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GamesParamsQuery, GamesQuery } from '@egamings/data-access';
+import { GamesQuery } from '@egamings/data-access';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
