@@ -43,6 +43,7 @@ export class FilterComponent implements OnInit, OnDestroy {
     this.formGroup.valueChanges
       .pipe(takeUntil(this.unsubscribeAll))
       .subscribe((values) => {
+        console.log(values);
         this.changeEvent.emit(values);
       });
   }

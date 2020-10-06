@@ -42,7 +42,7 @@ export class GamesParamsQuery extends Query<IGamesParams> {
   }
 
   private filterName(game: IGame, name: string) {
-    return game.name.toLowerCase().includes(name?.toLowerCase());
+    return name ? game.name.toLowerCase().includes(name?.toLowerCase()) : true;
   }
 
   private filterCategories(game: IGame, categoryIds: number[]) {
