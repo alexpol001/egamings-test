@@ -22,7 +22,7 @@ export class GamesQuery extends QueryEntity<GamesState, IGame> {
     super(store);
   }
 
-  paramedGames$ = this.gamesOptionsQuery.select().pipe(
+  filteredGames$ = this.gamesOptionsQuery.select().pipe(
     mergeMap((params) => {
       return this.selectAll().pipe(
         map((games) => {
@@ -34,9 +34,11 @@ export class GamesQuery extends QueryEntity<GamesState, IGame> {
     })
   );
 
+  filteredGamesCount$ = this.filteredGames$.pipe(map((games) => games.length));
+
   paginatedGames$ = this.gamesPaginationQuery.select().pipe(
     mergeMap((pagination) => {
-      return this.paramedGames$.pipe(
+      return this.filteredGames$.pipe(
         map((games) => {
           const { pageIndex, pageSize } = pagination;
           const start = pageIndex * pageSize;

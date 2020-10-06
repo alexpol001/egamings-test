@@ -11,9 +11,9 @@
       class="filter"
       [categories]="categories$ | async"
       [merchants]="merchants$ | async"
-      [search]="search$ | async"
-      [selectedCategories]="selectedCategories$ | async"
-      [selectedMerchants]="selectedMerchants$ | async"
+      [search]="filterSearch$ | async"
+      [selectedCategories]="filterCategories$ | async"
+      [selectedMerchants]="filterMerchants$ | async"
       (changeEvent)="onFilters($event)"
     ></egamings-ui-filter>
   </div>

@@ -31,20 +31,20 @@ export class HomeComponent implements OnInit {
 
   games$ = this.gamesQuery.paginatedGames$;
 
+  length$ = this.gamesQuery.filteredGamesCount$;
+  pageIndex$ = this.gamesPaginationQuery.pageIndex$;
+  pageSize$ = this.gamesPaginationQuery.pageSize$;
+
+  sort$ = this.gamesOptionsQuery.sort$;
+  sortFavorite$ = this.gamesOptionsQuery.sortFavorite$;
+
+  filterSearch$ = this.gamesOptionsQuery.filterSearch$;
+  filterCategories$ = this.gamesOptionsQuery.filterCategories$;
+  filterMerchants$ = this.gamesOptionsQuery.filterMerchants$;
+
+  favorites$ = this.gamesQuery.selectActiveId();
+
   pageSizeOptions = [25, 50, 75, 100];
-
-  length$: Observable<number>;
-  pageIndex$: Observable<number>;
-  pageSize$: Observable<number>;
-
-  sort$: Observable<Sort>;
-  sortFavorite$: Observable<boolean>;
-
-  search$: Observable<string>;
-  selectedCategories$: Observable<ID[]>;
-  selectedMerchants$: Observable<ID[]>;
-
-  favorites$: Observable<ID[]>;
 
   constructor(
     private titleService: Title,
@@ -60,35 +60,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle('Egamings | Home');
-
-    const pagination = this.gamesPaginationQuery.select();
-
-    this.pageIndex$ = pagination.pipe(
-      map((pagination) => pagination.pageIndex)
-    );
-
-    this.pageSize$ = pagination.pipe(map((pagination) => pagination.pageSize));
-
-    this.length$ = this.gamesQuery.paramedGames$.pipe(
-      map((games) => {
-        return games.length;
-      })
-    );
-
-    const params = this.gamesOptionsQuery.select();
-
-    this.sort$ = params.pipe(map((params) => params.sort));
-    this.sortFavorite$ = params.pipe(map((params) => params.sortFavorite));
-
-    this.search$ = params.pipe(map((params) => params.filters?.search));
-    this.selectedCategories$ = params.pipe(
-      map((params) => params.filters?.categories)
-    );
-    this.selectedMerchants$ = params.pipe(
-      map((params) => params.filters?.merchants)
-    );
-
-    this.favorites$ = this.gamesQuery.selectActiveId();
   }
 
   onSort(sort: Sort) {

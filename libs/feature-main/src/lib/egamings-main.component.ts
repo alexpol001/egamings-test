@@ -23,7 +23,7 @@ export class EgamingsMainComponent implements OnInit {
       .pipe(map((games) => games?.length));
 
     this.filtered$ = this.gamesQuery
-      .paramedGames$
+      .filteredGames$
       .pipe(map((games) => games?.length));
   }
 }
