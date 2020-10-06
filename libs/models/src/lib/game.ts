@@ -16,6 +16,7 @@ export interface IGame {
 
 export interface IGamesParams {
   sort: Sort;
+  sortFavorite: boolean;
   filters: IGamesFilter;
 }
 

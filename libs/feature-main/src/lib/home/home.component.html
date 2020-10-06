@@ -1,6 +1,8 @@
 <egamings-ui-sorting
   class="sorting"
   [sort]="sort$ | async"
+  [sortFavorite]="sortFavorite$ | async"
+  (sortFavoriteEvent)="onFavoriteSort($event)"
   (sortEvent)="onSort($event)"
 ></egamings-ui-sorting>
 <div class="filter-game-list">

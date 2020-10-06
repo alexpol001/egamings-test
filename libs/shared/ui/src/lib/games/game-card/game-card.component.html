@@ -2,14 +2,11 @@
   <mat-card-header class="header">
     <mat-card-title class="title">
       <div class="name">{{ name }}</div>
-      <button
-        mat-icon-button
+      <egamings-ui-favorite-toggle
         class="button-favorite"
-        [color]="favorite ? 'accent' : 'primary'"
-        (click)="favoriteToggle()"
-      >
-        <mat-icon>{{ favorite ? 'star' : 'star_border' }}</mat-icon>
-      </button>
+        [active]="favorite"
+        (toggleEvent)="onToggle()"
+      ></egamings-ui-favorite-toggle>
     </mat-card-title>
     <mat-card-subtitle class="subtitle">{{ mechant }}</mat-card-subtitle>
   </mat-card-header>

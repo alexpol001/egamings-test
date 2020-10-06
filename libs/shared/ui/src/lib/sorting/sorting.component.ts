@@ -17,8 +17,11 @@ import { Sort } from '@angular/material/sort';
 export class SortingComponent implements OnInit {
   @Input() categories: string[];
   @Input() sort: Sort;
+  @Input() sortFavorite: boolean;
 
   @Output() sortEvent: EventEmitter<Sort> = new EventEmitter();
+
+  @Output() sortFavoriteEvent: EventEmitter<boolean> = new EventEmitter();
 
   constructor() {}
 
@@ -26,5 +29,9 @@ export class SortingComponent implements OnInit {
 
   onSort(sort: Sort) {
     this.sortEvent.emit(sort);
+  }
+
+  onFavoriteToggle(sort: boolean) {
+    this.sortFavoriteEvent.emit(sort);
   }
 }

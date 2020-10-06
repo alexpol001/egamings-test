@@ -13,6 +13,7 @@ import {
   GamesService,
   MerchantsQuery,
 } from '@egamings/data-access';
+
 import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -37,6 +38,7 @@ export class HomeComponent implements OnInit {
   pageSize$: Observable<number>;
 
   sort$: Observable<Sort>;
+  sortFavorite$: Observable<boolean>;
 
   search$: Observable<string>;
   selectedCategories$: Observable<ID[]>;
@@ -76,6 +78,8 @@ export class HomeComponent implements OnInit {
     const params = this.gamesParamsQuery.select();
 
     this.sort$ = params.pipe(map((params) => params.sort));
+    this.sortFavorite$ = params.pipe(map((params) => params.sortFavorite));
+
     this.search$ = params.pipe(map((params) => params.filters?.search));
     this.selectedCategories$ = params.pipe(
       map((params) => params.filters?.categories)
@@ -86,16 +90,15 @@ export class HomeComponent implements OnInit {
 
     // this.favorites$ = this.gamesQuery.selectActiveId();
 
-    this.favorites$ = this.gamesQuery.selectActiveId().pipe(
-      map((favIds) => {
-        console.log(favIds);
-        return favIds;
-      })
-    );
+    this.favorites$ = this.gamesQuery.selectActiveId();
   }
 
   onSort(sort: Sort) {
     this.updateParams({ sort });
+  }
+
+  onFavoriteSort(sortFavorite: boolean) {
+    this.updateParams({ sortFavorite });
   }
 
   onFilters(filters: IGamesFilter) {

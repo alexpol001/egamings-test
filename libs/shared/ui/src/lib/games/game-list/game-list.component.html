@@ -8,7 +8,7 @@
         [image]="game.image"
         [id]="game.id"
         [favorite]="isFavorite(game.id)"
-        (favoriteEvent)="onFavorite($event)"
+        (favoriteToggleEvent)="onFavorite($event)"
       ></egamings-ui-game-card>
     </ng-container>
   </div>

@@ -24,7 +24,7 @@ export class GameCardComponent implements OnInit {
 
   @Input() favorite: boolean;
 
-  @Output() favoriteEvent: EventEmitter<number> = new EventEmitter();
+  @Output() favoriteToggleEvent: EventEmitter<number> = new EventEmitter();
 
   playHover: boolean;
 
@@ -40,8 +40,7 @@ export class GameCardComponent implements OnInit {
     this.playHover = false;
   }
 
-  favoriteToggle() {
-    this.favorite = !this.favorite;
-    this.favoriteEvent.emit(this.id);
+  onToggle() {
+    this.favoriteToggleEvent.emit(this.id);
   }
 }
