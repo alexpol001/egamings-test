@@ -28,7 +28,7 @@
     "help": "nx help",
     "build.mobile": "nx build mobile",
     "prepare.mobile": "npm run clean.mobile && npm run build.mobile",
-    "prepare.mobile.android": "npm run prepare.ionic.ionic && cd apps/ionic-ionic && npm run cap.add.android",
+    "prepare.mobile.android": "npm run prepare.mobile && cd apps/mobile && npm run cap.add.android",
     "open.mobile.android": "cd apps/mobile && npm run cap.android",
     "sync.ionic.ionic": "cd apps/mobile && npm run cap.copy",
     "clean.mobile": "cd apps/mobile && npx rimraf -- hooks node_modules platforms www plugins ios android package-lock.json && npm i && rimraf -- package-lock.json"
