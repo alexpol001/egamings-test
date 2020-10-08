@@ -1,10 +1,8 @@
 import { Sort } from '@angular/material/sort';
-import { PageEvent } from '@angular/material/paginator';
+import { ID } from '@datorama/akita';
 
 import { ICategory } from './category';
-
 import { IMerchant } from './merchant';
-import { ID } from '@datorama/akita';
 
 export interface IGame {
   id: ID;
