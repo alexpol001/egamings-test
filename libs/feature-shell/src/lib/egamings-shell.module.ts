@@ -24,7 +24,12 @@ const ROUTES: Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(ROUTES),
-    DataAccessModule.forRoot(),
+    DataAccessModule.forRoot({
+      pagination: {
+        pageSize: 25,
+        pageSizeOptions: [25, 50, 75, 100],
+      },
+    }),
     EgamingsMainModule,
   ],
   declarations: [EgamingsShellComponent],

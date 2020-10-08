@@ -1,9 +1,10 @@
+import * as _ from 'lodash-es';
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
+import { map } from 'rxjs/operators';
 
 import { IGamesOptions } from '@egamings/shared/models';
-import * as _ from 'lodash-es';
-import { map } from 'rxjs/operators';
+
 import { GamesOptionsStore } from './options.store';
 
 @Injectable()

@@ -32,19 +32,19 @@ export class HomeComponent implements OnInit {
   games$ = this.gamesQuery.paginatedGames$;
 
   length$ = this.gamesQuery.filteredGamesCount$;
-  pageIndex$ = this.gamesPaginationQuery.pageIndex$;
-  pageSize$ = this.gamesPaginationQuery.pageSize$;
 
-  sort$ = this.gamesOptionsQuery.sort$;
-  sortFavorite$ = this.gamesOptionsQuery.sortFavorite$;
+  pageIndex$ = this.gamesPaginationQuery.select('pageIndex');
+  pageSize$ = this.gamesPaginationQuery.select('pageSize');
+  pageSizeOptions$ = this.gamesPaginationQuery.select('pageSizeOptions');
+
+  sort$ = this.gamesOptionsQuery.select('sort');
+  sortFavorite$ = this.gamesOptionsQuery.select('sortFavorite');
 
   filterSearch$ = this.gamesOptionsQuery.filterSearch$;
   filterCategories$ = this.gamesOptionsQuery.filterCategories$;
   filterMerchants$ = this.gamesOptionsQuery.filterMerchants$;
 
   favorites$ = this.gamesQuery.selectActiveId();
-
-  pageSizeOptions = [25, 50, 75, 100];
 
   constructor(
     private titleService: Title,

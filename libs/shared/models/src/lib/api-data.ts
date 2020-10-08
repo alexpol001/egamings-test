@@ -3,7 +3,6 @@ import { Dictionary, NumericDictionary } from 'lodash';
 export interface IApiCategory {
   ID: number;
   Name: Dictionary<string>;
-  Slug: string;
 }
 
 export interface IApiGame {

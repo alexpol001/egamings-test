@@ -1,29 +1,25 @@
+import * as _ from 'lodash-es';
 import {
   Inject,
-  InjectionToken,
   ModuleWithProviders,
   NgModule,
   Optional,
   SkipSelf,
 } from '@angular/core';
-
-import * as _ from 'lodash-es';
-
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
 import { IApiData } from '@egamings/shared/models';
 
+import { PAGINATION_CONFIG_TOKEN } from './games/pagination/pagination.token';
 import { StorageModule } from './storage/storage.module';
-
 import { MerchantsModule } from './merchants/merchants.module';
 import { CategoriesModule } from './categories/categories.module';
 import { GamesModule } from './games/games.module';
-
 import { GamesService } from './games/games.service';
 import { CategoriesService } from './categories/categories.service';
 import { MerchantsService } from './merchants/merchants.service';
-
-const API_URL_TOKEN = new InjectionToken<string>('api.url.token');
+import { API_URL_TOKEN } from './data-access-tokens';
+import { DATA_ACCESS_CONFIG_DEFAULT } from './data-access.common';
+import { IDataAccessConfig } from './data-access.model';
 
 @NgModule({
   imports: [
@@ -57,14 +53,20 @@ export class DataAccessModule {
   }
 
   static forRoot(
-    apiUrl = '/assets/api.json'
+    config?: Partial<IDataAccessConfig>
   ): ModuleWithProviders<DataAccessModule> {
+    config = _.merge(DATA_ACCESS_CONFIG_DEFAULT, config);
+
     return {
       ngModule: DataAccessModule,
       providers: [
         {
           provide: API_URL_TOKEN,
-          useValue: apiUrl,
+          useValue: config.apiUrl,
+        },
+        {
+          provide: PAGINATION_CONFIG_TOKEN,
+          useValue: config.pagination,
         },
       ],
     };

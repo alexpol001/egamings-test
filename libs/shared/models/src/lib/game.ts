@@ -30,4 +30,5 @@ export interface IGamesFilters {
 export interface IGamesPagination {
   pageIndex: number;
   pageSize: number;
+  pageSizeOptions: number[];
 }

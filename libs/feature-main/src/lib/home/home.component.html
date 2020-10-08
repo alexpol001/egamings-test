@@ -23,7 +23,7 @@
       [length]="length$ | async"
       [pageIndex]="pageIndex$ | async"
       [pageSize]="pageSize$ | async"
-      [pageSizeOptions]="pageSizeOptions"
+      [pageSizeOptions]="pageSizeOptions$ | async"
       (pageEvent)="onPage($event)"
     ></egamings-ui-paginator>
     <egamings-ui-game-list
