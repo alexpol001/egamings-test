@@ -10,8 +10,6 @@ export class FavoriteToggleComponent implements OnInit {
 
   @Output() toggleEvent: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() {}
-
   ngOnInit(): void {}
 
   onToggle() {

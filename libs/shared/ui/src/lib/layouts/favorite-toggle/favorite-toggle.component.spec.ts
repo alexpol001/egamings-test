@@ -8,9 +8,8 @@ describe('FavoriteToggleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FavoriteToggleComponent ]
-    })
-    .compileComponents();
+      declarations: [FavoriteToggleComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

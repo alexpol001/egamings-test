@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
+import { HeaderComponent } from './header/header.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FavoriteToggleComponent } from './favorite-toggle/favorite-toggle.component';
-import { MatIconModule } from '@angular/material/icon';
 import { ToTopComponent } from './to-top/to-top.component';
 
 @NgModule({
