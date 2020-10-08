@@ -27,12 +27,12 @@ export class SortingComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  @debounce(500)
+  @debounce(1000)
   onSort(sort: Sort) {
     this.sortEvent.emit(sort);
   }
 
-  @debounce(500)
+  @debounce(1000)
   onFavoriteToggle(sort: boolean) {
     this.sortFavoriteEvent.emit(sort);
   }

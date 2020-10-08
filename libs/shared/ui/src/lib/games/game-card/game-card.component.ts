@@ -6,6 +6,7 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
+import { debounce } from 'helpful-decorators';
 
 @Component({
   selector: 'egamings-ui-game-card',
@@ -48,6 +49,7 @@ export class GameCardComponent implements OnInit {
     this.favoriteToggleEvent.emit(this.id);
   }
 
+  @debounce(1000)
   onStepChange(step: number) {
     this.stepChangeEvent.emit(step);
   }
