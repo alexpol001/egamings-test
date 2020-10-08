@@ -180,7 +180,11 @@
             "aot": true,
             "assets": [
               "apps/frontend/src/favicon.ico",
-              "apps/frontend/src/assets"
+              {
+                "input": "libs/shared/assets",
+                "glob": "**/*",
+                "output": "assets"
+              }
             ],
             "styles": ["libs/styles/styles.scss"],
             "scripts": []
@@ -312,7 +316,14 @@
             "polyfills": "apps/mobile/src/polyfills.ts",
             "tsConfig": "apps/mobile/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/mobile/src/favicon.ico", "apps/mobile/src/assets"],
+            "assets": [
+              "apps/mobile/src/favicon.ico",
+              {
+                "input": "libs/shared/assets",
+                "glob": "**/*",
+                "output": "assets"
+              }
+            ],
             "styles": ["libs/styles/styles.scss"],
             "scripts": []
           },
