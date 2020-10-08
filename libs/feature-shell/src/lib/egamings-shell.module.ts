@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+
 import {
   EgamingsMainComponent,
   EgamingsMainModule,
 } from '@egamings/feature-main';
-
 import { EgamingsShellComponent } from './egamings-shell.component';
 import { DataAccessModule } from '@egamings/data-access';
 
