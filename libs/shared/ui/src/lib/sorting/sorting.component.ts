@@ -15,7 +15,6 @@ import { Sort } from '@angular/material/sort';
   encapsulation: ViewEncapsulation.None,
 })
 export class SortingComponent implements OnInit {
-  @Input() categories: string[];
   @Input() sort: Sort;
   @Input() sortFavorite: boolean;
 

@@ -1,20 +1,23 @@
 <mat-card class="sorting-card">
   <div
     matSort
+    class="sorting-container"
     [matSortStart]="'desc'"
     [matSortActive]="sort?.active"
     [matSortDirection]="sort?.direction"
-    class="sorting-container"
     (matSortChange)="onSort($event)"
   >
     <div class="title">Sorting</div>
+
     <div class="wrap">
       <div class="sorting">
         <egamings-ui-favorite-toggle
           [active]="sortFavorite"
           (toggleEvent)="onFavoriteToggle($event)"
         ></egamings-ui-favorite-toggle>
+
         <div mat-sort-header="name">Name</div>
+
         <div mat-sort-header="merchant.name">
           Merchant
         </div>

@@ -15,7 +15,7 @@ import { LayoutsModule } from '../layouts';
     MatSortModule,
     MatDividerModule,
     MatIconModule,
-    LayoutsModule
+    LayoutsModule,
   ],
   declarations: [SortingComponent],
   exports: [SortingComponent],
