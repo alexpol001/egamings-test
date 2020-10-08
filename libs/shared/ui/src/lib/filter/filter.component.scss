@@ -3,11 +3,11 @@
 :host {
   display: block;
 
-  .filter-container > .filter-form {
+  .filter-container > .form {
     @include fx-layout(column);
   }
 
-  .filter-container > .filter-form > .header {
+  .filter-container > .form > .header {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 8px;

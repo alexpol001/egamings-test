@@ -1,26 +1,27 @@
 <mat-card class="filter-container">
-  <form [formGroup]="formGroup" class="filter-form">
+  <form [formGroup]="formGroup" class="form">
     <div class="header">
       <div class="title">Filter</div>
-      <button *ngIf="isNotEmpty()" mat-icon-button type="reset">
+      <button *ngIf="isNotEmpty" mat-icon-button type="reset">
         <mat-icon>clear</mat-icon>
       </button>
     </div>
+
     <mat-form-field>
       <mat-label>Search</mat-label>
       <input
-        [formControlName]="'search'"
         matInput
         placeholder="enter the name of game"
         name="search"
+        [formControlName]="'search'"
       />
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Categories</mat-label>
-      <mat-select [formControlName]="'categories'" multiple>
+      <mat-select multiple [formControlName]="'categories'">
         <mat-select-trigger>
-          {{ getCategoriesSelectText() }}
+          {{ categoriesSelectText }}
         </mat-select-trigger>
         <mat-option class="favorite-category" [value]="-1">
           <mat-icon class="_accent-600-fg">star</mat-icon>

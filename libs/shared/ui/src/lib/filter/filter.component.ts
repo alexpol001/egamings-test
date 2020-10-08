@@ -1,3 +1,4 @@
+import * as _ from 'lodash-es';
 import {
   Component,
   EventEmitter,
@@ -8,10 +9,10 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ID } from '@datorama/akita';
-import { IMerchant, ICategory, IGamesFilters } from '@egamings/shared/models';
-import * as _ from 'lodash-es';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+
+import { IMerchant, ICategory, IGamesFilters } from '@egamings/shared/models';
 
 @Component({
   selector: 'egamings-ui-filter',
@@ -28,10 +29,20 @@ export class FilterComponent implements OnInit, OnDestroy {
 
   @Output() changeEvent: EventEmitter<IGamesFilters> = new EventEmitter();
 
-  private formBuilder: FormBuilder = new FormBuilder();
-  private unsubscribeAll = new Subject();
+  categoriesSelectText: string;
 
   formGroup: FormGroup;
+
+  get isNotEmpty() {
+    return (
+      this.search ||
+      this.selectedCategories?.length ||
+      this.selectedMerchants?.length
+    );
+  }
+
+  private formBuilder: FormBuilder = new FormBuilder();
+  private unsubscribeAll = new Subject();
 
   constructor() {}
 
@@ -45,7 +56,7 @@ export class FilterComponent implements OnInit, OnDestroy {
     this.formGroup.valueChanges
       .pipe(takeUntil(this.unsubscribeAll))
       .subscribe((values) => {
-        this.getCategoriesSelectText();
+        this.setCategoriesSelectText(values['categories']);
         this.changeEvent.emit(values);
       });
   }
@@ -55,31 +66,22 @@ export class FilterComponent implements OnInit, OnDestroy {
     this.unsubscribeAll.complete();
   }
 
-  getCategoriesSelectText() {
-    const values: ID[] = this.formGroup.get('categories').value;
+  getCategoryNameById(id: ID) {
+    return this.categories.find((category) => {
+      return category.id === id;
+    })?.name;
+  }
+
+  private setCategoriesSelectText(categories: ID[]) {
     let text: string[] = [];
-    for (let i = 0; i < values?.length; i++) {
-      if (values[i] !== -1) {
-        text.push(this.getCategoryNameById(values[i]));
+    for (let i = 0; i < categories?.length; i++) {
+      if (categories[i] !== -1) {
+        text.push(this.getCategoryNameById(categories[i]));
       } else {
         text.push('Favorite');
       }
     }
 
-    return _.join(text, ', ');
-  }
-
-  isNotEmpty() {
-    return (
-      this.search ||
-      this.selectedCategories?.length ||
-      this.selectedMerchants?.length
-    );
-  }
-
-  getCategoryNameById(id: ID) {
-    return this.categories.find((category) => {
-      return category.id === id;
-    })?.name;
+    this.categoriesSelectText = _.join(text, ', ');
   }
 }
