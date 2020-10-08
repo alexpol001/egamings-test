@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Sort } from '@angular/material/sort';
-
-import { IGamesFilters, IGamesOptions } from '@egamings/shared/models';
+import { PageEvent } from '@angular/material/paginator';
+import { Title } from '@angular/platform-browser';
 
 import {
   CategoriesQuery,
@@ -13,12 +13,8 @@ import {
   GamesService,
   MerchantsQuery,
 } from '@egamings/data-access';
-
-import { PageEvent } from '@angular/material/paginator';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Title } from '@angular/platform-browser';
-import { ID } from '@datorama/akita';
+import { IGamesFilters, IGamesOptions } from '@egamings/shared/models';
+import { IStepEvent } from '@egamings/shared/ui';
 
 @Component({
   selector: 'egamings-main-home',
@@ -93,7 +89,7 @@ export class HomeComponent implements OnInit {
     this.gamesService.toggleFavorite(id);
   }
 
-  onStep(stepEvent: { id: ID; step: number }) {
+  onStep(stepEvent: IStepEvent) {
     const { id, step } = stepEvent;
     this.gamesService.setStep(id, step);
   }

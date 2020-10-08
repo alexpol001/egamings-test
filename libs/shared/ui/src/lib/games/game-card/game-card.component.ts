@@ -44,7 +44,7 @@ export class GameCardComponent implements OnInit {
     this.playHover = false;
   }
 
-  onToggle() {
+  onFavoriteToggle() {
     this.favoriteToggleEvent.emit(this.id);
   }
 

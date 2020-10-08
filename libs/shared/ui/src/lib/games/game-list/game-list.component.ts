@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ID } from '@datorama/akita';
+
 import { IGame } from '@egamings/shared/models';
+
+import { IStepEvent } from './game-list.models';
 
 @Component({
   selector: 'egamings-ui-game-list',
@@ -14,10 +17,7 @@ export class GameListComponent implements OnInit {
 
   @Output() favoriteEvent: EventEmitter<ID> = new EventEmitter();
 
-  @Output() stepEvent: EventEmitter<{
-    id: ID;
-    step: number;
-  }> = new EventEmitter();
+  @Output() stepEvent: EventEmitter<IStepEvent> = new EventEmitter();
 
   constructor() {}
 
@@ -27,8 +27,8 @@ export class GameListComponent implements OnInit {
     this.favoriteEvent.emit(id);
   }
 
-  onStep(id: ID, step: number) {
-    this.stepEvent.emit({ id, step });
+  onStep(stepEvent: IStepEvent) {
+    this.stepEvent.emit(stepEvent);
   }
 
   isFavorite(gameId: ID) {
@@ -37,7 +37,7 @@ export class GameListComponent implements OnInit {
       : false;
   }
 
-  identify(index, item) {
-    return item.name;
+  trackByFn(index, item) {
+    return item.id;
   }
 }

@@ -20,7 +20,7 @@ egamings-ui-game-card {
     @include fx-flex();
   }
 
-  > .game-card > .header > .mat-card-header-text > .title > .button-favorite {
+  > .game-card > .header > .mat-card-header-text > .title > .favorite {
     margin-right: -20px;
   }
 
@@ -36,7 +36,7 @@ egamings-ui-game-card {
     @include fx-flex();
   }
 
-  > .game-card > .actions > .button-launch {
+  > .game-card > .actions > .play {
     width: 100%;
   }
 }

@@ -2,16 +2,19 @@
   <mat-card-header class="header">
     <mat-card-title class="title">
       <div class="name">{{ name }}</div>
+
       <egamings-ui-favorite-toggle
-        class="button-favorite"
+        class="favorite"
         [active]="favorite"
-        (toggleEvent)="onToggle()"
+        (toggleEvent)="onFavoriteToggle()"
       ></egamings-ui-favorite-toggle>
     </mat-card-title>
+
     <mat-card-subtitle class="subtitle">
       <div class="merchant">
         {{ mechant }}
       </div>
+
       <egamings-ui-stepper
         class="stepper"
         [step]="step"
@@ -19,14 +22,16 @@
       ></egamings-ui-stepper>
     </mat-card-subtitle>
   </mat-card-header>
-  <img [src]="image" mat-card-image class="image" alt="" />
+
+  <img mat-card-image class="image" alt="" [src]="image" />
+
   <mat-card-actions class="actions">
     <a
+      mat-raised-button
+      class="play {{ !playHover ? '_primary' : '_primary-400' }}"
+      [routerLink]="['game', id]"
       (mouseenter)="playMouseenter()"
       (mouseleave)="playMouseleave()"
-      [routerLink]="['game', id]"
-      mat-raised-button
-      class="button-launch {{ !playHover ? '_primary' : '_primary-400' }}"
     >
       Play
     </a>
