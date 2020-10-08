@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ToTopComponent } from './to-top.component';
+import { StepperComponent } from './stepper.component';
 
-describe('ToTopComponent', () => {
-  let component: ToTopComponent;
-  let fixture: ComponentFixture<ToTopComponent>;
+describe('StepperComponent', () => {
+  let component: StepperComponent;
+  let fixture: ComponentFixture<StepperComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToTopComponent ]
-    })
-    .compileComponents();
+      declarations: [StepperComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ToTopComponent);
+    fixture = TestBed.createComponent(StepperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

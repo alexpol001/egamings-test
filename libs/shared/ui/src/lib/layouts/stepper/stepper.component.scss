@@ -3,8 +3,8 @@
 :host {
   @include fx-layout(row, center center);
 
-  > .step {
-      font-size: 16px;
-      font-weight: 500;
+  > .stepvalue {
+    font-size: 16px;
+    font-weight: 500;
   }
 }

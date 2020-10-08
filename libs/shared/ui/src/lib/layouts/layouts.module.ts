@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from './header/header.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FavoriteToggleComponent } from './favorite-toggle/favorite-toggle.component';
-import { ToTopComponent } from './to-top/to-top.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule, MatButtonModule, MatIconModule],
@@ -15,13 +15,13 @@ import { ToTopComponent } from './to-top/to-top.component';
     HeaderComponent,
     NotFoundComponent,
     FavoriteToggleComponent,
-    ToTopComponent,
+    StepperComponent,
   ],
   exports: [
     HeaderComponent,
     NotFoundComponent,
     FavoriteToggleComponent,
-    ToTopComponent,
+    StepperComponent,
   ],
 })
 export class LayoutsModule {}

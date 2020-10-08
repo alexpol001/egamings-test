@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'egamings-ui-to-top',
-  templateUrl: './to-top.component.html',
-  styleUrls: ['./to-top.component.scss'],
+  selector: 'egamings-ui-stepper',
+  templateUrl: './stepper.component.html',
+  styleUrls: ['./stepper.component.scss'],
 })
-export class ToTopComponent implements OnInit {
+export class StepperComponent implements OnInit {
   @Input() step = 0;
 
   @Output() stepEvent: EventEmitter<number> = new EventEmitter();

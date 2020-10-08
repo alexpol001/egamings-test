@@ -28,7 +28,7 @@ egamings-ui-game-card {
     @include fx-layout(row, space-between center);
   }
 
-  > .game-card > .header > .mat-card-header-text > .subtitle > .button-to-top {
+  > .game-card > .header > .mat-card-header-text > .subtitle > .stepper {
     margin-right: -20px;
   }
 
