@@ -4,7 +4,6 @@ import { Query } from '@datorama/akita';
 import { IGame, IGamesPagination } from '@egamings/shared/models';
 
 import * as _ from 'lodash-es';
-import { map } from 'rxjs/operators';
 
 import { GamesPaginationStore } from './pagination.store';
 

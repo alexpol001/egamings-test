@@ -1,8 +1,9 @@
+import * as _ from 'lodash-es';
 import { Injectable } from '@angular/core';
 
 import { IApiMerchant, IMerchant } from '@egamings/shared/models';
+
 import { MerchantsStore } from './merchants.store';
-import * as _ from 'lodash-es';
 
 @Injectable()
 export class MerchantsService {

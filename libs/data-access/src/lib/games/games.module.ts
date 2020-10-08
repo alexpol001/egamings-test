@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { GamesQuery } from './games.query';
 import { GamesService } from './games.service';
 import { GamesStore } from './games.store';

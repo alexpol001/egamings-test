@@ -1,4 +1,4 @@
-import { InjectionToken, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { GamesPaginationQuery } from './pagination.query';
 import { GamesPaginationService } from './pagination.service';

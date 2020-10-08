@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
+import { ID } from '@datorama/akita';
 
 import { IApiGame, ICategory, IGame } from '@egamings/shared/models';
+
 import { GamesStore } from './games.store';
-import { MerchantsQuery } from '../merchants/merchants.query';
-import { CategoriesQuery } from '../categories/categories.query';
-import { ID } from '@datorama/akita';
 import { GamesQuery } from './games.query';
 
 import { LocalStorageService } from '../storage/local-storage/local-storage.service';
+import { MerchantsQuery } from '../merchants/merchants.query';
+import { CategoriesQuery } from '../categories/categories.query';
 
 @Injectable()
 export class GamesService {
