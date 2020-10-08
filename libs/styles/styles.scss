@@ -1,13 +1,3 @@
 @import '~@egamings/theming';
 
 @include egamings-core();
-
-body {
-  @include mat-theme(
-    $colors: (
-      primary: mat-palette($mat-indigo),
-      accent: mat-palette($mat-orange),
-      warn: mat-palette($mat-red),
-    )
-  );
-}

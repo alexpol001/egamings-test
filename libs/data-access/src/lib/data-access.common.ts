@@ -1,6 +1,6 @@
 import { IDataAccessConfig } from './data-access.model';
 
-export const DATA_ACCESS_CONFIG_DEFAULT: IDataAccessConfig = {
+export const DATA_ACCESS_DEFAULT_CONFIG: IDataAccessConfig = {
   apiUrl: '/assets/api.json',
   pagination: {
     pageSize: 10,

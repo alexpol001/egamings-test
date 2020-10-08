@@ -1,6 +1,18 @@
 <a [routerLink]="'/'" mat-button>Home</a>
+
 <div class="games-info">
   <div class="filtered">{{ filtered }}</div>
   <div class="divider">/</div>
   <div class="total">{{ total }}</div>
+</div>
+
+<div class="toggle-theme">
+  <mat-icon>brightness_5</mat-icon>
+  <mat-slide-toggle
+    class="toggle"
+    [checked]="isDark"
+    [color]="'accent'"
+    (change)="onToggleTheme()"
+  ></mat-slide-toggle>
+  <mat-icon>brightness_4</mat-icon>
 </div>

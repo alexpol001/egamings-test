@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import {
+  DataAccessModule,
+  DataAccessThemeModule,
+  ITheme,
+} from '@egamings/data-access';
 
 import {
   EgamingsMainComponent,
   EgamingsMainModule,
 } from '@egamings/feature-main';
 import { EgamingsShellComponent } from './egamings-shell.component';
-import { DataAccessModule } from '@egamings/data-access';
 
 const ROUTES: Routes = [
   {
@@ -20,6 +24,18 @@ const ROUTES: Routes = [
   },
 ];
 
+export const THEMES: ITheme[] = [
+  {
+    themeId: 'light',
+    cssFile: 'light-theme.css',
+  },
+  {
+    themeId: 'dark',
+    cssClass: 'dark-theme',
+    cssFile: 'dark-theme.css',
+  },
+];
+
 @NgModule({
   imports: [
     CommonModule,
@@ -29,6 +45,10 @@ const ROUTES: Routes = [
         pageSize: 25,
         pageSizeOptions: [25, 50, 75, 100],
       },
+    }),
+    DataAccessThemeModule.forRoot({
+      themes: THEMES,
+      defaultThemeId: 'light',
     }),
     EgamingsMainModule,
   ],

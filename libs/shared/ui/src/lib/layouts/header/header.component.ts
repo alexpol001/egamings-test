@@ -1,4 +1,12 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostBinding,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'egamings-ui-header',
@@ -11,7 +19,15 @@ export class HeaderComponent implements OnInit {
 
   @HostBinding('class') bg = '_primary';
 
+  @Output() toggleThemeEvent = new EventEmitter<boolean>();
+
+  @Input() isDark = false;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onToggleTheme() {
+    this.toggleThemeEvent.emit(!this.isDark);
+  }
 }

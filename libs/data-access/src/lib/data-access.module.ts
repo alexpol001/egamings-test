@@ -18,7 +18,7 @@ import { GamesService } from './games/games.service';
 import { CategoriesService } from './categories/categories.service';
 import { MerchantsService } from './merchants/merchants.service';
 import { API_URL_TOKEN } from './data-access-tokens';
-import { DATA_ACCESS_CONFIG_DEFAULT } from './data-access.common';
+import { DATA_ACCESS_DEFAULT_CONFIG } from './data-access.common';
 import { IDataAccessConfig } from './data-access.model';
 
 @NgModule({
@@ -55,7 +55,7 @@ export class DataAccessModule {
   static forRoot(
     config?: Partial<IDataAccessConfig>
   ): ModuleWithProviders<DataAccessModule> {
-    config = _.merge(DATA_ACCESS_CONFIG_DEFAULT, config);
+    config = _.merge(DATA_ACCESS_DEFAULT_CONFIG, config);
 
     return {
       ngModule: DataAccessModule,

@@ -50,6 +50,9 @@
     "mobile-e2e": {
       "tags": [],
       "implicitDependencies": ["mobile"]
+    },
+    "utils": {
+      "tags": []
     }
   }
 }

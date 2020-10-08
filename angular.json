@@ -186,7 +186,20 @@
                 "output": "assets"
               }
             ],
-            "styles": ["libs/styles/styles.scss"],
+            "styles": [
+              "libs/styles/styles.scss",
+              {
+                "input": "libs/styles/themes/light-theme.scss",
+                "lazy": true,
+                "bundleName": "light-theme"
+              },
+              {
+                "input": "libs/styles/themes/dark-theme.scss",
+                "lazy": true,
+                "bundleName": "dark-theme"
+              }
+            ],
+            "extractCss": true,
             "scripts": []
           },
           "configurations": {
@@ -324,7 +337,20 @@
                 "output": "assets"
               }
             ],
-            "styles": ["libs/styles/styles.scss"],
+            "styles": [
+              "libs/styles/styles.scss",
+              {
+                "input": "libs/styles/themes/light-theme.scss",
+                "lazy": true,
+                "bundleName": "light-theme"
+              },
+              {
+                "input": "libs/styles/themes/dark-theme.scss",
+                "lazy": true,
+                "bundleName": "dark-theme"
+              }
+            ],
+            "extractCss": true,
             "scripts": []
           },
           "configurations": {
@@ -424,6 +450,36 @@
             "tsConfig": ["apps/mobile-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/mobile-e2e/**/*"]
           }
+        }
+      }
+    },
+    "utils": {
+      "projectType": "library",
+      "root": "libs/utils",
+      "sourceRoot": "libs/utils/src",
+      "prefix": "egamings",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/utils/tsconfig.lib.json",
+              "libs/utils/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/utils/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

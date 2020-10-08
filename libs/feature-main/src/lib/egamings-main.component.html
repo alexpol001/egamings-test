@@ -1,6 +1,8 @@
 <egamings-ui-header
   [total]="total$ | async"
   [filtered]="filtered$ | async"
+  [isDark]="isDark$ | async"
+  (toggleThemeEvent)="onToggleTheme($event)"
 ></egamings-ui-header>
 <main class="content">
   <router-outlet></router-outlet>

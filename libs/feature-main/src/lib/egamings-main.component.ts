@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GamesQuery } from '@egamings/data-access';
-import { Observable } from 'rxjs';
+import { GamesQuery, ThemeQuery, ThemeService } from '@egamings/data-access';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -13,7 +12,23 @@ export class EgamingsMainComponent implements OnInit {
 
   filtered$ = this.gamesQuery.filteredGamesCount$;
 
-  constructor(private gamesQuery: GamesQuery) {}
+  isDark$ = this.themeQuery
+    .selectActiveId()
+    .pipe(map((themeId) => themeId === this.darkThemeId));
+
+  lightThemeId = 'light';
+
+  darkThemeId = 'dark';
+
+  constructor(
+    private gamesQuery: GamesQuery,
+    private themeService: ThemeService,
+    private themeQuery: ThemeQuery
+  ) {}
 
   ngOnInit(): void {}
+
+  onToggleTheme(isDark: boolean) {
+    this.themeService.setTheme(isDark ? this.darkThemeId : this.lightThemeId);
+  }
 }

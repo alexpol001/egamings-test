@@ -6,6 +6,19 @@
 
   padding: 16px;
 
+  > .toggle-theme {
+    flex-direction: row;
+    display: flex;
+    place-content: center start;
+    align-items: center;
+  
+    > .toggle {
+      margin: 0 4px;
+    }
+
+    padding: 0 8px;
+  }
+
   > .games-info {
     @include fx-layout(row, space-between center);
 

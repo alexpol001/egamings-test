@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { HeaderComponent } from './header/header.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -10,7 +11,13 @@ import { FavoriteToggleComponent } from './favorite-toggle/favorite-toggle.compo
 import { StepperComponent } from './stepper/stepper.component';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, MatButtonModule, MatIconModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSlideToggleModule,
+  ],
   declarations: [
     HeaderComponent,
     NotFoundComponent,
