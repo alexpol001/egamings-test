@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'egamings-ui-paginator',
@@ -13,10 +13,6 @@ export class PaginatorComponent implements OnInit {
   @Input() pageSizeOptions: number[];
 
   @Output() pageEvent: EventEmitter<PageEvent> = new EventEmitter();
-
-  constructor(private matPaginatorIntl: MatPaginatorIntl) {
-    // this.matPaginatorIntl.itemsPerPageLabel = 'ItemsPerPageLabel';
-  }
 
   ngOnInit(): void {}
 
