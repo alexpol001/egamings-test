@@ -30,7 +30,7 @@
     "prepare.mobile": "npm run clean.mobile && npm run build.mobile",
     "prepare.mobile.android": "npm run prepare.mobile && cd apps/mobile && npm run cap.add.android",
     "open.mobile.android": "cd apps/mobile && npm run cap.android",
-    "sync.ionic.ionic": "cd apps/mobile && npm run cap.copy",
+    "sync.mobile": "cd apps/mobile && npm run cap.copy",
     "clean.mobile": "cd apps/mobile && npx rimraf -- hooks node_modules platforms www plugins ios android package-lock.json && npm i && rimraf -- package-lock.json"
   },
   "private": true,
