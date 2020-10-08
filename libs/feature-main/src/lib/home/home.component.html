@@ -5,8 +5,9 @@
   (sortFavoriteEvent)="onFavoriteSort($event)"
   (sortEvent)="onSort($event)"
 ></egamings-ui-sorting>
+
 <div class="filter-game-list">
-  <div class="filter-wrap">
+  <div class="wrap">
     <egamings-ui-filter
       class="filter"
       [categories]="categories$ | async"
@@ -17,6 +18,7 @@
       (changeEvent)="onFilters($event)"
     ></egamings-ui-filter>
   </div>
+
   <div class="games">
     <egamings-ui-paginator
       class="paginator"
@@ -26,6 +28,7 @@
       [pageSizeOptions]="pageSizeOptions$ | async"
       (pageEvent)="onPage($event)"
     ></egamings-ui-paginator>
+
     <egamings-ui-game-list
       [games]="games$ | async"
       [favorites]="favorites$ | async"

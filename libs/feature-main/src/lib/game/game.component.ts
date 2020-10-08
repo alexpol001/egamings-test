@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { GamesQuery } from '@egamings/data-access';
-import { IGame } from '@egamings/shared/models';
 import { Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
+
+import { GamesQuery } from '@egamings/data-access';
+import { IGame } from '@egamings/shared/models';
 
 @Component({
   selector: 'egamings-main-game',
