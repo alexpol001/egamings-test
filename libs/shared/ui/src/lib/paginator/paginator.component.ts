@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { debounce } from 'helpful-decorators';
 
 @Component({
   selector: 'egamings-ui-paginator',
@@ -16,6 +17,7 @@ export class PaginatorComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  @debounce(500)
   onPage(event: PageEvent) {
     this.pageEvent.emit(event);
   }

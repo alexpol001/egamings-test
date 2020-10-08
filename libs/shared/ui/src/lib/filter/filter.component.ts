@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ID } from '@datorama/akita';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { debounce } from 'helpful-decorators';
 
 import { IMerchant, ICategory, IGamesFilters } from '@egamings/shared/models';
 
@@ -57,7 +58,7 @@ export class FilterComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribeAll))
       .subscribe((values) => {
         this.setCategoriesSelectText(values['categories']);
-        this.changeEvent.emit(values);
+        this.changeEventEmit(values);
       });
   }
 
@@ -83,5 +84,10 @@ export class FilterComponent implements OnInit, OnDestroy {
     }
 
     this.categoriesSelectText = _.join(text, ', ');
+  }
+
+  @debounce(1000)
+  private changeEventEmit(filters: IGamesFilters) {
+    this.changeEvent.emit(filters);
   }
 }

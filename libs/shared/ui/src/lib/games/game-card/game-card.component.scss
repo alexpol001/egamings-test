@@ -32,6 +32,23 @@ egamings-ui-game-card {
     margin-right: -20px;
   }
 
+  > .game-card > .image-container {
+    position: relative;
+    height: 0;
+    padding-bottom: calc(75% + 40px);
+    margin-right: -16px;
+    margin-left: -16px;
+    background: url('/assets/preview.png') no-repeat;
+    background-size: contain;
+  }
+
+  > .game-card > .image-container > .image {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
   > .game-card > .image {
     @include fx-flex();
   }

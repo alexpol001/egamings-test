@@ -7,6 +7,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Sort } from '@angular/material/sort';
+import { debounce } from 'helpful-decorators';
 
 @Component({
   selector: 'egamings-ui-sorting',
@@ -26,10 +27,12 @@ export class SortingComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  @debounce(500)
   onSort(sort: Sort) {
     this.sortEvent.emit(sort);
   }
 
+  @debounce(500)
   onFavoriteToggle(sort: boolean) {
     this.sortFavoriteEvent.emit(sort);
   }
