@@ -40,9 +40,17 @@ export class HomeComponent implements OnInit {
   sort$ = this.gamesOptionsQuery.select('sort');
   sortFavorite$ = this.gamesOptionsQuery.select('sortFavorite');
 
-  filterSearch$ = this.gamesOptionsQuery.filterSearch$;
-  filterCategories$ = this.gamesOptionsQuery.filterCategories$;
-  filterMerchants$ = this.gamesOptionsQuery.filterMerchants$;
+  filterSearch$ = this.gamesOptionsQuery.select(
+    (state) => state.filters?.search
+  );
+
+  filterCategories$ = this.gamesOptionsQuery.select(
+    (state) => state.filters?.categories
+  );
+
+  filterMerchants$ = this.gamesOptionsQuery.select(
+    (state) => state.filters?.merchants
+  );
 
   favorites$ = this.gamesQuery.selectActiveId();
 

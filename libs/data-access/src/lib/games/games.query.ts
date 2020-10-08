@@ -34,8 +34,6 @@ export class GamesQuery extends QueryEntity<GamesState, IGame> {
     })
   );
 
-  filteredGamesCount$ = this.filteredGames$.pipe(map((games) => games.length));
-
   paginatedGames$ = this.gamesPaginationQuery.select().pipe(
     mergeMap((pagination) => {
       return this.filteredGames$.pipe(
@@ -47,6 +45,8 @@ export class GamesQuery extends QueryEntity<GamesState, IGame> {
       );
     })
   );
+
+  filteredGamesCount$ = this.filteredGames$.pipe(map((games) => games.length));
 
   private filterGames(games: IGame[], filters: IGamesFilters) {
     return games.filter((game) => {
@@ -94,52 +94,54 @@ export class GamesQuery extends QueryEntity<GamesState, IGame> {
   }
 
   private sortGames(games: IGame[], sort: Sort, sortFavorite: boolean) {
-    return games.sort((a, b) => {
-      if (sortFavorite) {
-        const activeA = this.hasActive(a.id);
-        const activeB = this.hasActive(b.id);
+    return games?.length
+      ? games.sort((a, b) => {
+          if (sortFavorite) {
+            const activeA = this.hasActive(a.id);
+            const activeB = this.hasActive(b.id);
 
-        if (activeA && !activeB) {
-          return -1;
-        }
+            if (activeA && !activeB) {
+              return -1;
+            }
 
-        if (activeB && !activeA) {
-          return 1;
-        }
-      }
+            if (activeB && !activeA) {
+              return 1;
+            }
+          }
 
-      if (a.step > b.step) {
-        return -1;
-      } else if (a.step < b.step) {
-        return 1;
-      }
+          if (a.step > b.step) {
+            return -1;
+          } else if (a.step < b.step) {
+            return 1;
+          }
 
-      let dir = sort?.direction;
-      let active = sort?.active;
-      let fieldA;
-      let fieldB;
+          let dir = sort?.direction;
+          let active = sort?.active;
+          let fieldA;
+          let fieldB;
 
-      if (dir) {
-        fieldA = _.get(a, active);
-        fieldB = _.get(b, active);
-      } else {
-        dir = 'asc';
-        fieldA = a.name;
-        fieldB = b.name;
-      }
+          if (dir) {
+            fieldA = _.get(a, active);
+            fieldB = _.get(b, active);
+          } else {
+            dir = 'asc';
+            fieldA = a.name;
+            fieldB = b.name;
+          }
 
-      if (typeof fieldA === 'string') {
-        fieldA = fieldA.toLowerCase();
-        fieldB = fieldB.toLowerCase();
-      }
+          if (typeof fieldA === 'string') {
+            fieldA = fieldA.toLowerCase();
+            fieldB = fieldB.toLowerCase();
+          }
 
-      if (fieldA < fieldB) {
-        return dir === 'asc' ? -1 : 1;
-      } else if (fieldA > fieldB) {
-        return dir === 'asc' ? 1 : -1;
-      }
+          if (fieldA < fieldB) {
+            return dir === 'asc' ? -1 : 1;
+          } else if (fieldA > fieldB) {
+            return dir === 'asc' ? 1 : -1;
+          }
 
-      return 0;
-    });
+          return 0;
+        })
+      : games;
   }
 }
