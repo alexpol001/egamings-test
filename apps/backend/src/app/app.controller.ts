@@ -1,4 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
+import { IApiData } from '@egamings/shared/models';
 
 import { AppService } from './app.service';
 
@@ -7,7 +8,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getData() {
-    return this.appService.getData();
+  getData(): IApiData {
+    return null;
   }
 }

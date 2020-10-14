@@ -496,7 +496,13 @@
             "outputPath": "dist/apps/backend",
             "main": "apps/backend/src/main.ts",
             "tsConfig": "apps/backend/tsconfig.app.json",
-            "assets": ["apps/backend/src/assets"]
+            "assets": [
+              {
+                "input": "libs/shared/assets",
+                "glob": "**/*",
+                "output": "assets"
+              }
+            ]
           },
           "configurations": {
             "production": {
