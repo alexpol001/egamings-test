@@ -26,10 +26,8 @@ export class ThemeService {
     @Inject(PLATFORM_ID) private platformId: any,
     @Optional() @Inject(THEME_OPTS_TOKEN) private opts?: IThemeOpts
   ) {
-    if (isPlatformBrowser(this.platformId)) {
-      this.head = this.document.head;
-      this.body = this.document.body;
-    }
+    this.head = this.document.head;
+    this.body = this.document.body;
 
     const { themes, defaultThemeId } = this.opts;
 
@@ -54,7 +52,6 @@ export class ThemeService {
   }
 
   async setTheme(themeId: string) {
-    console.log(themeId);
     const entity = this.themeQuery.getEntity(themeId);
     const active = this.themeQuery.getActive();
 
@@ -91,7 +88,9 @@ export class ThemeService {
       this.renderer.setAttribute(linkEl, 'type', 'text/css');
       this.renderer.setAttribute(linkEl, 'href', filename);
       this.renderer.setProperty(linkEl, 'onload', resolve);
-      this.renderer.appendChild(this.head, linkEl);
+      if (this.head) {
+        this.renderer.appendChild(this.head, linkEl);
+      }
       this.themeLinks = [...this.themeLinks, linkEl];
     });
   }

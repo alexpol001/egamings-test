@@ -172,7 +172,7 @@
               }
             },
             "allowedCommonJsDependencies": ["helpful-decorators"],
-            "outputPath": "dist/apps/frontend/browser",
+            "outputPath": "dist/apps/frontend",
             "index": "apps/frontend/src/index.html",
             "main": "apps/frontend/src/main.ts",
             "polyfills": "apps/frontend/src/polyfills.ts",
@@ -282,7 +282,7 @@
                 "externals": "replace"
               }
             },
-            "outputPath": "dist/apps/frontend/server",
+            "outputPath": "dist/apps/backend",
             "main": "apps/frontend/server.ts",
             "tsConfig": "apps/frontend/tsconfig.server.json",
             "externalDependencies": [
@@ -305,7 +305,7 @@
                 }
               ],
               "sourceMap": false,
-              "optimization": false
+              "optimization": true
             }
           }
         },
@@ -551,37 +551,53 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@nrwl/node:build",
+          "builder": "@angular-builders/custom-webpack:server",
           "options": {
+            "customWebpackConfig": {
+              "path": "webpack.config.ts",
+              "mergeStrategies": {
+                "externals": "replace"
+              }
+            },
             "outputPath": "dist/apps/backend",
             "main": "apps/backend/src/main.ts",
-            "tsConfig": "apps/backend/tsconfig.app.json",
-            "assets": [
-              {
-                "input": "libs/shared/assets",
-                "glob": "**/*",
-                "output": "assets"
-              }
+            "tsConfig": "apps/backend/tsconfig.json",
+            "externalDependencies": [
+              "@nestjs/microservices",
+              "@nestjs/microservices/microservices-module",
+              "@nestjs/websockets",
+              "@nestjs/websockets/socket-module",
+              "cache-manager",
+              "class-validator",
+              "class-transformer",
+              "fastify-static"
             ]
           },
           "configurations": {
             "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
+              "outputHashing": "media",
               "fileReplacements": [
                 {
                   "replace": "apps/backend/src/environments/environment.ts",
                   "with": "apps/backend/src/environments/environment.prod.ts"
                 }
-              ]
+              ],
+              "sourceMap": false,
+              "optimization": false
             }
           }
         },
         "serve": {
-          "builder": "@nrwl/node:execute",
+          "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
-            "buildTarget": "backend:build"
+            "browserTarget": "frontend:build",
+            "serverTarget": "backend:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "frontend:build:production",
+              "serverTarget": "backend:build:production"
+            }
           }
         },
         "lint": {
