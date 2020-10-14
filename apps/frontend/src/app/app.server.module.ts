@@ -4,6 +4,7 @@ import {
   ServerTransferStateModule,
 } from '@angular/platform-server';
 import { EgamingsShellComponent } from '@egamings/feature-shell';
+// import { EgamingsShellComponent } from './app.component';
 import { AppModule } from './app.module';
 
 @NgModule({

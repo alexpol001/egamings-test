@@ -3,7 +3,7 @@ import { Query } from '@datorama/akita';
 
 import { IGame, IGamesPagination } from '@egamings/shared/models';
 
-import * as _ from 'lodash-es';
+import * as _ from 'lodash';
 
 import { GamesPaginationStore } from './pagination.store';
 

@@ -1,4 +1,4 @@
-import * as _ from 'lodash-es';
+import * as _ from 'lodash';
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
 

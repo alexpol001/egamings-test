@@ -3,7 +3,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { AngularUniversalModule } from '@nestjs/ng-universal';
 import { join } from 'path';
 // tslint:disable-next-line: nx-enforce-module-boundaries
-import { AppServerModule } from '@egamings/frontend/server-module';
+import { AppServerModule } from 'apps/frontend/src/main.server';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -11,11 +11,11 @@ import { AppService } from './app.service';
 @Module({
   imports: [
     // ServeStaticModule.forRoot({
-    //   rootPath: join(__dirname, '..', 'frontend'),
+    //   rootPath: join(__dirname, 'assets'),
     // }),
     AngularUniversalModule.forRoot({
       bootstrap: AppServerModule,
-      viewsPath: join(process.cwd(), 'dist/apps/frontend'),
+      viewsPath: join(__dirname, '..', 'frontend'),
     }),
   ],
   controllers: [AppController],

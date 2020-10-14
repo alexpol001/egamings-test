@@ -1,11 +1,9 @@
 import { Body, Controller, Get, Param } from '@nestjs/common';
 import { IApiData } from '@egamings/shared/models';
 
-import { AppService } from './app.service';
-
-@Controller()
+@Controller('api')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  // constructor(private readonly appService: AppService) {}
 
   @Get()
   getData() {

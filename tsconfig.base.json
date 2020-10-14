@@ -23,7 +23,7 @@
       "@egamings/shared/models": ["libs/shared/models/src/index.ts"],
       "@egamings/utils": ["libs/utils/src/index.ts"],
       "@egamings/frontend/server-module": [
-        "apps/frontend/src/app/app-server.module.ts"
+        "apps/frontend/src/app/app.server.module.ts"
       ]
     }
   },

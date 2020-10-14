@@ -6,5 +6,6 @@ export default (config: webpack.Configuration) => {
     __dirname,
     'libs/shared/scss/_theming'
   );
+  config.resolve.plugins
   return config;
 };

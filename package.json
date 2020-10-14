@@ -26,6 +26,10 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
+    "dev:ssr:frontend": "nx run frontend:serve-ssr",
+    "serve:ssr:frontend": "node dist/apps/frontend/server/main.js",
+    "build:ssr:frontend": "nx build frontend --prod && nx run frontend:server:production",
+    "prerender:frontend": "nx frontend:prerender",
     "build.mobile": "nx build mobile",
     "prepare.mobile": "npm run clean.mobile && npm run build.mobile",
     "prepare.mobile.android": "npm run prepare.mobile && cd apps/mobile && npm run cap.add.android",
@@ -70,8 +74,13 @@
     "@angular/language-service": "^10.0.0",
     "@datorama/akita-ng-router-store": "^5.1.6",
     "@datorama/akita-ngdevtools": "^5.0.3",
+    "@nestjs/schematics": "^7.0.0",
+    "@nestjs/testing": "^7.0.0",
+    "@nguniversal/builders": "^10.1.0",
     "@nrwl/cypress": "10.2.1",
     "@nrwl/jest": "10.2.1",
+    "@nrwl/nest": "10.3.0",
+    "@nrwl/node": "10.3.0",
     "@nrwl/workspace": "10.2.1",
     "@types/jest": "26.0.8",
     "@types/lodash-es": "^4.17.3",
@@ -86,10 +95,6 @@
     "ts-jest": "26.1.4",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "typescript": "~3.9.3",
-    "@nrwl/node": "10.3.0",
-    "@nestjs/schematics": "^7.0.0",
-    "@nestjs/testing": "^7.0.0",
-    "@nrwl/nest": "10.3.0"
+    "typescript": "~3.9.3"
   }
 }
