@@ -11,12 +11,11 @@
     display: flex;
     place-content: center start;
     align-items: center;
-  
+    padding: 0 8px;
+
     > .toggle {
       margin: 0 4px;
     }
-
-    padding: 0 8px;
   }
 
   > .games-info {
