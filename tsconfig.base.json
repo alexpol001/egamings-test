@@ -21,7 +21,10 @@
       "@egamings/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@egamings/data-access": ["libs/data-access/src/index.ts"],
       "@egamings/shared/models": ["libs/shared/models/src/index.ts"],
-      "@egamings/utils": ["libs/utils/src/index.ts"]
+      "@egamings/utils": ["libs/utils/src/index.ts"],
+      "@egamings/frontend/server-module": [
+        "apps/frontend/src/app/app-server.module.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
