@@ -4,6 +4,6 @@ import { LocalStorageService } from '../storage/local-storage';
 export const THEME_DEFAULT_OPTS: IThemeOpts = {
   themeStorage: {
     storage: LocalStorageService,
-    key: 'sinbix-theme',
+    key: 'egamings-theme',
   },
 };

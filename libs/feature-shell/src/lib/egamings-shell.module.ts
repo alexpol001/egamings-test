@@ -12,6 +12,7 @@ import {
   EgamingsMainModule,
 } from '@egamings/feature-main';
 import { EgamingsShellComponent } from './egamings-shell.component';
+import { CookieStorageService } from 'libs/data-access/src/lib/storage/cookie-storage';
 
 const ROUTES: Routes = [
   {
@@ -49,6 +50,9 @@ export const THEMES: ITheme[] = [
     DataAccessThemeModule.forRoot({
       themes: THEMES,
       defaultThemeId: 'light',
+      themeStorage: {
+        storage: CookieStorageService,
+      },
     }),
     EgamingsMainModule,
   ],

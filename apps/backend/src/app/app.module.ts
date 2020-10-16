@@ -17,8 +17,11 @@ import { AppService } from './app.service';
       bootstrap: AppServerModule,
       viewsPath: join(__dirname, '..', 'frontend'),
       cache: {
-        expiresIn: 1000 * 60 * 10
-      }
+        expiresIn: 1000 * 60 * 10 * 0.001
+      },
+      extraProviders: [
+        
+      ]
     }),
   ],
   controllers: [AppController],

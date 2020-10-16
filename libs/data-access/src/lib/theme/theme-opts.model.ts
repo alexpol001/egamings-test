@@ -8,7 +8,7 @@ export interface IThemeStorageOpts {
 }
 
 export interface IThemeOpts {
-  themeStorage?: IThemeStorageOpts;
+  themeStorage?: Partial<IThemeStorageOpts>;
   themes?: ITheme[];
   defaultThemeId?: string;
 }

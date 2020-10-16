@@ -1,14 +1,26 @@
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, XhrFactory } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import {
   ServerModule,
   ServerTransferStateModule,
 } from '@angular/platform-server';
+// import { CookieBackendModule } from 'ngx-cookie-backend';
 import { EgamingsShellComponent } from '@egamings/feature-shell';
 // import { EgamingsShellComponent } from './app.component';
 import { AppModule } from './app.module';
 import { ServerStateInterceptor } from './serverstate.interseptor';
 import { UniversalInterceptor } from './universal.interceptor';
+import { CookieInterceptor } from './cookie.interceptor';
+import * as xhr2 from 'xhr2';
+
+// import { ServerCookiesModule } from '@ngx-utils/cookies/server';
+
+// class ServerXhr implements XhrFactory {
+//   build(): XMLHttpRequest {
+//     xhr2.XMLHttpRequest.prototype._restrictedHeaders = {};
+//     return new xhr2.XMLHttpRequest();
+//   }
+// }
 
 @NgModule({
   imports: [
@@ -17,8 +29,12 @@ import { UniversalInterceptor } from './universal.interceptor';
     AppModule,
     ServerModule,
     ServerTransferStateModule,
+    // HttpClientModule,
+    // ServerCookiesModule.forRoot(),
+    // CookieBackendModule.forRoot(),
   ],
   providers: [
+    // { provide: XhrFactory, useClass: ServerXhr },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: UniversalInterceptor,
@@ -29,9 +45,12 @@ import { UniversalInterceptor } from './universal.interceptor';
       useClass: ServerStateInterceptor,
       multi: true,
     },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: CookieInterceptor,
+    //   multi: true,
+    // },
   ],
-  // Since the bootstrapped component is not inherited from your
-  // imported AppModule, it needs to be repeated here.
   bootstrap: [EgamingsShellComponent],
 })
 export class AppServerModule {}

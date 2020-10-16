@@ -9,10 +9,15 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 import { enableProdMode } from '@angular/core';
+import * as cookieParser from 'cookie-parser';
+// import * as cookieEncrypter from 'cookie-encrypter';
+
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
+  app.use(cookieParser());
+  // app.use(cookieEncrypter('qwe'));
   // app.setGlobalPrefix(globalPrefix);
   const port = process.env.PORT || 3333;
   await app.listen(port, () => {
@@ -27,7 +32,7 @@ declare const __non_webpack_require__: NodeRequire;
 const mainModule = __non_webpack_require__.main;
 const moduleFilename = (mainModule && mainModule.filename) || '';
 if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
-  bootstrap().catch((err) => console.error(err));
+  bootstrap().catch((err) => console.error(err, "error"));
 }
 
 if (environment.production) {

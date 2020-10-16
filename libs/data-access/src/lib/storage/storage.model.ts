@@ -13,7 +13,7 @@ export interface IStorage {
 }
 
 export class AStorageService implements IStorage {
-  private storage: IStorage;
+  protected storage: IStorage;
 
   constructor(storage: IStorage) {
     this.storage = storage;

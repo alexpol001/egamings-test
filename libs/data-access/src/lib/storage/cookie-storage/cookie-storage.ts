@@ -1,25 +1,38 @@
-import { Storage as StorageCap } from '@capacitor/core';
+import { CookiesService, CookiesOptions } from '@ngx-utils/cookies';
 import { IStorage } from '../storage.model';
+import { CookieOptions } from './cookie-storage.model';
 
 export class CookieStorage implements IStorage {
-  async clear(): Promise<void> {
-    await StorageCap.clear();
-  }
-  async getItem(key: string): Promise<string> {
-    return (await StorageCap.get({ key }))?.value;
-  }
-  async key(index: number): Promise<string> {
-    const keys = (await StorageCap.keys())?.keys ?? [];
+  constructor(private cookieService: CookiesService) {}
 
-    return index >= 0 && keys.length < index ? keys[index] : null;
+  async clear(): Promise<void> {
+    this.cookieService.removeAll();
   }
+
+  async getItem(key: string): Promise<string> {
+    const item = this.cookieService.get(key);
+
+    return item != null ? item : null;
+  }
+
+  async key(index: number): Promise<string> {
+    const keys = Object.keys(this.cookieService.getAll());
+
+    return index >= 0 && index < keys.length ? keys[index] : null;
+  }
+
   async removeItem(key: string): Promise<void> {
-    await StorageCap.remove({ key });
+    this.cookieService.remove(key);
   }
-  async setItem(key: string, value: string): Promise<void> {
-    await StorageCap.set({ key, value });
+  async setItem(
+    key: string,
+    value: string,
+    opts?: CookiesOptions
+  ): Promise<void> {
+    // const { expires, path, domain, secure, sameSite } = opts || {}; 
+    await this.cookieService.put(key, value, opts);
   }
   async getLength(): Promise<number> {
-    return (await StorageCap.keys())?.keys?.length ?? 0;
+    return Object.keys(this.cookieService.getAll()).length;
   }
 }

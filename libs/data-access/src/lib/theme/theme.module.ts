@@ -12,7 +12,7 @@ import { AStorageService } from '../storage/storage.model';
 @NgModule()
 export class DataAccessThemeModule {
   static forRoot(
-    opts?: IThemeOpts
+    opts?: Partial<IThemeOpts>
   ): ModuleWithProviders<DataAccessThemeModule> {
     const themeOpts = _.merge(THEME_DEFAULT_OPTS, opts);
 

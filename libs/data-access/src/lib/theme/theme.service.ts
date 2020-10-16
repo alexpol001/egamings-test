@@ -37,16 +37,17 @@ export class ThemeService {
   async addThemes(themes: ITheme[], defaultTheme?: string) {
     if (themes?.length) {
       this.themeStore.add(themes);
-      if (!(await this.storageService.getItem(this.opts.themeStorage.key))) {
+
+      const themeId = await this.storageService.getItem(
+        this.opts.themeStorage.key
+      );
+
+      console.log(themeId, 'that is theme id');
+
+      if (!themeId) {
         this.setTheme(defaultTheme ? defaultTheme : themes[0].themeId);
       } else {
-        const themeId = await this.storageService.getItem(
-          this.opts.themeStorage.key
-        );
-
-        if (themeId) {
-          await this.setTheme(themeId);
-        }
+        await this.setTheme(themeId);
       }
     }
   }
