@@ -1,25 +1,34 @@
 import { HttpClientModule, HTTP_INTERCEPTORS, XhrFactory } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { Inject, Injectable, NgModule } from '@angular/core';
 import {
   ServerModule,
   ServerTransferStateModule,
 } from '@angular/platform-server';
-// import { CookieBackendModule } from 'ngx-cookie-backend';
 import { EgamingsShellComponent } from '@egamings/feature-shell';
 // import { EgamingsShellComponent } from './app.component';
 import { AppModule } from './app.module';
 import { ServerStateInterceptor } from './serverstate.interseptor';
 import { UniversalInterceptor } from './universal.interceptor';
-import { CookieInterceptor } from './cookie.interceptor';
-import * as xhr2 from 'xhr2';
+// import { CookieInterceptor } from './cookie.interceptor';
+// import * as xhr2 from 'xhr2';
 
-// import { ServerCookiesModule } from '@ngx-utils/cookies/server';
+// import { ServerCookiesModule } from '@egamings/shared/utils';
+// import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
 
 // class ServerXhr implements XhrFactory {
 //   build(): XMLHttpRequest {
 //     xhr2.XMLHttpRequest.prototype._restrictedHeaders = {};
 //     return new xhr2.XMLHttpRequest();
 //   }
+// }
+
+// @Injectable()
+// export class RequestCookies {
+//     constructor(@Inject(REQUEST) private request: Request) {}
+
+//     get cookies() {
+//         return !!this.request.headers['cookie'] ? this.request.headers['cookie'] : null;
+//     }
 // }
 
 @NgModule({
@@ -35,6 +44,7 @@ import * as xhr2 from 'xhr2';
   ],
   providers: [
     // { provide: XhrFactory, useClass: ServerXhr },
+    // { provide: 'req', useClass: RequestCookies },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: UniversalInterceptor,

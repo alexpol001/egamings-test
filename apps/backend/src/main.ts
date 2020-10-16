@@ -16,7 +16,7 @@ import * as cookieParser from 'cookie-parser';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
-  app.use(cookieParser());
+  // app.use(cookieParser());
   // app.use(cookieEncrypter('qwe'));
   // app.setGlobalPrefix(globalPrefix);
   const port = process.env.PORT || 3333;
@@ -32,7 +32,7 @@ declare const __non_webpack_require__: NodeRequire;
 const mainModule = __non_webpack_require__.main;
 const moduleFilename = (mainModule && mainModule.filename) || '';
 if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
-  bootstrap().catch((err) => console.error(err, "error"));
+  bootstrap().catch((err) => console.error(err));
 }
 
 if (environment.production) {

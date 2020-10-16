@@ -18,14 +18,10 @@ import { AppService } from './app.service';
       viewsPath: join(__dirname, '..', 'frontend'),
       cache: {
         expiresIn: 1000 * 60 * 10 * 0.001
-      },
-      extraProviders: [
-        
-      ]
+      }
     }),
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
-

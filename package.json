@@ -53,6 +53,7 @@
     "@angular/router": "^10.0.0",
     "@capacitor/core": "^2.4.2",
     "@datorama/akita": "^5.2.4",
+    "@gorniv/ngx-universal": "^2.2.2",
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/ng-universal": "^4.0.1",
