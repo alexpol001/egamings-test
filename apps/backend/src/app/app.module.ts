@@ -16,9 +16,13 @@ import { AppService } from './app.service';
     AngularUniversalModule.forRoot({
       bootstrap: AppServerModule,
       viewsPath: join(__dirname, '..', 'frontend'),
+      cache: {
+        expiresIn: 1000 * 60 * 10
+      }
     }),
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
+

@@ -23,6 +23,8 @@ export class HeaderComponent implements OnInit {
 
   @Input() isDark = false;
 
+  time = new Date().getMilliseconds();
+
   constructor() {}
 
   ngOnInit(): void {}

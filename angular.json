@@ -171,7 +171,7 @@
                 "externals": "replace"
               }
             },
-            "allowedCommonJsDependencies": ["helpful-decorators"],
+            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
             "outputPath": "dist/apps/frontend",
             "index": "apps/frontend/src/index.html",
             "main": "apps/frontend/src/main.ts",
@@ -382,7 +382,7 @@
                 "externals": "replace"
               }
             },
-            "allowedCommonJsDependencies": ["helpful-decorators"],
+            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
             "outputPath": "dist/apps/mobile",
             "index": "apps/mobile/src/index.html",
             "main": "apps/mobile/src/main.ts",
@@ -554,24 +554,11 @@
           "builder": "@angular-builders/custom-webpack:server",
           "options": {
             "customWebpackConfig": {
-              "path": "webpack.config.ts",
-              "mergeStrategies": {
-                "externals": "replace"
-              }
+              "path": "webpack-server.config.ts"
             },
-            "outputPath": "dist/apps/backend",
+           "outputPath": "dist/apps/backend",
             "main": "apps/backend/src/main.ts",
-            "tsConfig": "apps/backend/tsconfig.json",
-            "externalDependencies": [
-              "@nestjs/microservices",
-              "@nestjs/microservices/microservices-module",
-              "@nestjs/websockets",
-              "@nestjs/websockets/socket-module",
-              "cache-manager",
-              "class-validator",
-              "class-transformer",
-              "fastify-static"
-            ]
+            "tsConfig": "apps/backend/tsconfig.json"
           },
           "configurations": {
             "production": {
@@ -583,7 +570,7 @@
                 }
               ],
               "sourceMap": false,
-              "optimization": false
+              "optimization": true
             }
           }
         },

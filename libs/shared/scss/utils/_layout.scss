@@ -65,7 +65,7 @@
   }
 }
 
-// (row wrap, center center, 10px grid)
+// fx-layout(row wrap, center center, 10px 16px)
 @mixin fx-layout($direction-wrap: row, $axis: null, $layout-gap-value: null) {
   $direction: row;
   $wrap: null;

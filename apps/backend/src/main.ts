@@ -7,7 +7,8 @@ import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
-import { join } from 'path';
+import { environment } from './environments/environment';
+import { enableProdMode } from '@angular/core';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -29,3 +30,6 @@ if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
   bootstrap().catch((err) => console.error(err));
 }
 
+if (environment.production) {
+  enableProdMode();
+}

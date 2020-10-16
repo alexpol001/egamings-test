@@ -21,13 +21,13 @@ export class GamesService {
   ) {}
 
   initGames(apiGames: IApiGame[]) {
-    let games: IGame[] = [];
-    for (let game of apiGames) {
+    const games: IGame[] = [];
+    for (const game of apiGames) {
       games.push({
         id: game.ID,
         categories: (() => {
           const categories: ICategory[] = [];
-          for (let categoryId of game.CategoryID) {
+          for (const categoryId of game.CategoryID) {
             const category = this.categoriesQuery.getEntity(categoryId);
             if (category) {
               categories.push(category);
