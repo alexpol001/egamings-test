@@ -1,12 +1,14 @@
-import { CookieService } from 'ngx-cookie-service';
+// import { CookieService } from 'ngx-cookie-service';
 import { IStorage } from '../storage.model';
-import { CookieOptions } from './cookie-storage.model';
+// import { CookieOptions } from './cookie-storage.model';
+import { CookieService, CookieOptions } from 'ngx-cookie';
+
 
 export class CookieStorage implements IStorage {
   constructor(private cookieService: CookieService) {}
 
   async clear(): Promise<void> {
-    this.cookieService.deleteAll();
+    this.cookieService.removeAll();
   }
 
   async getItem(key: string): Promise<string> {
@@ -22,22 +24,18 @@ export class CookieStorage implements IStorage {
   }
 
   async removeItem(key: string): Promise<void> {
-    this.cookieService.delete(key);
+    this.cookieService.remove(key);
   }
   async setItem(
     key: string,
     value: string,
-    opts?: Partial<CookieOptions>
+    opts?: CookieOptions
   ): Promise<void> {
-    const { expires, path, domain, secure, sameSite } = opts || {};
-    await this.cookieService.set(
+    // const { expires, path, domain, secure, sameSite } = opts || {};
+    await this.cookieService.put(
       key,
       value,
-      expires || null,
-      path || null,
-      domain || null,
-      secure || null,
-      sameSite || null
+      opts
     );
   }
   async getLength(): Promise<number> {

@@ -1,5 +1,5 @@
 import { Injectable, Inject, PLATFORM_ID, Optional } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 import { GlobalRenderer } from '@egamings/utils';
 
@@ -42,10 +42,8 @@ export class ThemeService {
         this.opts.themeStorage.key
       );
 
-      console.log(themeId, 'that is theme id');
-
       if (!themeId) {
-        this.setTheme(defaultTheme ? defaultTheme : themes[0].themeId);
+        await this.setTheme(defaultTheme ? defaultTheme : themes[0].themeId);
       } else {
         await this.setTheme(themeId);
       }
@@ -58,9 +56,10 @@ export class ThemeService {
 
     if (entity.cssFile) {
       await this.loadCss(entity.cssFile);
-      if (this.themeLinks?.length >= 2) {
-        this.renderer.removeChild(this.head, this.themeLinks.shift());
-      }
+    }
+
+    if (this.themeLinks?.length >= 2) {
+      this.renderer.removeChild(this.head, this.themeLinks.shift());
     }
 
     this.themeStore.setActive(themeId);
@@ -75,24 +74,29 @@ export class ThemeService {
       this.renderer.addClass(this.body, entity.cssClass);
     }
 
-    await this.setThemeToStorage(themeId);
+    this.setThemeToStorage(themeId);
   }
 
   private async setThemeToStorage(themeId) {
     await this.storageService.setItem(this.opts.themeStorage.key, themeId);
   }
 
-  private async loadCss(filename: string) {
+  private loadCss(filename: string): Promise<void> {
     return new Promise((resolve) => {
       const linkEl: HTMLElement = this.renderer.createElement('link');
       this.renderer.setAttribute(linkEl, 'rel', 'stylesheet');
       this.renderer.setAttribute(linkEl, 'type', 'text/css');
       this.renderer.setAttribute(linkEl, 'href', filename);
       this.renderer.setProperty(linkEl, 'onload', resolve);
+
       if (this.head) {
         this.renderer.appendChild(this.head, linkEl);
       }
       this.themeLinks = [...this.themeLinks, linkEl];
+
+      if (isPlatformServer(this.platformId)) {
+        resolve();
+      }
     });
   }
 }

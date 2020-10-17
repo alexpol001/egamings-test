@@ -1,10 +1,12 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+// import { CookieService } from 'ngx-cookie-service';
+import { CookieService, CookieOptions } from 'ngx-cookie';
+
 
 import { CookieStorage } from './cookie-storage';
 import { AStorageService } from '../storage.model';
 import { MemoryStorageService } from '../memory-storage/memory-storage.service';
-import { CookieOptions } from './cookie-storage.model';
+// import { CookieOptions } from './cookie-storage.model';
 
 @Injectable()
 export class CookieStorageService extends AStorageService {
@@ -17,15 +19,10 @@ export class CookieStorageService extends AStorageService {
     super(new CookieStorage(cookieService));
   }
 
-  async getItem(key: string) {
-    console.log(this.getLength());
-    return super.getItem(key);
-  }
-
   async setItem(
     key: string,
     value: string,
-    opts?: Partial<CookieOptions>
+    opts?: CookieOptions
   ): Promise<void> {
     this.storage.setItem(key, value, opts);
   }
