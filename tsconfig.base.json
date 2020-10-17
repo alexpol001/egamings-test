@@ -24,8 +24,7 @@
       "@egamings/utils": ["libs/utils/src/index.ts"],
       "@egamings/frontend/server-module": [
         "apps/frontend/src/app/app.server.module.ts"
-      ],
-      "@egamings/shared/utils": ["libs/shared/utils/src/index.ts"]
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

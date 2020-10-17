@@ -5,6 +5,7 @@ import {
   DataAccessModule,
   DataAccessThemeModule,
   ITheme,
+  CookieStorageService
 } from '@egamings/data-access';
 
 import {
@@ -49,6 +50,9 @@ export const THEMES: ITheme[] = [
     DataAccessThemeModule.forRoot({
       themes: THEMES,
       defaultThemeId: 'light',
+      themeStorage: {
+        storage: CookieStorageService
+      }
     }),
     EgamingsMainModule,
   ],

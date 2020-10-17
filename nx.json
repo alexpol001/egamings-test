@@ -56,9 +56,6 @@
     },
     "backend": {
       "tags": []
-    },
-    "shared-utils": {
-      "tags": []
     }
   }
 }
