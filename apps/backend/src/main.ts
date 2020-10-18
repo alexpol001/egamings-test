@@ -31,3 +31,6 @@ const moduleFilename = (mainModule && mainModule.filename) || '';
 if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
   bootstrap().catch((err) => console.error(err));
 }
+
+export { renderModule, renderModuleFactory } from '@angular/platform-server';
+export { AppServerModule } from 'apps/frontend/src/app/app.server.module';

@@ -10,9 +10,6 @@ import { AppService } from './app.service';
 
 @Module({
   imports: [
-    ServeStaticModule.forRoot({
-      // rootPath: join(__dirname, 'assets'),
-    }),
     AngularUniversalModule.forRoot({
       bootstrap: AppServerModule,
       viewsPath: join(__dirname, '..', 'frontend'),
@@ -22,3 +19,4 @@ import { AppService } from './app.service';
   providers: [AppService],
 })
 export class AppModule {}
+

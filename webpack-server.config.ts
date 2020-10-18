@@ -1,4 +1,4 @@
-var nodeExternals = require('webpack-node-externals');
+import * as nodeExternals from 'webpack-node-externals';
 
 import * as webpack from 'webpack';
 import clientWebpack from './webpack.config';
