@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import {
   DataAccessModule,
-  DataAccessThemeModule,
+  ThemeModule,
   ITheme,
   CookieStorageService
 } from '@egamings/data-access';
@@ -47,7 +47,7 @@ export const THEMES: ITheme[] = [
         pageSizeOptions: [25, 50, 75, 100],
       },
     }),
-    DataAccessThemeModule.forRoot({
+    ThemeModule.forRoot({
       themes: THEMES,
       defaultThemeId: 'light',
       themeStorage: {

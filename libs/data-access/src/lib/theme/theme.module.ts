@@ -10,14 +10,14 @@ import { THEME_OPTS_TOKEN } from './theme-opts.token';
 import { AStorageService } from '../storage/storage.model';
 
 @NgModule()
-export class DataAccessThemeModule {
+export class ThemeModule {
   static forRoot(
     opts?: Partial<IThemeOpts>
-  ): ModuleWithProviders<DataAccessThemeModule> {
+  ): ModuleWithProviders<ThemeModule> {
     const themeOpts = _.merge(THEME_DEFAULT_OPTS, opts);
 
     return {
-      ngModule: DataAccessThemeModule,
+      ngModule: ThemeModule,
       providers: [
         ThemeStore,
         ThemeQuery,

@@ -17,7 +17,7 @@ import { GamesModule } from './games/games.module';
 import { GamesService } from './games/games.service';
 import { CategoriesService } from './categories/categories.service';
 import { MerchantsService } from './merchants/merchants.service';
-import { API_URL_TOKEN } from './data-access-tokens';
+import { API_URL_TOKEN } from './data-access.tokens';
 import { DATA_ACCESS_DEFAULT_CONFIG } from './data-access.common';
 import { IDataAccessConfig } from './data-access.model';
 
