@@ -33,14 +33,14 @@
       "@egamings/shared/models": [
         "libs/shared/models/src/index.ts"
       ],
-      "@egamings/utils": [
-        "libs/utils/src/index.ts"
-      ],
       "@egamings/frontend/server-module": [
         "apps/frontend/src/app/app.server.module.ts"
       ],
       "@egamings/shared/data-access": [
         "libs/shared/data-access/src/index.ts"
+      ],
+      "@egamings/shared/utils": [
+        "libs/shared/utils/src/index.ts"
       ]
     }
   },

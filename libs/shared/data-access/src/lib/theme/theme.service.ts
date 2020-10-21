@@ -1,7 +1,7 @@
 import { Injectable, Inject, PLATFORM_ID, Optional } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common';
 
-import { GlobalRenderer } from '@egamings/utils';
+import { GlobalRenderer } from '@egamings/shared/utils';
 
 import { IThemeOpts } from './theme-opts.model';
 import { THEME_OPTS_TOKEN } from './theme-opts.token';

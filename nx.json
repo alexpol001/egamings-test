@@ -57,13 +57,13 @@
         "mobile"
       ]
     },
-    "utils": {
-      "tags": []
-    },
     "backend": {
       "tags": []
     },
     "shared-data-access": {
+      "tags": []
+    },
+    "shared-utils": {
       "tags": []
     }
   }
