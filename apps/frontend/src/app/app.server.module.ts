@@ -7,7 +7,6 @@ import {
 import { EgamingsShellComponent } from '@egamings/feature-shell';
 import { AppModule } from './app.module';
 import { ServerStateInterceptor } from './serverstate.interseptor';
-import { UniversalInterceptor } from './universal.interceptor';
 import { CookieBackendModule } from 'ngx-cookie-backend';
 
 @NgModule({
@@ -18,11 +17,6 @@ import { CookieBackendModule } from 'ngx-cookie-backend';
     CookieBackendModule.forRoot(),
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: UniversalInterceptor,
-      multi: true,
-    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ServerStateInterceptor,

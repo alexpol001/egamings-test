@@ -9,12 +9,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
-  imports: [
-    AngularUniversalModule.forRoot({
-      bootstrap: AppServerModule,
-      viewsPath: join(__dirname, '..', 'frontend'),
-    }),
-  ],
+  // imports: [
+  //   AngularUniversalModule.forRoot({
+  //     bootstrap: AppServerModule,
+  //     viewsPath: join(__dirname, '..', 'frontend'),
+  //   }),
+  // ],
   controllers: [AppController],
   providers: [AppService],
 })

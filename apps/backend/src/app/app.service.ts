@@ -8,7 +8,7 @@ export class AppService {
   getData(): IApiData {
     return JSON.parse(
       fs
-        .readFileSync(join(__dirname, '..', 'frontend/assets/api.json'))
+        .readFileSync(join(__dirname, 'assets/api.json'))
         .toString()
     );
   }

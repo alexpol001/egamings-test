@@ -172,7 +172,7 @@
               }
             },
             "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
-            "outputPath": "dist/apps/frontend",
+            "outputPath": "dist/apps/frontend/browser",
             "index": "apps/frontend/src/index.html",
             "main": "apps/frontend/src/main.ts",
             "polyfills": "apps/frontend/src/polyfills.ts",
@@ -247,6 +247,30 @@
           "configurations": {
             "production": {
               "browserTarget": "frontend:build:production"
+            }
+          }
+        },
+        "server": {
+          "builder": "@angular-builders/custom-webpack:server",
+          "options": {
+            "customWebpackConfig": {
+              "path": "webpack.config.ts"
+            },
+            "outputPath": "dist/apps/frontend/server",
+            "main": "apps/frontend/server.ts",
+            "tsConfig": "apps/frontend/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "bundleDependencies": true,
+              "fileReplacements": [
+                {
+                  "replace": "apps/frontend/src/environments/environment.ts",
+                  "with": "apps/frontend/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
             }
           }
         },
@@ -501,11 +525,9 @@
       "prefix": "backend",
       "schematics": {},
       "architect": {
-        "build2": {
+        "build": {
           "builder": "@nrwl/node:build",
           "options": {
-            "webpackConfig": "webpack-server.config.ts",
-            "externalDependencies": "none",
             "outputPath": "dist/apps/backend",
             "main": "apps/backend/src/main.ts",
             "tsConfig": "apps/backend/tsconfig.json",
@@ -531,7 +553,13 @@
             }
           }
         },
-        "build": {
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "backend:build"
+          }
+        },
+        "build2": {
           "builder": "@angular-builders/custom-webpack:server",
           "options": {
             "customWebpackConfig": {
@@ -555,7 +583,7 @@
             }
           }
         },
-        "serve": {
+        "serve2": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
             "browserTarget": "frontend:build",

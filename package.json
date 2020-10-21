@@ -88,7 +88,7 @@
     "@nrwl/workspace": "10.2.1",
     "@types/jest": "26.0.8",
     "@types/lodash-es": "^4.17.3",
-    "@types/node": "~8.9.4",
+    "@types/node": "^8.10.65",
     "codelyzer": "~5.0.1",
     "cypress": "^4.1.0",
     "dotenv": "6.2.0",
