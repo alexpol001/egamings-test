@@ -14,7 +14,10 @@
               "libs/feature-shell/tsconfig.lib.json",
               "libs/feature-shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/feature-shell/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/feature-shell/**/*"
+            ]
           }
         },
         "test": {
@@ -44,7 +47,10 @@
               "libs/feature-main/tsconfig.lib.json",
               "libs/feature-main/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/feature-main/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/feature-main/**/*"
+            ]
           }
         },
         "test": {
@@ -74,43 +80,16 @@
               "libs/shared/ui/tsconfig.lib.json",
               "libs/shared/ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/ui/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "data-access": {
-      "projectType": "library",
-      "root": "libs/data-access",
-      "sourceRoot": "libs/data-access/src",
-      "prefix": "egamings",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/data-access/tsconfig.lib.json",
-              "libs/data-access/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/data-access/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/data-access/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -134,7 +113,10 @@
               "libs/shared/models/tsconfig.lib.json",
               "libs/shared/models/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/models/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/models/**/*"
+            ]
           }
         },
         "test": {
@@ -171,7 +153,10 @@
                 "externals": "replace"
               }
             },
-            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
+            "allowedCommonJsDependencies": [
+              "helpful-decorators",
+              "lodash"
+            ],
             "outputPath": "dist/apps/frontend/browser",
             "index": "apps/frontend/src/index.html",
             "main": "apps/frontend/src/main.ts",
@@ -287,7 +272,10 @@
               "apps/frontend/tsconfig.app.json",
               "apps/frontend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/frontend/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/frontend/**/*"
+            ]
           }
         },
         "test": {
@@ -302,7 +290,9 @@
           "options": {
             "browserTarget": "frontend:build:production",
             "serverTarget": "backend:build:production",
-            "routes": ["/"]
+            "routes": [
+              "/"
+            ]
           },
           "configurations": {
             "production": {}
@@ -331,8 +321,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/frontend-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/frontend-e2e/**/*"]
+            "tsConfig": [
+              "apps/frontend-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/frontend-e2e/**/*"
+            ]
           }
         }
       }
@@ -357,7 +352,10 @@
                 "externals": "replace"
               }
             },
-            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
+            "allowedCommonJsDependencies": [
+              "helpful-decorators",
+              "lodash"
+            ],
             "outputPath": "dist/apps/mobile",
             "index": "apps/mobile/src/index.html",
             "main": "apps/mobile/src/main.ts",
@@ -449,7 +447,10 @@
               "apps/mobile/tsconfig.app.json",
               "apps/mobile/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/mobile/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/mobile/**/*"
+            ]
           }
         },
         "test": {
@@ -482,8 +483,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/mobile-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/mobile-e2e/**/*"]
+            "tsConfig": [
+              "apps/mobile-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/mobile-e2e/**/*"
+            ]
           }
         }
       }
@@ -501,7 +507,10 @@
               "libs/utils/tsconfig.lib.json",
               "libs/utils/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/utils/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/utils/**/*"
+            ]
           }
         },
         "test": {
@@ -603,7 +612,10 @@
               "apps/backend/tsconfig.app.json",
               "apps/backend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/backend/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/backend/**/*"
+            ]
           }
         },
         "test": {
@@ -612,6 +624,39 @@
             "jestConfig": "apps/backend/jest.config.js",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "shared-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/data-access",
+      "sourceRoot": "libs/shared/data-access/src",
+      "prefix": "egamings",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/data-access/tsconfig.lib.json",
+              "libs/shared/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/data-access/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'data-access',
-  preset: '../../jest.config.js',
+  name: 'shared-data-access',
+  preset: '../../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -12,7 +12,7 @@ module.exports = {
       ],
     },
   },
-  coverageDirectory: '../../coverage/libs/data-access',
+  coverageDirectory: '../../../coverage/libs/shared/data-access',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

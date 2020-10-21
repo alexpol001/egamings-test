@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
-import { GamesQuery } from '@egamings/data-access';
+import { GamesQuery } from '@egamings/shared/data-access';
 import { IGame } from '@egamings/shared/models';
 
 @Component({

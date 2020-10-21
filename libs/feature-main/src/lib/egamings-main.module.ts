@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CoreModule } from '@egamings/data-access';
+import { CoreModule } from '@egamings/shared/data-access';
 import {
   FilterModule,
   GamesModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GamesQuery, ThemeQuery, ThemeService } from '@egamings/data-access';
+import { GamesQuery, ThemeQuery, ThemeService } from '@egamings/shared/data-access';
 import { map } from 'rxjs/operators';
 
 @Component({

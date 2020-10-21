@@ -6,7 +6,7 @@ import {
   ThemeModule,
   ITheme,
   CookieStorageService
-} from '@egamings/data-access';
+} from '@egamings/shared/data-access';
 
 import {
   EgamingsMainComponent,
