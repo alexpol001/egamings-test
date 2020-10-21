@@ -1,6 +1,6 @@
-import { IDataAccessConfig } from './data-access.model';
+import { ICoreConfig } from './core.types';
 
-export const DATA_ACCESS_DEFAULT_CONFIG: IDataAccessConfig = {
+export const CORE_DEFAULT_CONFIG: ICoreConfig = {
   apiUrl: 'http://localhost:3333/api',
   pagination: {
     pageSize: 10,

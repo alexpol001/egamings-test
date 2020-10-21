@@ -9,17 +9,17 @@ import {
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { IApiData } from '@egamings/shared/models';
 
-import { PAGINATION_CONFIG_TOKEN } from './games/pagination/pagination.token';
-import { StorageModule } from './storage/storage.module';
-import { MerchantsModule } from './merchants/merchants.module';
-import { CategoriesModule } from './categories/categories.module';
-import { GamesModule } from './games/games.module';
-import { GamesService } from './games/games.service';
-import { CategoriesService } from './categories/categories.service';
-import { MerchantsService } from './merchants/merchants.service';
-import { API_URL_TOKEN } from './data-access.tokens';
-import { DATA_ACCESS_DEFAULT_CONFIG } from './data-access.common';
-import { IDataAccessConfig } from './data-access.model';
+import { PAGINATION_CONFIG_TOKEN } from '../games/pagination/pagination.token';
+import { StorageModule } from '../storage/storage.module';
+import { MerchantsModule } from '../merchants/merchants.module';
+import { CategoriesModule } from '../categories/categories.module';
+import { GamesModule } from '../games/games.module';
+import { GamesService } from '../games/games.service';
+import { CategoriesService } from '../categories/categories.service';
+import { MerchantsService } from '../merchants/merchants.service';
+import { API_URL_TOKEN } from './core.tokens';
+import { CORE_DEFAULT_CONFIG } from './core.common';
+import { ICoreConfig } from './core.types';
 
 @NgModule({
   imports: [
@@ -30,9 +30,9 @@ import { IDataAccessConfig } from './data-access.model';
     GamesModule,
   ],
 })
-export class DataAccessModule {
+export class CoreModule {
   constructor(
-    @Optional() @SkipSelf() parentModule: DataAccessModule,
+    @Optional() @SkipSelf() parentModule: CoreModule,
     @Inject(API_URL_TOKEN) apiUrl: string,
     private httpClient: HttpClient,
     private gamesService: GamesService,
@@ -41,7 +41,7 @@ export class DataAccessModule {
   ) {
     if (parentModule) {
       throw new Error(
-        'DataAccessModule is already loaded. Import it in the RootModule only!'
+        'CoreModule is already loaded. Import it in the RootModule only!'
       );
     }
 
@@ -53,12 +53,12 @@ export class DataAccessModule {
   }
 
   static forRoot(
-    config?: Partial<IDataAccessConfig>
-  ): ModuleWithProviders<DataAccessModule> {
-    config = _.merge(DATA_ACCESS_DEFAULT_CONFIG, config);
+    config?: Partial<ICoreConfig>
+  ): ModuleWithProviders<CoreModule> {
+    config = _.merge(CORE_DEFAULT_CONFIG, config);
 
     return {
-      ngModule: DataAccessModule,
+      ngModule: CoreModule,
       providers: [
         {
           provide: API_URL_TOKEN,

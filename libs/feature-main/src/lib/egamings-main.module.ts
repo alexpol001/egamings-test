@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DataAccessModule } from '@egamings/data-access';
+import { CoreModule } from '@egamings/data-access';
 import {
   FilterModule,
   GamesModule,
@@ -44,7 +44,7 @@ const ROUTES: Routes = [
     FilterModule,
     SortingModule,
     PaginatorModule,
-    DataAccessModule,
+    CoreModule,
     RouterModule.forChild(ROUTES),
   ],
   declarations: [EgamingsMainComponent, GameComponent, HomeComponent],

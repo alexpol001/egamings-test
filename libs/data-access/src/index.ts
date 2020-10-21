@@ -3,4 +3,4 @@ export * from './lib/categories';
 export * from './lib/merchants';
 export * from './lib/storage';
 export * from './lib/theme';
-export * from './lib/data-access.module';
+export * from './lib/core';

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import {
-  DataAccessModule,
+  CoreModule,
   ThemeModule,
   ITheme,
   CookieStorageService
@@ -41,7 +41,7 @@ export const THEMES: ITheme[] = [
   imports: [
     CommonModule,
     RouterModule.forRoot(ROUTES),
-    DataAccessModule.forRoot({
+    CoreModule.forRoot({
       pagination: {
         pageSize: 25,
         pageSizeOptions: [25, 50, 75, 100],
