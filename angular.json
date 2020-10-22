@@ -172,14 +172,14 @@
               }
             ],
             "styles": [
-              "libs/styles/styles.scss",
+              "libs/shared/styles/styles.scss",
               {
-                "input": "libs/styles/themes/light-theme.scss",
+                "input": "libs/shared/styles/themes/light-theme.scss",
                 "lazy": true,
                 "bundleName": "light-theme"
               },
               {
-                "input": "libs/styles/themes/dark-theme.scss",
+                "input": "libs/shared/styles/themes/dark-theme.scss",
                 "lazy": true,
                 "bundleName": "dark-theme"
               }
@@ -371,14 +371,14 @@
               }
             ],
             "styles": [
-              "libs/styles/styles.scss",
+              "libs/shared/styles/styles.scss",
               {
-                "input": "libs/styles/themes/light-theme.scss",
+                "input": "libs/shared/styles/themes/light-theme.scss",
                 "lazy": true,
                 "bundleName": "light-theme"
               },
               {
-                "input": "libs/styles/themes/dark-theme.scss",
+                "input": "libs/shared/styles/themes/dark-theme.scss",
                 "lazy": true,
                 "bundleName": "dark-theme"
               }
