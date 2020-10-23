@@ -158,8 +158,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/frontend/src/environments/environment.ts",
-                  "with": "apps/frontend/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/common/src/lib/environments/environment.ts",
+                  "with": "libs/shared/common/src/lib/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -217,8 +217,8 @@
               "bundleDependencies": true,
               "fileReplacements": [
                 {
-                  "replace": "apps/frontend/src/environments/environment.ts",
-                  "with": "apps/frontend/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/common/src/lib/environments/environment.ts",
+                  "with": "libs/shared/common/src/lib/environments/environment.prod.ts"
                 }
               ],
               "sourceMap": false,
