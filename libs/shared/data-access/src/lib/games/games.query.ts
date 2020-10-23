@@ -5,7 +5,7 @@ import { Sort } from '@angular/material/sort';
 import { Order, QueryConfig, QueryEntity } from '@datorama/akita';
 import { map, mergeMap } from 'rxjs/operators';
 
-import { IGame, IGamesFilters } from '@egamings/shared/common';
+import { Game, GamesFilters } from '@egamings/shared/common';
 
 import { GamesStore, GamesState } from './games.store';
 import { GamesPaginationQuery } from './pagination';
@@ -16,7 +16,7 @@ import { GamesOptionsQuery } from './options/options.query';
   sortBy: 'name',
   sortByOrder: Order.ASC,
 })
-export class GamesQuery extends QueryEntity<GamesState, IGame> {
+export class GamesQuery extends QueryEntity<GamesState, Game> {
   constructor(
     protected store: GamesStore,
     private gamesOptionsQuery: GamesOptionsQuery,
@@ -51,7 +51,7 @@ export class GamesQuery extends QueryEntity<GamesState, IGame> {
 
   filteredGamesCount$ = this.filteredGames$.pipe(map((games) => games.length));
 
-  private filterGames(games: IGame[], filters: IGamesFilters) {
+  private filterGames(games: Game[], filters: GamesFilters) {
     return games.filter((game) => {
       return (
         this.filterName(game, filters?.search) &&
@@ -61,11 +61,11 @@ export class GamesQuery extends QueryEntity<GamesState, IGame> {
     });
   }
 
-  private filterName(game: IGame, name: string) {
+  private filterName(game: Game, name: string) {
     return name ? game.name.toLowerCase().includes(name?.toLowerCase()) : true;
   }
 
-  private filterCategories(game: IGame, categoryIds: number[]) {
+  private filterCategories(game: Game, categoryIds: number[]) {
     if (categoryIds?.length) {
       for (let categoryId of categoryIds) {
         if (categoryId === -1 && this.hasActive(game.id)) {
@@ -83,7 +83,7 @@ export class GamesQuery extends QueryEntity<GamesState, IGame> {
     return true;
   }
 
-  private filterMerchants(game: IGame, merchantIds: number[]) {
+  private filterMerchants(game: Game, merchantIds: number[]) {
     if (merchantIds?.length) {
       for (let merchantId of merchantIds) {
         if (merchantId === game.merchant.id) {
@@ -96,7 +96,7 @@ export class GamesQuery extends QueryEntity<GamesState, IGame> {
     return true;
   }
 
-  private sortGames(games: IGame[], sort: Sort, sortFavorite: boolean) {
+  private sortGames(games: Game[], sort: Sort, sortFavorite: boolean) {
     return games?.length
       ? games.sort((a, b) => {
           if (sortFavorite) {

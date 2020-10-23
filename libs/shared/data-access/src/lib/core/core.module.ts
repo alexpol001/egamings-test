@@ -7,7 +7,7 @@ import {
   SkipSelf,
 } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { IApiData } from '@egamings/shared/common';
+import { ApiData } from '@egamings/shared/common';
 
 import { PAGINATION_CONFIG_TOKEN } from '../games/pagination/pagination.token';
 import { StorageModule } from '../storage/storage.module';
@@ -45,7 +45,7 @@ export class CoreModule {
       );
     }
 
-    this.httpClient.get(apiUrl).subscribe((apiData: IApiData) => {
+    this.httpClient.get(apiUrl).subscribe((apiData: ApiData) => {
       this.categoriesService.initCategories(apiData.categories);
       this.merchantsService.initMerchants(_.values(apiData.merchants));
       this.gamesService.initGames(apiData.games);

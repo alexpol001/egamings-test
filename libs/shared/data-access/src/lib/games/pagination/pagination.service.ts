@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { IGamesPagination } from '@egamings/shared/common';
+import { GamesPagination } from '@egamings/shared/common';
 
 import { GamesPaginationStore } from './pagination.store';
 
@@ -8,7 +8,7 @@ import { GamesPaginationStore } from './pagination.store';
 export class GamesPaginationService {
   constructor(private store: GamesPaginationStore) {}
 
-  update(params: Partial<IGamesPagination>) {
+  update(params: Partial<GamesPagination>) {
     this.store.update(params);
   }
 

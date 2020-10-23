@@ -6,13 +6,13 @@ import {
   EntityStore,
 } from '@datorama/akita';
 
-import { IMerchant } from '@egamings/shared/common';
+import { Merchant } from '@egamings/shared/common';
 
-export interface MerchantsState extends EntityState<IMerchant>, ActiveState {}
+export interface MerchantsState extends EntityState<Merchant>, ActiveState {}
 
 @Injectable()
 @StoreConfig({ name: 'merchants' })
-export class MerchantsStore extends EntityStore<MerchantsState, IMerchant> {
+export class MerchantsStore extends EntityStore<MerchantsState, Merchant> {
   constructor() {
     super();
   }

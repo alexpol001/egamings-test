@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { IApiCategory, ICategory } from '@egamings/shared/common';
+import { ApiCategory, Category } from '@egamings/shared/common';
 
 import { CategoriesStore } from './categories.store';
 
@@ -8,8 +8,8 @@ import { CategoriesStore } from './categories.store';
 export class CategoriesService {
   constructor(private categoriesStore: CategoriesStore) {}
 
-  initCategories(apiCategories: IApiCategory[]) {
-    let categories: ICategory[] = [];
+  initCategories(apiCategories: ApiCategory[]) {
+    let categories: Category[] = [];
     for (let category of apiCategories) {
       categories.push({
         id: category.ID,

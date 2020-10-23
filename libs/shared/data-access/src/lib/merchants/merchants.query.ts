@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Order, QueryConfig, QueryEntity } from '@datorama/akita';
 
-import { IMerchant } from '@egamings/shared/common';
+import { Merchant } from '@egamings/shared/common';
 
 import { MerchantsStore, MerchantsState } from './merchants.store';
 
@@ -10,7 +10,7 @@ import { MerchantsStore, MerchantsState } from './merchants.store';
   sortBy: 'name',
   sortByOrder: Order.ASC,
 })
-export class MerchantsQuery extends QueryEntity<MerchantsState, IMerchant> {
+export class MerchantsQuery extends QueryEntity<MerchantsState, Merchant> {
   constructor(protected store: MerchantsStore) {
     super(store);
   }

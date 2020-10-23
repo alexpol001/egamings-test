@@ -13,7 +13,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { debounce } from 'helpful-decorators';
 
-import { IMerchant, ICategory, IGamesFilters } from '@egamings/shared/common';
+import { Merchant, Category, GamesFilters } from '@egamings/shared/common';
 
 @Component({
   selector: 'egamings-ui-filter',
@@ -21,14 +21,14 @@ import { IMerchant, ICategory, IGamesFilters } from '@egamings/shared/common';
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit, OnDestroy {
-  @Input() categories: ICategory[];
-  @Input() merchants: IMerchant[];
+  @Input() categories: Category[];
+  @Input() merchants: Merchant[];
 
   @Input() search: string = '';
   @Input() selectedCategories: number[] = [];
   @Input() selectedMerchants: number[] = [];
 
-  @Output() changeEvent: EventEmitter<IGamesFilters> = new EventEmitter();
+  @Output() changeEvent: EventEmitter<GamesFilters> = new EventEmitter();
 
   categoriesSelectText: string;
 
@@ -87,7 +87,7 @@ export class FilterComponent implements OnInit, OnDestroy {
   }
 
   @debounce(1000)
-  private changeEventEmit(filters: IGamesFilters) {
+  private changeEventEmit(filters: GamesFilters) {
     this.changeEvent.emit(filters);
   }
 }

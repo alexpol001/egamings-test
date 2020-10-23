@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { Injectable } from '@angular/core';
 
-import { IApiMerchant, IMerchant } from '@egamings/shared/common';
+import { ApiMerchant, Merchant } from '@egamings/shared/common';
 
 import { MerchantsStore } from './merchants.store';
 
@@ -9,8 +9,8 @@ import { MerchantsStore } from './merchants.store';
 export class MerchantsService {
   constructor(private merchantsStore: MerchantsStore) {}
 
-  initMerchants(apiMerchants: IApiMerchant[]) {
-    let merchants: IMerchant[] = [];
+  initMerchants(apiMerchants: ApiMerchant[]) {
+    let merchants: Merchant[] = [];
 
     for (let merchant of apiMerchants) {
       merchants.push({

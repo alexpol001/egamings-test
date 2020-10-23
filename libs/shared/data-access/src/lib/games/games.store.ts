@@ -7,15 +7,15 @@ import {
   MultiActiveState,
 } from '@datorama/akita';
 
-import { IGame } from '@egamings/shared/common';
+import { Game } from '@egamings/shared/common';
 
 const initialState = { active: [] };
 
-export interface GamesState extends EntityState<IGame>, MultiActiveState {}
+export interface GamesState extends EntityState<Game>, MultiActiveState {}
 
 @Injectable()
 @StoreConfig({ name: 'games' })
-export class GamesStore extends EntityStore<GamesState, IGame> {
+export class GamesStore extends EntityStore<GamesState, Game> {
   constructor() {
     super(initialState);
   }

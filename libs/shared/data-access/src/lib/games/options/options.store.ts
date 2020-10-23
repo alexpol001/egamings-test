@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { StoreConfig, Store } from '@datorama/akita';
 
-import { IGamesOptions } from '@egamings/shared/common';
+import { GamesOptions } from '@egamings/shared/common';
 
-function createInitialState(): IGamesOptions {
+function createInitialState(): GamesOptions {
   return {
     sort: null,
     sortFavorite: false,
@@ -17,7 +17,7 @@ function createInitialState(): IGamesOptions {
 
 @Injectable()
 @StoreConfig({ name: 'games-params' })
-export class GamesOptionsStore extends Store<IGamesOptions> {
+export class GamesOptionsStore extends Store<GamesOptions> {
   constructor() {
     super(createInitialState());
   }

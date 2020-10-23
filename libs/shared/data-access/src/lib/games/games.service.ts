@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ID } from '@datorama/akita';
 
-import { IApiGame, ICategory, IGame } from '@egamings/shared/common';
+import { ApiGame, Category, Game } from '@egamings/shared/common';
 
 import { GamesStore } from './games.store';
 import { GamesQuery } from './games.query';
@@ -20,13 +20,13 @@ export class GamesService {
     private localStorageService: LocalStorageService
   ) {}
 
-  initGames(apiGames: IApiGame[]) {
-    const games: IGame[] = [];
+  initGames(apiGames: ApiGame[]) {
+    const games: Game[] = [];
     for (const game of apiGames) {
       games.push({
         id: game.ID,
         categories: (() => {
-          const categories: ICategory[] = [];
+          const categories: Category[] = [];
           for (const categoryId of game.CategoryID) {
             const category = this.categoriesQuery.getEntity(categoryId);
             if (category) {
