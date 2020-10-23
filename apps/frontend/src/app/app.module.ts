@@ -15,8 +15,7 @@ import { CookieModule } from 'ngx-cookie';
     BrowserModule.withServerTransition({ appId: 'frontendApp' }),
     EgamingsShellModule,
     // Cache for httpRequest data
-    TransferHttpCacheModule,
-    CookieModule.forRoot(),
+    TransferHttpCacheModule
   ],
   exports: [EgamingsShellModule],
   bootstrap: [EgamingsShellComponent],
