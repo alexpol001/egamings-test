@@ -1,4 +1,3 @@
-export const environment = {
-  production: true,
-  apiUrl: 'http://localhost:3333',
-};
+import { environmentProd } from '@egamings/shared/common';
+
+export const environment = environmentProd;
