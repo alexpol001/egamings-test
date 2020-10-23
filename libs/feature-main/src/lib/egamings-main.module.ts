@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
 import { CoreModule } from '@egamings/shared/data-access';
 import {
@@ -10,10 +11,9 @@ import {
   SortingModule,
 } from '@egamings/shared/ui';
 
+import { HomeComponent } from './home/home.component';
 import { EgamingsMainComponent } from './egamings-main.component';
 import { GameComponent } from './game/game.component';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 
 const ROUTES: Routes = [
   {
