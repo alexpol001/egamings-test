@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { IApiCategory, ICategory } from '@egamings/shared/models';
+import { IApiCategory, ICategory } from '@egamings/shared/common';
 
 import { CategoriesStore } from './categories.store';
 

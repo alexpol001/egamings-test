@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StoreConfig, Store } from '@datorama/akita';
 
-import { IGamesOptions } from '@egamings/shared/models';
+import { IGamesOptions } from '@egamings/shared/common';
 
 function createInitialState(): IGamesOptions {
   return {

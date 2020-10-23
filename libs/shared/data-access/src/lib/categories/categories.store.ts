@@ -7,7 +7,7 @@ import {
   EntityStore,
 } from '@datorama/akita';
 
-import { ICategory } from '@egamings/shared/models';
+import { ICategory } from '@egamings/shared/common';
 
 export interface CategoriesState extends EntityState<ICategory>, ActiveState {}
 

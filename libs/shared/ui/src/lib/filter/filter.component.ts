@@ -13,7 +13,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { debounce } from 'helpful-decorators';
 
-import { IMerchant, ICategory, IGamesFilters } from '@egamings/shared/models';
+import { IMerchant, ICategory, IGamesFilters } from '@egamings/shared/common';
 
 @Component({
   selector: 'egamings-ui-filter',

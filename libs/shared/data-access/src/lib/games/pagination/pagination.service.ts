@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { IGamesPagination } from '@egamings/shared/models';
+import { IGamesPagination } from '@egamings/shared/common';
 
 import { GamesPaginationStore } from './pagination.store';
 

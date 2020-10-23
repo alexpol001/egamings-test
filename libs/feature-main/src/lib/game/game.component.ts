@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
 import { GamesQuery } from '@egamings/shared/data-access';
-import { IGame } from '@egamings/shared/models';
+import { IGame } from '@egamings/shared/common';
 
 @Component({
   selector: 'egamings-main-game',

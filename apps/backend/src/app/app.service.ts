@@ -1,4 +1,4 @@
-import { IApiData } from '@egamings/shared/models';
+import { IApiData } from '@egamings/shared/common';
 import { Injectable } from '@nestjs/common';
 import * as fs from 'fs';
 import { join } from 'path';

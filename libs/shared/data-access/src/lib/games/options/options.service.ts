@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { Injectable } from '@angular/core';
 
-import { IGamesOptions } from '@egamings/shared/models';
+import { IGamesOptions } from '@egamings/shared/common';
 
 import { GamesPaginationService } from '../pagination/pagination.service';
 import { GamesOptionsStore } from './options.store';

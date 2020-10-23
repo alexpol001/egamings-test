@@ -13,7 +13,7 @@ import {
   GamesService,
   MerchantsQuery,
 } from '@egamings/shared/data-access';
-import { IGamesFilters, IGamesOptions } from '@egamings/shared/models';
+import { IGamesFilters, IGamesOptions } from '@egamings/shared/common';
 import { IStepEvent } from '@egamings/shared/ui';
 
 @Component({

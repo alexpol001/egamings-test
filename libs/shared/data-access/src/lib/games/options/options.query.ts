@@ -2,7 +2,7 @@ import * as _ from 'lodash';
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
 
-import { IGamesOptions } from '@egamings/shared/models';
+import { IGamesOptions } from '@egamings/shared/common';
 
 import { GamesOptionsStore } from './options.store';
 

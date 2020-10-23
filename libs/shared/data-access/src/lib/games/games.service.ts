@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ID } from '@datorama/akita';
 
-import { IApiGame, ICategory, IGame } from '@egamings/shared/models';
+import { IApiGame, ICategory, IGame } from '@egamings/shared/common';
 
 import { GamesStore } from './games.store';
 import { GamesQuery } from './games.query';

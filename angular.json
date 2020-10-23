@@ -100,39 +100,6 @@
         }
       }
     },
-    "shared-models": {
-      "projectType": "library",
-      "root": "libs/shared/models",
-      "sourceRoot": "libs/shared/models/src",
-      "prefix": "egamings",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/models/tsconfig.lib.json",
-              "libs/shared/models/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/models/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/models/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "frontend": {
       "projectType": "application",
       "schematics": {
@@ -663,6 +630,39 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-common": {
+      "projectType": "library",
+      "root": "libs/shared/common",
+      "sourceRoot": "libs/shared/common/src",
+      "prefix": "egamings",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/common/tsconfig.lib.json",
+              "libs/shared/common/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/common/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/common/jest.config.js",
             "passWithNoTests": true
           }
         }

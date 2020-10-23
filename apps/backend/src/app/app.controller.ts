@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param } from '@nestjs/common';
-import { IApiData } from '@egamings/shared/models';
+import { IApiData } from '@egamings/shared/common';
 
 import { AppService } from './app.service';
 

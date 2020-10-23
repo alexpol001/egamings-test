@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ID } from '@datorama/akita';
 
-import { IGame } from '@egamings/shared/models';
+import { IGame } from '@egamings/shared/common';
 
 import { IStepEvent } from './game-list.models';
 
