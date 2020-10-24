@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'feature-shell',
-  preset: '../../jest.config.js',
+  name: 'shared-feature-main',
+  preset: '../../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -12,7 +12,7 @@ module.exports = {
       ],
     },
   },
-  coverageDirectory: '../../coverage/libs/feature-shell',
+  coverageDirectory: '../../../coverage/libs/shared/feature-main',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

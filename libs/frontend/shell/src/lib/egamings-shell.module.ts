@@ -11,7 +11,7 @@ import {
 import {
   EgamingsMainComponent,
   EgamingsMainModule,
-} from '@egamings/feature-main';
+} from '@egamings/shared/feature-main';
 import { EgamingsShellComponent } from './egamings-shell.component';
 
 const ROUTES: Routes = [

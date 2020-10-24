@@ -10,42 +10,25 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@egamings/feature-shell": [
-        "libs/feature-shell/src/index.ts"
-      ],
-      "@egamings/feature-main": [
-        "libs/feature-main/src/index.ts"
-      ],
-      "@egamings/shared/ui": [
-        "libs/shared/ui/src/index.ts"
-      ],
+      "@egamings/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@egamings/frontend/server-module": [
         "apps/frontend/src/app/app.server.module.ts"
       ],
-      "@egamings/shared/data-access": [
-        "libs/shared/data-access/src/index.ts"
+      "@egamings/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@egamings/shared/utils": ["libs/shared/utils/src/index.ts"],
+      "@egamings/shared/common": ["libs/shared/common/src/index.ts"],
+      "@egamings/frontend/shell": ["libs/frontend/shell/src/index.ts"],
+      "@egamings/shared/feature-main": [
+        "libs/shared/feature-main/src/index.ts"
       ],
-      "@egamings/shared/utils": [
-        "libs/shared/utils/src/index.ts"
-      ],
-      "@egamings/shared/common": [
-        "libs/shared/common/src/index.ts"
-      ]
+      "@egamings/mobile/shell": ["libs/mobile/shell/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

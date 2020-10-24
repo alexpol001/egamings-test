@@ -4,7 +4,7 @@ import {
   ServerModule,
   ServerTransferStateModule,
 } from '@angular/platform-server';
-import { EgamingsShellComponent } from '@egamings/feature-shell';
+import { EgamingsShellComponent } from '@egamings/frontend/shell';
 import { AppModule } from './app.module';
 import { ServerStateInterceptor } from './serverstate.interseptor';
 import { CookieBackendModule } from 'ngx-cookie-backend';

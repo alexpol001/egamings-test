@@ -5,7 +5,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import {
   EgamingsShellComponent,
   EgamingsShellModule,
-} from '@egamings/feature-shell';
+} from '@egamings/frontend/shell';
 import { CookieModule } from 'ngx-cookie';
 
 @NgModule({

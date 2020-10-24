@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'feature-main',
-  preset: '../../jest.config.js',
+  name: 'mobile-shell',
+  preset: '../../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -12,7 +12,7 @@ module.exports = {
       ],
     },
   },
-  coverageDirectory: '../../coverage/libs/feature-main',
+  coverageDirectory: '../../../coverage/libs/mobile/shell',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

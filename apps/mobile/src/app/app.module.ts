@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   EgamingsShellComponent,
   EgamingsShellModule,
-} from '@egamings/feature-shell';
+} from '@egamings/mobile/shell';
 
 @NgModule({
   imports: [BrowserModule, BrowserAnimationsModule, EgamingsShellModule],
