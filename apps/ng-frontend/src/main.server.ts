@@ -6,5 +6,5 @@ if (environment.production) {
   enableProdMode();
 }
 
-export { AppServerModule } from '@egamings/frontend/shell';
+export { AppServerModule } from '@egamings/ng-frontend/shell';
 export { renderModule, renderModuleFactory } from '@angular/platform-server';

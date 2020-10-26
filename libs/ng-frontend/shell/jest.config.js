@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'mobile-shell',
+  name: 'ng-frontend-shell',
   preset: '../../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -12,7 +12,7 @@ module.exports = {
       ],
     },
   },
-  coverageDirectory: '../../../coverage/libs/mobile/shell',
+  coverageDirectory: '../../../coverage/libs/ng-frontend/shell',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

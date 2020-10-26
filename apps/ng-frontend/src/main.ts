@@ -1,7 +1,7 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { AppModule } from '@egamings/frontend/shell';
+import { AppModule } from '@egamings/ng-frontend/shell';
 import { environment } from './environments/environment';
 
 if (environment.production) {

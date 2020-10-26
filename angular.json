@@ -133,39 +133,6 @@
         }
       }
     },
-    "frontend-shell": {
-      "projectType": "library",
-      "root": "libs/frontend/shell",
-      "sourceRoot": "libs/frontend/shell/src",
-      "prefix": "egamings",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/frontend/shell/tsconfig.lib.json",
-              "libs/frontend/shell/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/frontend/shell/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/frontend/shell/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "shared-feature-main": {
       "projectType": "library",
       "root": "libs/shared/feature-main",
@@ -189,39 +156,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/feature-main/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "mobile-shell": {
-      "projectType": "library",
-      "root": "libs/mobile/shell",
-      "sourceRoot": "libs/mobile/shell/src",
-      "prefix": "egamings",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/mobile/shell/tsconfig.lib.json",
-              "libs/mobile/shell/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/mobile/shell/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/mobile/shell/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -731,6 +665,72 @@
             "jestConfig": "apps/ng-mobile/jest.config.js",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "ng-mobile-shell": {
+      "projectType": "library",
+      "root": "libs/ng-mobile/shell",
+      "sourceRoot": "libs/ng-mobile/shell/src",
+      "prefix": "egamings",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng-mobile/shell/tsconfig.lib.json",
+              "libs/ng-mobile/shell/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng-mobile/shell/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ng-mobile/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ng-frontend-shell": {
+      "projectType": "library",
+      "root": "libs/ng-frontend/shell",
+      "sourceRoot": "libs/ng-frontend/shell/src",
+      "prefix": "egamings",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ng-frontend/shell/tsconfig.lib.json",
+              "libs/ng-frontend/shell/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng-frontend/shell/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ng-frontend/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

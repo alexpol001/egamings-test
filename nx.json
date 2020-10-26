@@ -39,13 +39,7 @@
     "shared-common": {
       "tags": []
     },
-    "frontend-shell": {
-      "tags": []
-    },
     "shared-feature-main": {
-      "tags": []
-    },
-    "mobile-shell": {
       "tags": []
     },
     "nest-api-shell": {
@@ -70,6 +64,12 @@
       ]
     },
     "ng-mobile": {
+      "tags": []
+    },
+    "ng-mobile-shell": {
+      "tags": []
+    },
+    "ng-frontend-shell": {
       "tags": []
     }
   }
