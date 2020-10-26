@@ -8,9 +8,9 @@ import { CommonModule } from '@angular/common';
 import {
   EgamingsMainComponent,
   EgamingsMainModule,
-} from '@egamings/shared/feature-main';
+} from '@egamings/shared/client/ng-feature-main';
 
-import { CoreModule, ITheme, ThemeModule } from '@egamings/shared/data-access';
+import { CoreModule, ITheme, ThemeModule } from '@egamings/shared/client/ng-data-access';
 
 import { AppComponent } from './app.component';
 

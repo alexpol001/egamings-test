@@ -17,29 +17,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
   "projects": {
-    "shared-ui": {
-      "tags": []
-    },
-    "shared-data-access": {
-      "tags": []
-    },
-    "shared-utils": {
-      "tags": []
-    },
     "shared-common": {
-      "tags": []
-    },
-    "shared-feature-main": {
       "tags": []
     },
     "nest-api-shell": {
@@ -53,15 +36,11 @@
     },
     "ng-frontend-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "ng-frontend"
-      ]
+      "implicitDependencies": ["ng-frontend"]
     },
     "ng-mobile-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "ng-mobile"
-      ]
+      "implicitDependencies": ["ng-mobile"]
     },
     "ng-mobile": {
       "tags": []
@@ -70,6 +49,21 @@
       "tags": []
     },
     "ng-frontend-shell": {
+      "tags": []
+    },
+    "shared-client-ng-data-access": {
+      "tags": []
+    },
+    "shared-client-ng-feature-main": {
+      "tags": []
+    },
+    "shared-client-ng-ui": {
+      "tags": []
+    },
+    "shared-client-ng-utils": {
+      "tags": []
+    },
+    "shared-client-common": {
       "tags": []
     }
   }

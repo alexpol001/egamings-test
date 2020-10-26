@@ -10,48 +10,35 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@egamings/shared/ui": [
-        "libs/shared/ui/src/index.ts"
-      ],
       "@egamings/frontend/server-module": [
         "apps/frontend/src/app/app.server.module.ts"
       ],
-      "@egamings/shared/data-access": [
-        "libs/shared/data-access/src/index.ts"
+      "@egamings/shared/common": ["libs/shared/common/src/index.ts"],
+      "@egamings/nest-api/shell": ["libs/nest-api/shell/src/index.ts"],
+      "@egamings/ng-mobile/shell": ["libs/ng-mobile/shell/src/index.ts"],
+      "@egamings/ng-frontend/shell": ["libs/ng-frontend/shell/src/index.ts"],
+      "@egamings/shared/client/ng-data-access": [
+        "libs/shared/client/ng-data-access/src/index.ts"
       ],
-      "@egamings/shared/utils": [
-        "libs/shared/utils/src/index.ts"
+      "@egamings/shared/client/ng-feature-main": [
+        "libs/shared/client/ng-feature-main/src/index.ts"
       ],
-      "@egamings/shared/common": [
-        "libs/shared/common/src/index.ts"
+      "@egamings/shared/client/ng-ui": [
+        "libs/shared/client/ng-ui/src/index.ts"
       ],
-      "@egamings/shared/feature-main": [
-        "libs/shared/feature-main/src/index.ts"
+      "@egamings/shared/client/ng-utils": [
+        "libs/shared/client/ng-utils/src/index.ts"
       ],
-      "@egamings/nest-api/shell": [
-        "libs/nest-api/shell/src/index.ts"
-      ],
-      "@egamings/ng-mobile/shell": [
-        "libs/ng-mobile/shell/src/index.ts"
-      ],
-      "@egamings/ng-frontend/shell": [
-        "libs/ng-frontend/shell/src/index.ts"
+      "@egamings/shared/client/common": [
+        "libs/shared/client/common/src/index.ts"
       ]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

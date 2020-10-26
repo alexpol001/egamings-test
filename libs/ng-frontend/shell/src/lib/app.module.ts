@@ -5,13 +5,13 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { EgamingsMainComponent, EgamingsMainModule } from '@egamings/shared/feature-main';
+import { EgamingsMainComponent, EgamingsMainModule } from '@egamings/shared/client/ng-feature-main';
 import {
   CookieStorageService,
   CoreModule,
   ITheme,
   ThemeModule,
-} from '@egamings/shared/data-access';
+} from '@egamings/shared/client/ng-data-access';
 
 import { AppComponent } from './app.component';
 
