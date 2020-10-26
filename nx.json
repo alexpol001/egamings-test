@@ -17,7 +17,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -30,17 +35,18 @@
     },
     "frontend-e2e": {
       "tags": [],
-      "implicitDependencies": ["frontend"]
+      "implicitDependencies": [
+        "frontend"
+      ]
     },
     "mobile": {
       "tags": []
     },
     "mobile-e2e": {
       "tags": [],
-      "implicitDependencies": ["mobile"]
-    },
-    "backend": {
-      "tags": []
+      "implicitDependencies": [
+        "mobile"
+      ]
     },
     "shared-data-access": {
       "tags": []
@@ -61,6 +67,9 @@
       "tags": []
     },
     "nest-api-shell": {
+      "tags": []
+    },
+    "nest-api": {
       "tags": []
     }
   }

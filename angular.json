@@ -14,7 +14,10 @@
               "libs/shared/ui/tsconfig.lib.json",
               "libs/shared/ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/**/*"
+            ]
           }
         },
         "test": {
@@ -51,7 +54,10 @@
                 "externals": "replace"
               }
             },
-            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
+            "allowedCommonJsDependencies": [
+              "helpful-decorators",
+              "lodash"
+            ],
             "outputPath": "dist/apps/frontend/browser",
             "index": "apps/frontend/src/index.html",
             "main": "apps/frontend/src/main.ts",
@@ -180,7 +186,10 @@
               "apps/frontend/tsconfig.app.json",
               "apps/frontend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/frontend/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/frontend/**/*"
+            ]
           }
         },
         "test": {
@@ -194,8 +203,10 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "browserTarget": "frontend:build:production",
-            "serverTarget": "backend:build:production",
-            "routes": ["/"]
+            "serverTarget": "nest-api:build:production",
+            "routes": [
+              "/"
+            ]
           },
           "configurations": {
             "production": {}
@@ -224,8 +235,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/frontend-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/frontend-e2e/**/*"]
+            "tsConfig": [
+              "apps/frontend-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/frontend-e2e/**/*"
+            ]
           }
         }
       }
@@ -250,7 +266,10 @@
                 "externals": "replace"
               }
             },
-            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
+            "allowedCommonJsDependencies": [
+              "helpful-decorators",
+              "lodash"
+            ],
             "outputPath": "dist/apps/mobile",
             "index": "apps/mobile/src/index.html",
             "main": "apps/mobile/src/main.ts",
@@ -342,7 +361,10 @@
               "apps/mobile/tsconfig.app.json",
               "apps/mobile/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/mobile/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/mobile/**/*"
+            ]
           }
         },
         "test": {
@@ -375,105 +397,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/mobile-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/mobile-e2e/**/*"]
-          }
-        }
-      }
-    },
-    "backend": {
-      "root": "apps/backend",
-      "sourceRoot": "apps/backend/src",
-      "projectType": "application",
-      "prefix": "backend",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/backend",
-            "main": "apps/backend/src/main.ts",
-            "tsConfig": "apps/backend/tsconfig.json",
-            "assets": [
-              {
-                "input": "libs/shared/assets",
-                "glob": "**/*",
-                "output": "assets"
-              }
-            ]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/backend/src/environments/environment.ts",
-                  "with": "apps/backend/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "backend:build"
-          }
-        },
-        "build2": {
-          "builder": "@angular-builders/custom-webpack:server",
-          "options": {
-            "customWebpackConfig": {
-              "path": "webpack-server.config.ts"
-            },
-            "outputPath": "dist/apps/backend",
-            "main": "apps/backend/src/main.ts",
-            "tsConfig": "apps/backend/tsconfig.json"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "apps/backend/src/environments/environment.ts",
-                  "with": "apps/backend/src/environments/environment.prod.ts"
-                }
-              ],
-              "sourceMap": false,
-              "optimization": true
-            }
-          }
-        },
-        "serve2": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "options": {
-            "browserTarget": "frontend:build",
-            "serverTarget": "backend:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "frontend:build:production",
-              "serverTarget": "backend:build:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
             "tsConfig": [
-              "apps/backend/tsconfig.app.json",
-              "apps/backend/tsconfig.spec.json"
+              "apps/mobile-e2e/tsconfig.e2e.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/backend/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/backend/jest.config.js",
-            "passWithNoTests": true
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/mobile-e2e/**/*"
+            ]
           }
         }
       }
@@ -491,7 +421,10 @@
               "libs/shared/data-access/tsconfig.lib.json",
               "libs/shared/data-access/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/data-access/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/data-access/**/*"
+            ]
           }
         },
         "test": {
@@ -521,7 +454,10 @@
               "libs/shared/utils/tsconfig.lib.json",
               "libs/shared/utils/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/utils/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/utils/**/*"
+            ]
           }
         },
         "test": {
@@ -551,7 +487,10 @@
               "libs/shared/common/tsconfig.lib.json",
               "libs/shared/common/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/common/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/common/**/*"
+            ]
           }
         },
         "test": {
@@ -581,7 +520,10 @@
               "libs/frontend/shell/tsconfig.lib.json",
               "libs/frontend/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/frontend/shell/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/frontend/shell/**/*"
+            ]
           }
         },
         "test": {
@@ -611,7 +553,10 @@
               "libs/shared/feature-main/tsconfig.lib.json",
               "libs/shared/feature-main/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/feature-main/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/feature-main/**/*"
+            ]
           }
         },
         "test": {
@@ -641,7 +586,10 @@
               "libs/mobile/shell/tsconfig.lib.json",
               "libs/mobile/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/mobile/shell/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/mobile/shell/**/*"
+            ]
           }
         },
         "test": {
@@ -671,13 +619,116 @@
               "libs/nest-api/shell/tsconfig.lib.json",
               "libs/nest-api/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/nest-api/shell/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/nest-api/shell/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/nest-api/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nest-api": {
+      "root": "apps/nest-api",
+      "sourceRoot": "apps/nest-api/src",
+      "projectType": "application",
+      "prefix": "backend",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/nest-api",
+            "main": "apps/nest-api/src/main.ts",
+            "tsConfig": "apps/nest-api/tsconfig.json",
+            "assets": [
+              {
+                "input": "libs/shared/assets",
+                "glob": "**/*",
+                "output": "assets"
+              }
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/nest-api/src/environments/environment.ts",
+                  "with": "apps/nest-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "nest-api:build"
+          }
+        },
+        "build2": {
+          "builder": "@angular-builders/custom-webpack:server",
+          "options": {
+            "customWebpackConfig": {
+              "path": "webpack-server.config.ts"
+            },
+            "outputPath": "dist/apps/nest-api",
+            "main": "apps/nest-api/src/main.ts",
+            "tsConfig": "apps/nest-api/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "apps/nest-api/src/environments/environment.ts",
+                  "with": "apps/nest-api/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve2": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "frontend:build",
+            "serverTarget": "nest-api:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "frontend:build:production",
+              "serverTarget": "nest-api:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/nest-api/tsconfig.app.json",
+              "apps/nest-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-api/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/nest-api/jest.config.js",
             "passWithNoTests": true
           }
         }

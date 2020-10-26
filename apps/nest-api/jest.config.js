@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'backend',
+  name: 'nest-api',
   preset: '../../jest.config.js',
   globals: {
     'ts-jest': {
@@ -10,5 +10,5 @@ module.exports = {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/backend',
+  coverageDirectory: '../../coverage/apps/nest-api',
 };
