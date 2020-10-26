@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'egamings-shell',
+  selector: 'egamings-app',
   template: '<router-outlet></router-outlet>',
 })
-export class EgamingsShellComponent implements OnInit {
+export class AppComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

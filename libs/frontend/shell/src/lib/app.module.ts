@@ -1,18 +1,19 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+import { EgamingsMainComponent, EgamingsMainModule } from '@egamings/shared/feature-main';
 import {
+  CookieStorageService,
   CoreModule,
-  ThemeModule,
   ITheme,
-  CookieStorageService
+  ThemeModule,
 } from '@egamings/shared/data-access';
 
-import {
-  EgamingsMainComponent,
-  EgamingsMainModule,
-} from '@egamings/shared/feature-main';
-import { EgamingsShellComponent } from './egamings-shell.component';
+import { AppComponent } from './app.component';
 
 const ROUTES: Routes = [
   {
@@ -38,8 +39,15 @@ export const THEMES: ITheme[] = [
 ];
 
 @NgModule({
+  declarations: [AppComponent],
   imports: [
     CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    BrowserModule.withServerTransition({ appId: 'frontendApp' }),
+    // Cache for httpRequest data
+    TransferHttpCacheModule,
+    EgamingsMainModule,
     RouterModule.forRoot(ROUTES),
     CoreModule.forRoot({
       pagination: {
@@ -51,12 +59,10 @@ export const THEMES: ITheme[] = [
       themes: THEMES,
       defaultThemeId: 'light',
       themeStorage: {
-        storage: CookieStorageService
-      }
+        storage: CookieStorageService,
+      },
     }),
-    EgamingsMainModule,
   ],
-  declarations: [EgamingsShellComponent],
-  exports: [EgamingsShellComponent],
+  bootstrap: [AppComponent],
 })
-export class EgamingsShellModule {}
+export class AppModule {}

@@ -6,7 +6,6 @@ import {
   EgamingsShellComponent,
   EgamingsShellModule,
 } from '@egamings/frontend/shell';
-import { CookieModule } from 'ngx-cookie';
 
 @NgModule({
   imports: [

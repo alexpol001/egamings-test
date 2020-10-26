@@ -50,4 +50,6 @@ const ROUTES: Routes = [
   declarations: [EgamingsMainComponent, GameComponent, HomeComponent],
   exports: [EgamingsMainComponent],
 })
-export class EgamingsMainModule {}
+export class EgamingsMainModule {
+  
+}
