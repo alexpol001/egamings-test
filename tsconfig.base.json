@@ -27,7 +27,8 @@
       "@egamings/shared/feature-main": [
         "libs/shared/feature-main/src/index.ts"
       ],
-      "@egamings/mobile/shell": ["libs/mobile/shell/src/index.ts"]
+      "@egamings/mobile/shell": ["libs/mobile/shell/src/index.ts"],
+      "@egamings/nest-api/shell": ["libs/nest-api/shell/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

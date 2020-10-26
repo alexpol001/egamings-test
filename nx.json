@@ -59,6 +59,9 @@
     },
     "mobile-shell": {
       "tags": []
+    },
+    "nest-api-shell": {
+      "tags": []
     }
   }
 }

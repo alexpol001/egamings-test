@@ -166,7 +166,6 @@
               "serverTarget": "frontend:server:production"
             }
           }
-  
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -573,7 +572,7 @@
       "projectType": "library",
       "root": "libs/frontend/shell",
       "sourceRoot": "libs/frontend/shell/src",
-      "prefix": "egamings-shell",
+      "prefix": "egamings",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -656,6 +655,31 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
+        }
+      }
+    },
+    "nest-api-shell": {
+      "root": "libs/nest-api/shell",
+      "sourceRoot": "libs/nest-api/shell/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nest-api/shell/tsconfig.lib.json",
+              "libs/nest-api/shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/nest-api/shell/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nest-api/shell/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     }

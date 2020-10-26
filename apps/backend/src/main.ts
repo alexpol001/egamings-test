@@ -1,8 +1,8 @@
 import 'zone.js/dist/zone-node';
-import { Logger, NotFoundException } from '@nestjs/common';
+import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
-import { AppModule } from './app/app.module';
+import { AppModule } from '@egamings/nest-api/shell';
 import { environment } from './environments/environment';
 import { enableProdMode } from '@angular/core';
 
