@@ -27,7 +27,7 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "killnodes": "killall node",
-    "serve:all": "npx nx serve nest-api & npx nx ssr-serve frontend",
+    "serve:all": "npx nx serve nest-api & npx nx ssr-serve ng-frontend",
     "dev:ssr:frontend": "npx nx frontend:serve-ssr",
     "serve:ssr:frontend": "node dist/apps/frontend/server/main.js",
     "prebuild:ssr:frontend": "npm run postinstall",

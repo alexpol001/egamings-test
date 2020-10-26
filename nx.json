@@ -30,24 +30,6 @@
     "shared-ui": {
       "tags": []
     },
-    "frontend": {
-      "tags": []
-    },
-    "frontend-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "frontend"
-      ]
-    },
-    "mobile": {
-      "tags": []
-    },
-    "mobile-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "mobile"
-      ]
-    },
     "shared-data-access": {
       "tags": []
     },
@@ -70,6 +52,24 @@
       "tags": []
     },
     "nest-api": {
+      "tags": []
+    },
+    "ng-frontend": {
+      "tags": []
+    },
+    "ng-frontend-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "ng-frontend"
+      ]
+    },
+    "ng-mobile-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "ng-mobile"
+      ]
+    },
+    "ng-mobile": {
       "tags": []
     }
   }
