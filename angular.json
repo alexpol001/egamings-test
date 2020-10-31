@@ -97,30 +97,6 @@
             "buildTarget": "nest-api:build"
           }
         },
-        "build2": {
-          "builder": "@angular-builders/custom-webpack:server",
-          "options": {
-            "customWebpackConfig": {
-              "path": "webpack-server.config.ts"
-            },
-            "outputPath": "dist/apps/nest-api",
-            "main": "apps/nest-api/src/main.ts",
-            "tsConfig": "apps/nest-api/tsconfig.json"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "apps/nest-api/src/environments/environment.ts",
-                  "with": "apps/nest-api/src/environments/environment.prod.ts"
-                }
-              ],
-              "sourceMap": false,
-              "optimization": true
-            }
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -170,7 +146,7 @@
             "assets": [
               "apps/ng-frontend/src/favicon.ico",
               {
-                "input": "libs/shared/client/ng-assets",
+                "input": "libs/shared/client/assets",
                 "glob": "**/*",
                 "output": "assets"
               }
@@ -195,8 +171,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/ng-frontend/src/environments/environment.ts",
-                  "with": "apps/ng-frontend/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/client/common/src/lib/environments/environment.ts",
+                  "with": "libs/shared/client/common/src/lib/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -254,8 +230,8 @@
               "bundleDependencies": true,
               "fileReplacements": [
                 {
-                  "replace": "apps/ng-frontend/src/environments/environment.ts",
-                  "with": "apps/ng-frontend/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/client/common/src/lib/environments/environment.ts",
+                  "with": "libs/shared/client/common/src/lib/environments/environment.prod.ts"
                 }
               ],
               "sourceMap": false,
@@ -396,7 +372,7 @@
             "assets": [
               "apps/ng-mobile/src/favicon.ico",
               {
-                "input": "libs/shared/client/ng-assets",
+                "input": "libs/shared/client/assets",
                 "glob": "**/*",
                 "output": "assets"
               }
@@ -421,8 +397,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/ng-mobile/src/environments/environment.ts",
-                  "with": "apps/ng-mobile/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/client/common/src/lib/environments/environment.ts",
+                  "with": "libs/shared/client/common/src/lib/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,

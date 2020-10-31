@@ -6,6 +6,5 @@ export default (config: webpack.Configuration) => {
     __dirname,
     'libs/shared/client/ng-styles/theming/_theming'
   );
-  config.resolve.plugins;
   return config;
 };
