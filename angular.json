@@ -70,11 +70,7 @@
             "main": "apps/nest-api/src/main.ts",
             "tsConfig": "apps/nest-api/tsconfig.json",
             "assets": [
-              {
-                "input": "libs/nest-api/assets",
-                "glob": "**/*",
-                "output": "assets"
-              }
+              "apps/nest-api/src/assets"
             ]
           },
           "configurations": {
@@ -146,20 +142,20 @@
             "assets": [
               "apps/ng-frontend/src/favicon.ico",
               {
-                "input": "libs/shared/client/assets",
+                "input": "libs/shared/client/common/assets",
                 "glob": "**/*",
                 "output": "assets"
               }
             ],
             "styles": [
-              "libs/shared/client/ng-styles/styles.scss",
+              "libs/shared/client/common/styles/styles.scss",
               {
-                "input": "libs/shared/client/ng-styles/themes/light-theme.scss",
+                "input": "libs/shared/client/common/styles/themes/light-theme.scss",
                 "lazy": true,
                 "bundleName": "light-theme"
               },
               {
-                "input": "libs/shared/client/ng-styles/themes/dark-theme.scss",
+                "input": "libs/shared/client/common/styles/themes/dark-theme.scss",
                 "lazy": true,
                 "bundleName": "dark-theme"
               }
@@ -372,20 +368,20 @@
             "assets": [
               "apps/ng-mobile/src/favicon.ico",
               {
-                "input": "libs/shared/client/assets",
+                "input": "libs/shared/client/common/assets",
                 "glob": "**/*",
                 "output": "assets"
               }
             ],
             "styles": [
-              "libs/shared/client/ng-styles/styles.scss",
+              "libs/shared/client/common/styles/styles.scss",
               {
-                "input": "libs/shared/client/ng-styles/themes/light-theme.scss",
+                "input": "libs/shared/client/common/styles/themes/light-theme.scss",
                 "lazy": true,
                 "bundleName": "light-theme"
               },
               {
-                "input": "libs/shared/client/ng-styles/themes/dark-theme.scss",
+                "input": "libs/shared/client/common/styles/themes/dark-theme.scss",
                 "lazy": true,
                 "bundleName": "dark-theme"
               }
