@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { GamesQuery, ThemeQuery, ThemeService } from '@egamings/shared/client/ng-data-access';
 import { map } from 'rxjs/operators';
+
+import { GamesQuery, ThemeQuery, ThemeService } from '@egamings/shared/client/ng-data-access';
 
 @Component({
   selector: 'egamings-main',
-  templateUrl: './egamings-main.component.html',
-  styleUrls: ['./egamings-main.component.scss'],
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss'],
 })
 export class EgamingsMainComponent implements OnInit {
   total$ = this.gamesQuery.selectCount();

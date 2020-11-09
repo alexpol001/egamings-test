@@ -12,7 +12,7 @@ import {
 } from '@egamings/shared/client/ng-ui';
 
 import { HomeComponent } from './home/home.component';
-import { EgamingsMainComponent } from './egamings-main.component';
+import { EgamingsMainComponent } from './main.component';
 import { GameComponent } from './game/game.component';
 
 const ROUTES: Routes = [

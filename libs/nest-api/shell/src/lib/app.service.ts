@@ -1,7 +1,8 @@
-import { ApiData } from '@egamings/shared/common';
 import { Injectable } from '@nestjs/common';
 import * as fs from 'fs';
 import { join } from 'path';
+
+import { ApiData } from '@egamings/shared/common';
 
 @Injectable()
 export class AppService {

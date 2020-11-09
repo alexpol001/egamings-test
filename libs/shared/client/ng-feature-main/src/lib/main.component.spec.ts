@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EgamingsMainComponent } from './egamings-main.component';
+import { EgamingsMainComponent } from './main.component';
 
 describe('EgamingsMainComponent', () => {
   let component: EgamingsMainComponent;

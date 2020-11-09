@@ -1,2 +1,2 @@
-export * from './lib/egamings-main.component';
-export * from './lib/egamings-main.module';
+export * from './lib/main.component';
+export * from './lib/main.module';

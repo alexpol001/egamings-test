@@ -1,8 +1,8 @@
 import { Sort } from '@angular/material/sort';
 import { ID } from '@datorama/akita';
 
-import { Category } from './category';
-import { Merchant } from './merchant';
+import { Category } from './category.model';
+import { Merchant } from './merchant.model';
 
 export interface Game {
   id: ID;
