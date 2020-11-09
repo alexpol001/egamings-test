@@ -1,14 +1,20 @@
-import { Controller, Get } from '@nestjs/common';
-import { ApiData } from '@egamings/shared/common';
+import { Controller, Get, Inject } from '@nestjs/common';
+import { ClientProxy } from '@nestjs/microservices';
 
-import { AppService } from './app.service';
+import { ApiData } from '@egamings/shared/common';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    @Inject('REDIS_SERVICE') private readonly client: ClientProxy
+  ) {}
+
+  async onApplicationBootstrap() {
+    await this.client.connect();
+  }
 
   @Get()
-  getData(): ApiData {
-    return this.appService.getData();
+  getData(): Promise<ApiData> {
+    return this.client.send('get_data', []).toPromise();
   }
 }

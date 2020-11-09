@@ -65,6 +65,12 @@
     },
     "shared-client-common": {
       "tags": []
+    },
+    "nest-redis": {
+      "tags": []
+    },
+    "nest-redis-shell": {
+      "tags": []
     }
   }
 }

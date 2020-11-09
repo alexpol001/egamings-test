@@ -37,7 +37,8 @@
       ],
       "@egamings/shared/client/common": [
         "libs/shared/client/common/src/index.ts"
-      ]
+      ],
+      "@egamings/nest-redis/shell": ["libs/nest-redis/shell/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
