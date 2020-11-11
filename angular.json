@@ -757,6 +757,60 @@
           }
         }
       }
+    },
+    "nest-rebbit": {
+      "root": "apps/nest-rebbit",
+      "sourceRoot": "apps/nest-rebbit/src",
+      "projectType": "application",
+      "prefix": "nest-rebbit",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/nest-rebbit",
+            "main": "apps/nest-rebbit/src/main.ts",
+            "tsConfig": "apps/nest-rebbit/tsconfig.app.json",
+            "assets": ["apps/nest-rebbit/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/nest-rebbit/src/environments/environment.ts",
+                  "with": "apps/nest-rebbit/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "nest-rebbit:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/nest-rebbit/tsconfig.app.json",
+              "apps/nest-rebbit/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/nest-rebbit/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/nest-rebbit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

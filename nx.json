@@ -71,6 +71,9 @@
     },
     "nest-redis-shell": {
       "tags": []
+    },
+    "nest-rebbit": {
+      "tags": []
     }
   }
 }
