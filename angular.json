@@ -14,7 +14,10 @@
               "libs/shared/common/tsconfig.lib.json",
               "libs/shared/common/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/common/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/common/**/*"
+            ]
           }
         },
         "test": {
@@ -44,7 +47,10 @@
               "libs/nest-api/shell/tsconfig.lib.json",
               "libs/nest-api/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/nest-api/shell/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/nest-api/shell/**/*"
+            ]
           }
         },
         "test": {
@@ -69,7 +75,9 @@
             "outputPath": "dist/apps/nest-api",
             "main": "apps/nest-api/src/main.ts",
             "tsConfig": "apps/nest-api/tsconfig.json",
-            "assets": ["apps/nest-api/src/assets"]
+            "assets": [
+              "apps/nest-api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -98,7 +106,10 @@
               "apps/nest-api/tsconfig.app.json",
               "apps/nest-api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/nest-api/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-api/**/*"
+            ]
           }
         },
         "test": {
@@ -130,7 +141,10 @@
                 "externals": "replace"
               }
             },
-            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
+            "allowedCommonJsDependencies": [
+              "helpful-decorators",
+              "lodash"
+            ],
             "outputPath": "dist/apps/ng-frontend/browser",
             "index": "apps/ng-frontend/src/index.html",
             "main": "apps/ng-frontend/src/main.ts",
@@ -259,7 +273,10 @@
               "apps/ng-frontend/tsconfig.app.json",
               "apps/ng-frontend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/ng-frontend/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-frontend/**/*"
+            ]
           }
         },
         "test": {
@@ -274,7 +291,9 @@
           "options": {
             "browserTarget": "ng-frontend:build:production",
             "serverTarget": "nest-api:build:production",
-            "routes": ["/"]
+            "routes": [
+              "/"
+            ]
           },
           "configurations": {
             "production": {}
@@ -303,8 +322,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/ng-frontend-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ng-frontend-e2e/**/*"]
+            "tsConfig": [
+              "apps/ng-frontend-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-frontend-e2e/**/*"
+            ]
           }
         }
       }
@@ -330,8 +354,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/ng-mobile-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ng-mobile-e2e/**/*"]
+            "tsConfig": [
+              "apps/ng-mobile-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-mobile-e2e/**/*"
+            ]
           }
         }
       }
@@ -356,7 +385,10 @@
                 "externals": "replace"
               }
             },
-            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
+            "allowedCommonJsDependencies": [
+              "helpful-decorators",
+              "lodash"
+            ],
             "outputPath": "dist/apps/ng-mobile",
             "index": "apps/ng-mobile/src/index.html",
             "main": "apps/ng-mobile/src/main.ts",
@@ -448,7 +480,10 @@
               "apps/ng-mobile/tsconfig.app.json",
               "apps/ng-mobile/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/ng-mobile/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-mobile/**/*"
+            ]
           }
         },
         "test": {
@@ -473,7 +508,10 @@
               "libs/ng-mobile/shell/tsconfig.lib.json",
               "libs/ng-mobile/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ng-mobile/shell/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng-mobile/shell/**/*"
+            ]
           }
         },
         "test": {
@@ -503,7 +541,10 @@
               "libs/ng-frontend/shell/tsconfig.lib.json",
               "libs/ng-frontend/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ng-frontend/shell/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng-frontend/shell/**/*"
+            ]
           }
         },
         "test": {
@@ -599,7 +640,10 @@
               "libs/shared/client/ng-ui/tsconfig.lib.json",
               "libs/shared/client/ng-ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/client/ng-ui/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/client/ng-ui/**/*"
+            ]
           }
         },
         "test": {
@@ -662,7 +706,10 @@
               "libs/shared/client/common/tsconfig.lib.json",
               "libs/shared/client/common/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/client/common/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/client/common/**/*"
+            ]
           }
         },
         "test": {
@@ -692,7 +739,9 @@
             "outputPath": "dist/apps/nest-redis",
             "main": "apps/nest-redis/src/main.ts",
             "tsConfig": "apps/nest-redis/tsconfig.app.json",
-            "assets": ["apps/nest-redis/src/assets"]
+            "assets": [
+              "apps/nest-redis/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -721,7 +770,10 @@
               "apps/nest-redis/tsconfig.app.json",
               "apps/nest-redis/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/nest-redis/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-redis/**/*"
+            ]
           }
         },
         "test": {
@@ -746,7 +798,10 @@
               "libs/nest-redis/shell/tsconfig.lib.json",
               "libs/nest-redis/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/nest-redis/shell/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/nest-redis/shell/**/*"
+            ]
           }
         },
         "test": {
@@ -758,9 +813,37 @@
         }
       }
     },
-    "nest-rebbit": {
-      "root": "apps/nest-rebbit",
-      "sourceRoot": "apps/nest-rebbit/src",
+    "nest-rabbit-shell": {
+      "root": "libs/nest-rabbit/shell",
+      "sourceRoot": "libs/nest-rabbit/shell/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nest-rabbit/shell/tsconfig.lib.json",
+              "libs/nest-rabbit/shell/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/nest-rabbit/shell/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nest-rabbit/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nest-rabbit": {
+      "root": "apps/nest-rabbit",
+      "sourceRoot": "apps/nest-rabbit/src",
       "projectType": "application",
       "prefix": "nest-rebbit",
       "schematics": {},
@@ -768,10 +851,12 @@
         "build": {
           "builder": "@nrwl/node:build",
           "options": {
-            "outputPath": "dist/apps/nest-rebbit",
-            "main": "apps/nest-rebbit/src/main.ts",
-            "tsConfig": "apps/nest-rebbit/tsconfig.app.json",
-            "assets": ["apps/nest-rebbit/src/assets"]
+            "outputPath": "dist/apps/nest-rabbit",
+            "main": "apps/nest-rabbit/src/main.ts",
+            "tsConfig": "apps/nest-rabbit/tsconfig.app.json",
+            "assets": [
+              "apps/nest-rabbit/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -780,8 +865,8 @@
               "inspect": false,
               "fileReplacements": [
                 {
-                  "replace": "apps/nest-rebbit/src/environments/environment.ts",
-                  "with": "apps/nest-rebbit/src/environments/environment.prod.ts"
+                  "replace": "apps/nest-rabbit/src/environments/environment.ts",
+                  "with": "apps/nest-rabbit/src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -790,23 +875,26 @@
         "serve": {
           "builder": "@nrwl/node:execute",
           "options": {
-            "buildTarget": "nest-rebbit:build"
+            "buildTarget": "nest-rabbit:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/nest-rebbit/tsconfig.app.json",
-              "apps/nest-rebbit/tsconfig.spec.json"
+              "apps/nest-rabbit/tsconfig.app.json",
+              "apps/nest-rabbit/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/nest-rebbit/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-rabbit/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/nest-rebbit/jest.config.js",
+            "jestConfig": "apps/nest-rabbit/jest.config.js",
             "passWithNoTests": true
           }
         }

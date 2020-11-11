@@ -11,6 +11,6 @@ async function bootstrap() {
       auth_pass: 'sOmE_sEcUrE_pAsS'
     },
   });
-  app.listen(() => console.log('Microservice is listening'));
+  app.listen(() => console.log('Microservice Redis is listening'));
 }
 bootstrap();

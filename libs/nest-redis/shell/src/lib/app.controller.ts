@@ -1,6 +1,7 @@
-import { ApiData } from '@egamings/shared/common';
 import { Controller } from '@nestjs/common';
 import { Ctx, EventPattern, MessagePattern, Payload, RedisContext } from '@nestjs/microservices';
+
+import { ApiData } from '@egamings/shared/common';
 
 import { AppService } from './app.service';
 

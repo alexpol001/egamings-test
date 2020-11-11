@@ -17,7 +17,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -36,11 +41,15 @@
     },
     "ng-frontend-e2e": {
       "tags": [],
-      "implicitDependencies": ["ng-frontend"]
+      "implicitDependencies": [
+        "ng-frontend"
+      ]
     },
     "ng-mobile-e2e": {
       "tags": [],
-      "implicitDependencies": ["ng-mobile"]
+      "implicitDependencies": [
+        "ng-mobile"
+      ]
     },
     "ng-mobile": {
       "tags": []
@@ -72,7 +81,10 @@
     "nest-redis-shell": {
       "tags": []
     },
-    "nest-rebbit": {
+    "nest-rabbit-shell": {
+      "tags": []
+    },
+    "nest-rabbit": {
       "tags": []
     }
   }

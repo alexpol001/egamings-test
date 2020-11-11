@@ -15,6 +15,19 @@ import { AppController } from './app.controller';
         }
       },
     ]),
+    ClientsModule.register([
+      {
+        name: 'RABBIT_SERVICE',
+        transport: Transport.RMQ,
+        options: {
+          urls: ['amqp://localhost:5672'],
+          queue: 'cats_queue',
+          queueOptions: {
+            durable: false
+          },
+        },
+      },
+    ]),
   ],
   controllers: [AppController],
 })

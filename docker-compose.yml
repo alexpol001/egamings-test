@@ -15,6 +15,12 @@ services:
       node_net:
         ipv4_address: 172.28.1.4
 
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - 15672:15672
+      - 5672:5672
+
 # networking for the Redis container
 networks:
   node_net:
