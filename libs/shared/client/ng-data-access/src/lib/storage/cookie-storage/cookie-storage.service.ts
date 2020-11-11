@@ -10,7 +10,7 @@ import { MemoryStorageService } from '../memory-storage/memory-storage.service';
 
 @Injectable()
 export class CookieStorageService extends AStorageService {
-  protected storage: CookieStorage;
+  protected readonly storage: CookieStorage;
 
   constructor(
     cookieService: CookieService,
