@@ -65,6 +65,9 @@
     },
     "a-webpack": {
       "tags": []
+    },
+    "nest-mongo": {
+      "tags": []
     }
   }
 }
