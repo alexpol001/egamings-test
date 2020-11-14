@@ -100,10 +100,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "webpack.config.ts",
-              "mergeStrategies": {
-                "externals": "replace"
-              }
+              "path": "libs/a-webpack/src/lib/webpack.config.ts"
             },
             "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
             "outputPath": "dist/apps/ng-frontend/browser",
@@ -171,10 +168,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "customWebpackConfig": {
-              "path": "webpack.config.ts",
-              "mergeStrategies": {
-                "externals": "replace"
-              }
+              "path": "libs/a-webpack/src/lib/webpack.config.ts"
             },
             "browserTarget": "ng-frontend:build"
           },
@@ -188,7 +182,7 @@
           "builder": "@angular-builders/custom-webpack:server",
           "options": {
             "customWebpackConfig": {
-              "path": "webpack.config.ts"
+              "path": "libs/a-webpack/src/lib/webpack.config.ts"
             },
             "outputPath": "dist/apps/ng-frontend/server",
             "main": "apps/ng-frontend/server.ts",
@@ -326,10 +320,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "webpack.config.ts",
-              "mergeStrategies": {
-                "externals": "replace"
-              }
+              "path": "libs/a-webpack/src/lib/webpack.config.ts"
             },
             "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
             "outputPath": "dist/apps/ng-mobile",
@@ -397,10 +388,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "customWebpackConfig": {
-              "path": "webpack.config.ts",
-              "mergeStrategies": {
-                "externals": "replace"
-              }
+              "path": "libs/a-webpack/src/lib/webpack.config.ts"
             },
             "browserTarget": "ng-mobile:build"
           },
@@ -697,6 +685,31 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/nest-rabbit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "a-webpack": {
+      "root": "libs/a-webpack",
+      "sourceRoot": "libs/a-webpack/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/a-webpack/tsconfig.lib.json",
+              "libs/a-webpack/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/a-webpack/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/a-webpack/jest.config.js",
             "passWithNoTests": true
           }
         }

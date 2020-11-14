@@ -62,6 +62,9 @@
     },
     "nest-rabbit": {
       "tags": []
+    },
+    "a-webpack": {
+      "tags": []
     }
   }
 }
