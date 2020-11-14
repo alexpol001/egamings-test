@@ -14,7 +14,10 @@
               "libs/shared/common/tsconfig.lib.json",
               "libs/shared/common/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/common/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/common/**/*"
+            ]
           }
         },
         "test": {
@@ -44,7 +47,9 @@
             "outputPath": "dist/apps/nest-api",
             "main": "apps/nest-api/src/main.ts",
             "tsConfig": "apps/nest-api/tsconfig.json",
-            "assets": ["apps/nest-api/src/assets"]
+            "assets": [
+              "apps/nest-api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -73,7 +78,10 @@
               "apps/nest-api/tsconfig.app.json",
               "apps/nest-api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/nest-api/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-api/**/*"
+            ]
           }
         },
         "test": {
@@ -102,7 +110,10 @@
             "customWebpackConfig": {
               "path": "libs/a-webpack/src/lib/webpack.config.ts"
             },
-            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
+            "allowedCommonJsDependencies": [
+              "helpful-decorators",
+              "lodash"
+            ],
             "outputPath": "dist/apps/ng-frontend/browser",
             "index": "apps/ng-frontend/src/index.html",
             "main": "apps/ng-frontend/src/main.ts",
@@ -228,7 +239,10 @@
               "apps/ng-frontend/tsconfig.app.json",
               "apps/ng-frontend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/ng-frontend/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-frontend/**/*"
+            ]
           }
         },
         "test": {
@@ -243,7 +257,9 @@
           "options": {
             "browserTarget": "ng-frontend:build:production",
             "serverTarget": "nest-api:build:production",
-            "routes": ["/"]
+            "routes": [
+              "/"
+            ]
           },
           "configurations": {
             "production": {}
@@ -272,8 +288,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/ng-frontend-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ng-frontend-e2e/**/*"]
+            "tsConfig": [
+              "apps/ng-frontend-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-frontend-e2e/**/*"
+            ]
           }
         }
       }
@@ -299,8 +320,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/ng-mobile-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ng-mobile-e2e/**/*"]
+            "tsConfig": [
+              "apps/ng-mobile-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-mobile-e2e/**/*"
+            ]
           }
         }
       }
@@ -322,7 +348,10 @@
             "customWebpackConfig": {
               "path": "libs/a-webpack/src/lib/webpack.config.ts"
             },
-            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
+            "allowedCommonJsDependencies": [
+              "helpful-decorators",
+              "lodash"
+            ],
             "outputPath": "dist/apps/ng-mobile",
             "index": "apps/ng-mobile/src/index.html",
             "main": "apps/ng-mobile/src/main.ts",
@@ -411,7 +440,10 @@
               "apps/ng-mobile/tsconfig.app.json",
               "apps/ng-mobile/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/ng-mobile/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-mobile/**/*"
+            ]
           }
         },
         "test": {
@@ -502,7 +534,10 @@
               "libs/shared/client/ng-ui/tsconfig.lib.json",
               "libs/shared/client/ng-ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/client/ng-ui/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/client/ng-ui/**/*"
+            ]
           }
         },
         "test": {
@@ -565,7 +600,10 @@
               "libs/shared/client/common/tsconfig.lib.json",
               "libs/shared/client/common/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/client/common/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/client/common/**/*"
+            ]
           }
         },
         "test": {
@@ -582,114 +620,6 @@
         }
       }
     },
-    "nest-redis": {
-      "root": "apps/nest-redis",
-      "sourceRoot": "apps/nest-redis/src",
-      "projectType": "application",
-      "prefix": "nest-redis",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/nest-redis",
-            "main": "apps/nest-redis/src/main.ts",
-            "tsConfig": "apps/nest-redis/tsconfig.app.json",
-            "assets": ["apps/nest-redis/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/nest-redis/src/environments/environment.ts",
-                  "with": "apps/nest-redis/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "nest-redis:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/nest-redis/tsconfig.app.json",
-              "apps/nest-redis/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/nest-redis/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/nest-redis/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "nest-rabbit": {
-      "root": "apps/nest-rabbit",
-      "sourceRoot": "apps/nest-rabbit/src",
-      "projectType": "application",
-      "prefix": "nest-rebbit",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/nest-rabbit",
-            "main": "apps/nest-rabbit/src/main.ts",
-            "tsConfig": "apps/nest-rabbit/tsconfig.app.json",
-            "assets": ["apps/nest-rabbit/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/nest-rabbit/src/environments/environment.ts",
-                  "with": "apps/nest-rabbit/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "nest-rabbit:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/nest-rabbit/tsconfig.app.json",
-              "apps/nest-rabbit/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/nest-rabbit/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/nest-rabbit/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "a-webpack": {
       "root": "libs/a-webpack",
       "sourceRoot": "libs/a-webpack/src",
@@ -703,7 +633,10 @@
               "libs/a-webpack/tsconfig.lib.json",
               "libs/a-webpack/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/a-webpack/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/a-webpack/**/*"
+            ]
           }
         },
         "test": {
@@ -715,20 +648,22 @@
         }
       }
     },
-    "nest-mongo": {
-      "root": "apps/nest-mongo",
-      "sourceRoot": "apps/nest-mongo/src",
+    "nest-ms-rabbit": {
+      "root": "apps/nest-ms-rabbit",
+      "sourceRoot": "apps/nest-ms-rabbit/src",
       "projectType": "application",
-      "prefix": "nest-mongo",
+      "prefix": "nest-rebbit",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
           "options": {
-            "outputPath": "dist/apps/nest-mongo",
-            "main": "apps/nest-mongo/src/main.ts",
-            "tsConfig": "apps/nest-mongo/tsconfig.app.json",
-            "assets": ["apps/nest-mongo/src/assets"]
+            "outputPath": "dist/apps/nest-ms-rabbit",
+            "main": "apps/nest-ms-rabbit/src/main.ts",
+            "tsConfig": "apps/nest-ms-rabbit/tsconfig.app.json",
+            "assets": [
+              "apps/nest-ms-rabbit/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -737,8 +672,8 @@
               "inspect": false,
               "fileReplacements": [
                 {
-                  "replace": "apps/nest-mongo/src/environments/environment.ts",
-                  "with": "apps/nest-mongo/src/environments/environment.prod.ts"
+                  "replace": "apps/nest-ms-rabbit/src/environments/environment.ts",
+                  "with": "apps/nest-ms-rabbit/src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -747,23 +682,144 @@
         "serve": {
           "builder": "@nrwl/node:execute",
           "options": {
-            "buildTarget": "nest-mongo:build"
+            "buildTarget": "nest-ms-rabbit:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/nest-mongo/tsconfig.app.json",
-              "apps/nest-mongo/tsconfig.spec.json"
+              "apps/nest-ms-rabbit/tsconfig.app.json",
+              "apps/nest-ms-rabbit/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/nest-mongo/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-ms-rabbit/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/nest-mongo/jest.config.js",
+            "jestConfig": "apps/nest-ms-rabbit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nest-ms-redis": {
+      "root": "apps/nest-ms-redis",
+      "sourceRoot": "apps/nest-ms-redis/src",
+      "projectType": "application",
+      "prefix": "nest-redis",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/nest-ms-redis",
+            "main": "apps/nest-ms-redis/src/main.ts",
+            "tsConfig": "apps/nest-ms-redis/tsconfig.app.json",
+            "assets": [
+              "apps/nest-ms-redis/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/nest-ms-redis/src/environments/environment.ts",
+                  "with": "apps/nest-ms-redis/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "nest-ms-redis:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/nest-ms-redis/tsconfig.app.json",
+              "apps/nest-ms-redis/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-ms-redis/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/nest-ms-redis/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nest-ms-mongo": {
+      "root": "apps/nest-ms-mongo",
+      "sourceRoot": "apps/nest-ms-mongo/src",
+      "projectType": "application",
+      "prefix": "nest-mongo",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/nest-ms-mongo",
+            "main": "apps/nest-ms-mongo/src/main.ts",
+            "tsConfig": "apps/nest-ms-mongo/tsconfig.app.json",
+            "assets": [
+              "apps/nest-ms-mongo/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/nest-ms-mongo/src/environments/environment.ts",
+                  "with": "apps/nest-ms-mongo/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "nest-ms-mongo:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/nest-ms-mongo/tsconfig.app.json",
+              "apps/nest-ms-mongo/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-ms-mongo/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/nest-ms-mongo/jest.config.js",
             "passWithNoTests": true
           }
         }
