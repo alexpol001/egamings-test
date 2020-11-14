@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { StorageServerModule } from '../storage/storage.server.module';
+
+import { StorageServerModule } from '../storage';
 
 @NgModule({
   imports: [StorageServerModule],

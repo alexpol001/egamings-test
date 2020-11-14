@@ -1,5 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
+import { ApiData } from '@egamings/shared/common';
 
 import { AppService } from './app.service';
 

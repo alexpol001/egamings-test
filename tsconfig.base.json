@@ -20,9 +20,6 @@
         "apps/frontend/src/app/app.server.module.ts"
       ],
       "@egamings/shared/common": ["libs/shared/common/src/index.ts"],
-      "@egamings/nest-api/shell": ["libs/nest-api/shell/src/index.ts"],
-      "@egamings/ng-mobile/shell": ["libs/ng-mobile/shell/src/index.ts"],
-      "@egamings/ng-frontend/shell": ["libs/ng-frontend/shell/src/index.ts"],
       "@egamings/shared/client/ng-data-access": [
         "libs/shared/client/ng-data-access/src/index.ts"
       ],
@@ -37,9 +34,7 @@
       ],
       "@egamings/shared/client/common": [
         "libs/shared/client/common/src/index.ts"
-      ],
-      "@egamings/nest-redis/shell": ["libs/nest-redis/shell/src/index.ts"],
-      "@egamings/nest-rabbit/shell": ["libs/nest-rabbit/shell/src/index.ts"]
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

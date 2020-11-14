@@ -3,10 +3,10 @@ import { StoreConfig, Store } from '@datorama/akita';
 
 import { GamesPagination } from '@egamings/shared/common';
 
-import { IPaginationConfig } from './pagination.model';
+import { PaginationConfig } from './pagination.types';
 import { PAGINATION_CONFIG_TOKEN } from './pagination.token';
 
-function createInitialState(config: IPaginationConfig): GamesPagination {
+function createInitialState(config: PaginationConfig): GamesPagination {
   return {
     pageIndex: 0,
     pageSize: config.pageSize,
@@ -17,7 +17,7 @@ function createInitialState(config: IPaginationConfig): GamesPagination {
 @Injectable()
 @StoreConfig({ name: 'games-pagination' })
 export class GamesPaginationStore extends Store<GamesPagination> {
-  constructor(@Inject(PAGINATION_CONFIG_TOKEN) config: IPaginationConfig) {
+  constructor(@Inject(PAGINATION_CONFIG_TOKEN) config: PaginationConfig) {
     super(createInitialState(config));
   }
 }

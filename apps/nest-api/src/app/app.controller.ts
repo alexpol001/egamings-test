@@ -1,5 +1,6 @@
 import { Controller, Get, Inject } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
+import { debounce } from 'helpful-decorators';
 
 import { ApiData } from '@egamings/shared/common';
 
@@ -11,8 +12,8 @@ export class AppController {
   ) {}
 
   async onApplicationBootstrap() {
-    await this.redisClient.connect();
-    await this.rabbitClient.connect();
+    this.connectToClient(this.redisClient);
+    this.connectToClient(this.rabbitClient);
   }
 
   @Get()
@@ -23,5 +24,18 @@ export class AppController {
   @Get('rabbit')
   getRabbitData(): Promise<ApiData> {
     return this.rabbitClient.send('get_data', []).toPromise();
+  }
+
+  @debounce(5000)
+  private async connectToClient(client: ClientProxy) {
+    try {
+      await client.connect();
+      console.log('clentProxy connected');
+    } catch (error) {
+      console.log(error);
+      console.log(`Can't connect to clientProxy`);
+      console.log('Restarting in 5 seconds...');
+      await this.connectToClient(client);
+    }
   }
 }

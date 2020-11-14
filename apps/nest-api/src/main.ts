@@ -1,14 +1,8 @@
-import 'zone.js/dist/zone-node';
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
-import { AppModule } from '@egamings/nest-api/shell';
-import { environment } from './environments/environment';
-import { enableProdMode } from '@angular/core';
+import { AppModule } from './app/app.module';
 
-if (environment.production) {
-  enableProdMode();
-}
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';

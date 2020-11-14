@@ -1,6 +1,6 @@
-import { IPaginationConfig } from '../games/pagination/pagination.model';
+import { PaginationConfig } from '../games';
 
 export interface ICoreConfig {
   apiUrl: string;
-  pagination: IPaginationConfig;
+  pagination: PaginationConfig;
 }

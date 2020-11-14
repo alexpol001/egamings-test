@@ -7,6 +7,7 @@ import {
   SkipSelf,
 } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 import { ApiData } from '@egamings/shared/common';
 
 import { PAGINATION_CONFIG_TOKEN } from '../games/pagination/pagination.token';

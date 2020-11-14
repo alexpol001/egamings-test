@@ -11,8 +11,8 @@ import { AppController } from './app.controller';
         transport: Transport.REDIS,
         options: {
           url: 'redis://localhost:6379',
-          auth_pass: 'sOmE_sEcUrE_pAsS'
-        }
+          auth_pass: 'sOmE_sEcUrE_pAsS',
+        },
       },
     ]),
     ClientsModule.register([
@@ -23,7 +23,7 @@ import { AppController } from './app.controller';
           urls: ['amqp://localhost:5672'],
           queue: 'cats_queue',
           queueOptions: {
-            durable: false
+            durable: false,
           },
         },
       },

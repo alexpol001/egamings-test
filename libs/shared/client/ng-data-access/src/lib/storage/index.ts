@@ -3,3 +3,4 @@ export * from './memory-storage';
 export * from './cookie-storage';
 export * from './storage.model';
 export * from './storage.module';
+export * from './storage.server.module';
