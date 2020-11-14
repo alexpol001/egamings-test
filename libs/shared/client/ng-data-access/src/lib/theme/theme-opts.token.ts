@@ -1,4 +1,4 @@
 import { InjectionToken } from '@angular/core';
-import { IThemeOpts } from './theme-opts.model';
+import { ThemeOpts } from './theme-opts.types';
 
-export const THEME_OPTS_TOKEN = new InjectionToken<IThemeOpts>('theme.opts');
+export const THEME_OPTS_TOKEN = new InjectionToken<ThemeOpts>('theme.opts');

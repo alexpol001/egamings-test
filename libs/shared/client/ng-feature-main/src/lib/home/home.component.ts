@@ -14,7 +14,7 @@ import {
   MerchantsQuery,
 } from '@egamings/shared/client/ng-data-access';
 import { GamesFilters, GamesOptions } from '@egamings/shared/common';
-import { IStepEvent } from '@egamings/shared/client/ng-ui';
+import { StepEvent } from '@egamings/shared/client/ng-ui';
 
 @Component({
   selector: 'egamings-main-home',
@@ -89,7 +89,7 @@ export class HomeComponent implements OnInit {
     this.gamesService.toggleFavorite(id);
   }
 
-  onStep(stepEvent: IStepEvent) {
+  onStep(stepEvent: StepEvent) {
     const { id, step } = stepEvent;
     this.gamesService.setStep(id, step);
   }

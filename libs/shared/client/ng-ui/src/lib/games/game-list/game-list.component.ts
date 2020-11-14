@@ -3,7 +3,7 @@ import { ID } from '@datorama/akita';
 
 import { Game } from '@egamings/shared/common';
 
-import { IStepEvent } from './game-list.models';
+import { StepEvent } from './game-list.types';
 
 @Component({
   selector: 'egamings-ui-game-list',
@@ -17,7 +17,7 @@ export class GameListComponent implements OnInit {
 
   @Output() favoriteEvent: EventEmitter<ID> = new EventEmitter();
 
-  @Output() stepEvent: EventEmitter<IStepEvent> = new EventEmitter();
+  @Output() stepEvent: EventEmitter<StepEvent> = new EventEmitter();
 
   constructor() {}
 
@@ -27,7 +27,7 @@ export class GameListComponent implements OnInit {
     this.favoriteEvent.emit(id);
   }
 
-  onStep(stepEvent: IStepEvent) {
+  onStep(stepEvent: StepEvent) {
     this.stepEvent.emit(stepEvent);
   }
 

@@ -1,1 +1,1 @@
-export * from './lib/renderer';
+export * from './lib/renderer/renderer.service';

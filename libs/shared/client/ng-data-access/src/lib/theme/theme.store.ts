@@ -7,13 +7,13 @@ import {
   EntityStore,
 } from '@datorama/akita';
 
-import { ITheme } from './theme.model';
+import { Theme } from './theme.model';
 
-export interface ThemeState extends EntityState<ITheme>, ActiveState {}
+export interface ThemeState extends EntityState<Theme>, ActiveState {}
 
 @Injectable()
 @StoreConfig({ name: 'theme', idKey: 'themeId' })
-export class ThemeStore extends EntityStore<ThemeState, ITheme> {
+export class ThemeStore extends EntityStore<ThemeState, Theme> {
   constructor() {
     super();
   }

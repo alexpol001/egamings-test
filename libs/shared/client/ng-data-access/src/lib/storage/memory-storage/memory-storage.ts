@@ -1,6 +1,6 @@
-import { IStorage } from '../storage.model';
+import { Storage } from '../storage.types';
 
-export class MemoryStorage implements IStorage {
+export class MemoryStorage implements Storage {
   /**
    * Storage data
    */

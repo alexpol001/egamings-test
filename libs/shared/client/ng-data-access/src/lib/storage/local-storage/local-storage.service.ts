@@ -2,11 +2,11 @@ import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 import { LocalStorage } from './local-storage';
-import { AStorageService } from '../storage.model';
+import { StorageService } from '../storage.types';
 import { MemoryStorageService } from '../memory-storage/memory-storage.service';
 
 @Injectable()
-export class LocalStorageService extends AStorageService {
+export class LocalStorageService extends StorageService {
   constructor(
     private memoryStorageService: MemoryStorageService,
     @Inject(PLATFORM_ID) private platformId: Object

@@ -1,15 +1,11 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
-// import { CookieService } from 'ngx-cookie-service';
 import { CookieService, CookieOptions } from 'ngx-cookie';
 
-
 import { CookieStorage } from './cookie-storage';
-import { AStorageService } from '../storage.model';
-import { MemoryStorageService } from '../memory-storage/memory-storage.service';
-// import { CookieOptions } from './cookie-storage.model';
+import { StorageService } from '../storage.types';
 
 @Injectable()
-export class CookieStorageService extends AStorageService {
+export class CookieStorageService extends StorageService {
   protected readonly storage: CookieStorage;
 
   constructor(

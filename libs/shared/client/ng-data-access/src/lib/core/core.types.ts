@@ -1,6 +1,6 @@
-import { PaginationConfig } from '../games';
+import { PaginationConfig } from '../games/pagination/pagination.types';
 
-export interface ICoreConfig {
+export interface CoreConfig {
   apiUrl: string;
   pagination: PaginationConfig;
 }

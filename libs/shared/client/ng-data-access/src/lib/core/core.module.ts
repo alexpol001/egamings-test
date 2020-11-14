@@ -20,7 +20,7 @@ import { CategoriesService } from '../categories/categories.service';
 import { MerchantsService } from '../merchants/merchants.service';
 import { API_URL_TOKEN } from './core.tokens';
 import { CORE_DEFAULT_CONFIG } from './core.common';
-import { ICoreConfig } from './core.types';
+import { CoreConfig } from './core.types';
 
 @NgModule({
   imports: [
@@ -54,7 +54,7 @@ export class CoreModule {
   }
 
   static forRoot(
-    config?: Partial<ICoreConfig>
+    config?: Partial<CoreConfig>
   ): ModuleWithProviders<CoreModule> {
     config = _.merge(CORE_DEFAULT_CONFIG, config);
 

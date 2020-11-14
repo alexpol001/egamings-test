@@ -1,6 +1,6 @@
 import { ID } from '@datorama/akita';
 
-export interface IStepEvent {
+export interface StepEvent {
   id: ID;
   step: number;
 }

@@ -1,7 +1,7 @@
 import { Storage as StorageCap } from '@capacitor/core';
-import { IStorage } from '../storage.model';
+import { Storage } from '../storage.types';
 
-export class LocalStorage implements IStorage {
+export class LocalStorage implements Storage {
   async clear(): Promise<void> {
     await StorageCap.clear();
   }

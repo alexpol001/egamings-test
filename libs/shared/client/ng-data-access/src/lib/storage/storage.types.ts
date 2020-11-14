@@ -1,4 +1,4 @@
-export interface IStorage {
+export interface Storage {
   clear(): Promise<void>;
 
   getItem(key: string): Promise<string>;
@@ -12,10 +12,10 @@ export interface IStorage {
   getLength(): Promise<number>;
 }
 
-export class AStorageService implements IStorage {
-  protected readonly storage: IStorage;
+export class StorageService implements Storage {
+  protected readonly storage: Storage;
 
-  constructor(storage: IStorage) {
+  constructor(storage: Storage) {
     this.storage = storage;
   }
 

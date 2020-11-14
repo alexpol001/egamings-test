@@ -8,7 +8,7 @@ import { map, mergeMap } from 'rxjs/operators';
 import { Game, GamesFilters } from '@egamings/shared/common';
 
 import { GamesStore, GamesState } from './games.store';
-import { GamesPaginationQuery } from './pagination';
+import { GamesPaginationQuery } from './pagination/pagination.query';
 import { GamesOptionsQuery } from './options/options.query';
 
 @Injectable()
@@ -67,11 +67,11 @@ export class GamesQuery extends QueryEntity<GamesState, Game> {
 
   private filterCategories(game: Game, categoryIds: number[]) {
     if (categoryIds?.length) {
-      for (let categoryId of categoryIds) {
+      for (const categoryId of categoryIds) {
         if (categoryId === -1 && this.hasActive(game.id)) {
           return true;
         }
-        for (let gameCategory of game.categories) {
+        for (const gameCategory of game.categories) {
           if (categoryId === gameCategory.id) {
             return true;
           }
@@ -85,7 +85,7 @@ export class GamesQuery extends QueryEntity<GamesState, Game> {
 
   private filterMerchants(game: Game, merchantIds: number[]) {
     if (merchantIds?.length) {
-      for (let merchantId of merchantIds) {
+      for (const merchantId of merchantIds) {
         if (merchantId === game.merchant.id) {
           return true;
         }
@@ -118,8 +118,8 @@ export class GamesQuery extends QueryEntity<GamesState, Game> {
             return 1;
           }
 
+          const active = sort?.active;
           let dir = sort?.direction;
-          let active = sort?.active;
           let fieldA;
           let fieldB;
 

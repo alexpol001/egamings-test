@@ -1,7 +1,7 @@
 import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
-export class GlobalRenderer {
+export class RendererService {
   readonly renderer: Renderer2;
 
   constructor(private rendererFactory: RendererFactory2) {

@@ -6,7 +6,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 
 import { SortingComponent } from './sorting.component';
-import { LayoutsModule } from '../layouts';
+import { LayoutsModule } from '../layouts/layouts.module';
 
 @NgModule({
   imports: [

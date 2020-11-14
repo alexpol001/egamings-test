@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { EgamingsMainComponent } from '@egamings/shared/client/ng-feature-main';
-import { ITheme } from '@egamings/shared/client/ng-data-access';
+import { Theme } from '@egamings/shared/client/ng-data-access';
 
 export const ROUTES: Routes = [
   {
@@ -14,7 +14,7 @@ export const ROUTES: Routes = [
   },
 ];
 
-export const THEMES: ITheme[] = [
+export const THEMES: Theme[] = [
   {
     themeId: 'light',
     cssFile: 'light-theme.css',

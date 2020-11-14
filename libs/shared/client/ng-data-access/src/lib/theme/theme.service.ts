@@ -1,14 +1,14 @@
 import { Injectable, Inject, PLATFORM_ID, Optional } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { DOCUMENT, isPlatformServer } from '@angular/common';
 
-import { GlobalRenderer } from '@egamings/shared/client/ng-utils';
+import { RendererService } from '@egamings/shared/client/ng-utils';
 
-import { IThemeOpts } from './theme-opts.model';
+import { ThemeOpts } from './theme-opts.types';
 import { THEME_OPTS_TOKEN } from './theme-opts.token';
 import { ThemeStore } from './theme.store';
 import { ThemeQuery } from './theme.query';
-import { ITheme } from './theme.model';
-import { AStorageService } from '../storage/storage.model';
+import { Theme } from './theme.model';
+import { StorageService } from '../storage/storage.types';
 
 @Injectable()
 export class ThemeService {
@@ -20,11 +20,11 @@ export class ThemeService {
   constructor(
     private themeStore: ThemeStore,
     private themeQuery: ThemeQuery,
-    private globalRenderer: GlobalRenderer,
-    private storageService: AStorageService,
+    private globalRenderer: RendererService,
+    private storageService: StorageService,
     @Inject(DOCUMENT) private document: Document,
     @Inject(PLATFORM_ID) private platformId: any,
-    @Optional() @Inject(THEME_OPTS_TOKEN) private opts?: IThemeOpts
+    @Optional() @Inject(THEME_OPTS_TOKEN) private opts?: ThemeOpts
   ) {
     this.head = this.document.head;
     this.body = this.document.body;
@@ -34,7 +34,7 @@ export class ThemeService {
     this.addThemes(themes, defaultThemeId);
   }
 
-  async addThemes(themes: ITheme[], defaultTheme?: string) {
+  async addThemes(themes: Theme[], defaultTheme?: string) {
     if (themes?.length) {
       this.themeStore.add(themes);
 

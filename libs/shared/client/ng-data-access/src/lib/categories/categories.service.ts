@@ -9,8 +9,8 @@ export class CategoriesService {
   constructor(private categoriesStore: CategoriesStore) {}
 
   initCategories(apiCategories: ApiCategory[]) {
-    let categories: Category[] = [];
-    for (let category of apiCategories) {
+    const categories: Category[] = [];
+    for (const category of apiCategories) {
       categories.push({
         id: category.ID,
         name: category.Name['en'],

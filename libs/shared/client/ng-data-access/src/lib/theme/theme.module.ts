@@ -1,18 +1,18 @@
 import * as _ from 'lodash';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { IThemeOpts } from './theme-opts.model';
+import { ThemeOpts } from './theme-opts.types';
 import { THEME_DEFAULT_OPTS } from './theme-default-opts';
 import { ThemeService } from './theme.service';
 import { ThemeStore } from './theme.store';
 import { ThemeQuery } from './theme.query';
 import { THEME_OPTS_TOKEN } from './theme-opts.token';
-import { AStorageService } from '../storage/storage.model';
+import { StorageService } from '../storage/storage.types';
 
 @NgModule()
 export class ThemeModule {
   static forRoot(
-    opts?: Partial<IThemeOpts>
+    opts?: Partial<ThemeOpts>
   ): ModuleWithProviders<ThemeModule> {
     const themeOpts = _.merge(THEME_DEFAULT_OPTS, opts);
 
@@ -23,7 +23,7 @@ export class ThemeModule {
         ThemeQuery,
         ThemeService,
         {
-          provide: AStorageService,
+          provide: StorageService,
           useExisting: themeOpts.themeStorage.storage,
         },
         { provide: THEME_OPTS_TOKEN, useValue: themeOpts },

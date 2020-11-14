@@ -10,9 +10,9 @@ export class MerchantsService {
   constructor(private merchantsStore: MerchantsStore) {}
 
   initMerchants(apiMerchants: ApiMerchant[]) {
-    let merchants: Merchant[] = [];
+    const merchants: Merchant[] = [];
 
-    for (let merchant of apiMerchants) {
+    for (const merchant of apiMerchants) {
       merchants.push({
         id: merchant.ID,
         name: merchant.Name,

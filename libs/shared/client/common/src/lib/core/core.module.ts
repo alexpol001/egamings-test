@@ -8,7 +8,7 @@ import { CoreModule } from '@egamings/shared/client/ng-data-access';
 import { EgamingsMainModule } from '@egamings/shared/client/ng-feature-main';
 
 import { ROUTES } from './core.common';
-import { environment } from '../environments';
+import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [

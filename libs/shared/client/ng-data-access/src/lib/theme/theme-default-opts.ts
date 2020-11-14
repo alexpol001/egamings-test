@@ -1,7 +1,7 @@
-import { IThemeOpts } from './theme-opts.model';
-import { LocalStorageService } from '../storage/local-storage';
+import { ThemeOpts } from './theme-opts.types';
+import { LocalStorageService } from '../storage/local-storage/local-storage.service';
 
-export const THEME_DEFAULT_OPTS: IThemeOpts = {
+export const THEME_DEFAULT_OPTS: ThemeOpts = {
   themeStorage: {
     storage: LocalStorageService,
     key: 'egamings-theme',
