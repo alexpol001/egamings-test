@@ -5,5 +5,5 @@ export interface Post {
 
   content: string;
 
-  comments: PostComment;
+  comments: PostComment[];
 }
