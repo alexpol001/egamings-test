@@ -9,7 +9,6 @@ export class AppController {
 
   @MessagePattern('get_data')
   getData(@Payload() data: any[]) {
-    console.log('mongo');
     return this.appService.getData();
   }
 }
