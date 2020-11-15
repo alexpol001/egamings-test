@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 
 import { AppController } from './app.controller';
+import { GraphqlModule } from './graphql/graphql.module';
+import { PostsModule } from './posts/posts.module';
 
 @Module({
   imports: [
@@ -34,6 +36,7 @@ import { AppController } from './app.controller';
         },
       },
     ]),
+    GraphqlModule.forRoot(PostsModule),
   ],
   controllers: [AppController],
 })
