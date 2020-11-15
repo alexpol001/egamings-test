@@ -35,7 +35,10 @@
       "@egamings/shared/client/common": [
         "libs/shared/client/common/src/index.ts"
       ],
-      "@egamings/a-webpack": ["libs/a-webpack/src/index.ts"]
+      "@egamings/a-webpack": ["libs/a-webpack/src/index.ts"],
+      "@egamings/shared/server/common": [
+        "libs/shared/server/common/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
