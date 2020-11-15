@@ -1,4 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
+import { MessagePattern, Payload } from '@nestjs/microservices';
 
 import { AppService } from './app.service';
 
@@ -6,8 +7,9 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getData() {
+  @MessagePattern('get_data')
+  getData(@Payload() data: any[]) {
+    console.log('mongo');
     return this.appService.getData();
   }
 }

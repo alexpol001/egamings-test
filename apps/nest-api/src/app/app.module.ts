@@ -7,7 +7,7 @@ import { AppController } from './app.controller';
   imports: [
     ClientsModule.register([
       {
-        name: 'REDIS_SERVICE',
+        name: 'REDIS_CLIENT',
         transport: Transport.REDIS,
         options: {
           url: 'redis://localhost:6379',
@@ -15,7 +15,7 @@ import { AppController } from './app.controller';
         },
       },
       {
-        name: 'RABBIT_SERVICE',
+        name: 'RABBIT_CLIENT',
         transport: Transport.RMQ,
         options: {
           urls: ['amqp://localhost:5672'],
@@ -23,6 +23,14 @@ import { AppController } from './app.controller';
           queueOptions: {
             durable: false,
           },
+        },
+      },
+      {
+        name: 'NATS_MONGO_CLIENT',
+        transport: Transport.NATS,
+        options: {
+          url: 'nats://localhost:4222',
+          queue: 'cats_queue',
         },
       },
     ]),
