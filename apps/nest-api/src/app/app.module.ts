@@ -14,8 +14,6 @@ import { AppController } from './app.controller';
           auth_pass: 'sOmE_sEcUrE_pAsS',
         },
       },
-    ]),
-    ClientsModule.register([
       {
         name: 'RABBIT_SERVICE',
         transport: Transport.RMQ,
