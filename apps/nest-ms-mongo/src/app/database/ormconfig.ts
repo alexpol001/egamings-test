@@ -13,10 +13,10 @@ export const config: ConnectionOptions = {
   migrationsRun: true,
   logging: true,
   logger: 'file',
-  migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
-  //   cli: {
-  //     migrationsDir: 'src/migrations',
-  //   },
+  migrations: [__dirname + 'migrations/**/*{.ts,.js}'],
+  cli: {
+    migrationsDir: 'migrations',
+  },
 };
 
 export default config;
