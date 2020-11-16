@@ -13,7 +13,6 @@ import { PostsModule } from './posts/posts.module';
         transport: Transport.REDIS,
         options: {
           url: 'redis://localhost:6379',
-          auth_pass: 'sOmE_sEcUrE_pAsS',
         },
       },
       {

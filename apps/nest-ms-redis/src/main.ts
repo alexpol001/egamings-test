@@ -8,7 +8,6 @@ async function bootstrap() {
     transport: Transport.REDIS,
     options: {
       url: 'redis://localhost:6379',
-      auth_pass: 'sOmE_sEcUrE_pAsS',
     },
   });
   app.listen(() => console.log('Microservice Redis is listening'));
