@@ -8,14 +8,18 @@ import { ClientProxy } from '@nestjs/microservices';
 import { debounce } from 'helpful-decorators';
 
 import { ApiData } from '@egamings/shared/common';
-import { Observable } from 'rxjs';
+import {
+  NATS_MONGO_CLIENT,
+  RABBIT_CLIENT,
+  REDIS_CLIENT,
+} from './shared/clients/clients.constants';
 
 @Controller()
 export class AppController implements OnApplicationBootstrap {
   constructor(
-    @Inject('REDIS_CLIENT') private readonly redisClient: ClientProxy,
-    @Inject('RABBIT_CLIENT') private readonly rabbitClient: ClientProxy,
-    @Inject('NATS_MONGO_CLIENT') private readonly natsMongoClient: ClientProxy
+    @Inject(REDIS_CLIENT) private readonly redisClient: ClientProxy,
+    @Inject(RABBIT_CLIENT) private readonly rabbitClient: ClientProxy,
+    @Inject(NATS_MONGO_CLIENT) private readonly natsMongoClient: ClientProxy
   ) {}
 
   async onApplicationBootstrap() {

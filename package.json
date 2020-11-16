@@ -80,6 +80,7 @@
     "ngx-cookie": "^5.0.0",
     "ngx-cookie-backend": "^5.0.0",
     "normalize.css": "^8.0.1",
+    "pg": "^8.5.1",
     "redis": "^3.0.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.5",
