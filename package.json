@@ -27,6 +27,7 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "clear": "killall node",
+    "nest-ms-mongo:migration:generate": "cd apps/nest-ms-mongo/src/app/database npx typeorm migration:generate -n PostTable",
     "serve:env": "docker-compose up",
     "serve:client": "npx nx ssr-serve ng-frontend & npx nx serve ng-mobile --port=4300",
     "serve:server": "npx nx serve nest-ms-rabbit & npx nx serve nest-ms-redis & npx nx serve nest-ms-mongo & npx nx serve nest-api",
