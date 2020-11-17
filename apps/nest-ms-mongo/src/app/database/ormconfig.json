@@ -5,9 +5,7 @@
   "username": "root",
   "password": "example",
   "database": "postgres",
-  "entities": [
-    "dist/apps/nest-ms-mongo/**/*.entity.ts"
-  ],
+  "entities": ["apps/nest-ms-mongo/src/app/post/post.entity.ts"],
   "synchronize": true,
   "migrationsRun": true,
   "logging": true,

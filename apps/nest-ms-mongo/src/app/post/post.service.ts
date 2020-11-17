@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Post } from '@egamings/shared/server/common';
+import { Post } from './post.entity';
 
 @Injectable()
 export class PostService {
@@ -11,10 +11,12 @@ export class PostService {
   ) {}
 
   async create() {
-    return this.postRepository.create({
-      title: 'Post Title',
-      content: 'Post Content',
-    });
+    return await this.postRepository.save(
+      this.postRepository.create({
+        title: 'Post Title',
+        content: 'Post Content',
+      })
+    );
   }
 
   async findAll(): Promise<Post[]> {
