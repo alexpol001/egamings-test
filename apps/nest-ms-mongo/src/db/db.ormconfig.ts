@@ -1,5 +1,5 @@
 import { ConnectionOptions } from 'typeorm';
-import { Post } from '../post/post.entity';
+import { Post } from '../app/post/post.entity';
 
 const config: ConnectionOptions = {
   type: 'postgres',
@@ -9,13 +9,8 @@ const config: ConnectionOptions = {
   password: 'example',
   database: 'postgres',
   entities: [Post],
-  synchronize: true,
+  synchronize: false,
   migrationsRun: true,
-  logging: true,
-  logger: 'file',
-  cli: {
-    migrationsDir: 'migrations',
-  },
 };
 
 export default config;
