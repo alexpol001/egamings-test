@@ -11,6 +11,7 @@ const config: ConnectionOptions = {
   entities: [Post],
   synchronize: false,
   migrationsRun: true,
+  migrations: [__dirname + '/migrations/*.ts'],
 };
 
 export default config;

@@ -1,4 +1,3 @@
-import { Post } from '@egamings/shared/server/common';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as path from 'path';
