@@ -1,13 +1,13 @@
-// import { ConnectionOptions } from 'typeorm';
+import { ConnectionOptions } from 'typeorm';
 import { Post } from '../post/post.entity';
 
-export default {
+export const config: ConnectionOptions = {
   type: 'postgres',
   host: 'localhost',
   port: 5432,
   username: 'root',
   password: 'example',
-  database: 'postgress',
+  database: 'postgres',
   entities: [Post],
   synchronize: true,
   migrationsRun: true,
@@ -15,7 +15,8 @@ export default {
   logger: 'file',
   migrations: [__dirname + 'migrations/**/*{.ts,.js}'],
   cli: {
-    migrationsDir: '/migrations',
+    migrationsDir: 'migrations',
   },
 };
 
+export default config;
