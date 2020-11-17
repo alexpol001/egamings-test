@@ -6,13 +6,13 @@
   "password": "example",
   "database": "postgres",
   "entities": [
-    "../**/*.entity.{ts,js}"
+    "dist/apps/nest-ms-mongo/**/*.entity.ts"
   ],
   "synchronize": true,
   "migrationsRun": true,
   "logging": true,
   "logger": "file",
-  "migrations": ["migrations/**/*{.ts,.js}"],
+  "migrations": ["migrations/**/*.ts"],
   "cli": {
     "migrationsDir": "migrations"
   }

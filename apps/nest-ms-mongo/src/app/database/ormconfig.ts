@@ -1,7 +1,7 @@
-import { ConnectionOptions } from 'typeorm';
+// import { ConnectionOptions } from 'typeorm';
 import { Post } from '../post/post.entity';
 
-export const config: ConnectionOptions = {
+module.exports = {
   type: 'postgres',
   host: 'localhost',
   port: 5432,
@@ -18,5 +18,3 @@ export const config: ConnectionOptions = {
     migrationsDir: 'migrations',
   },
 };
-
-export default config;
