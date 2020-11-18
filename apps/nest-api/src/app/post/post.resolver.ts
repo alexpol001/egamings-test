@@ -1,14 +1,14 @@
 import { Inject } from '@nestjs/common';
-import { Resolver, Query, Mutation } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { ClientProxy } from '@nestjs/microservices';
 import { timeout } from 'rxjs/operators';
-import { NATS_MONGO_CLIENT } from '../shared/clients/clients.constants';
-import { Post } from './post.model';
+import { RABBIT_CLIENT } from '../shared/clients/clients.constants';
+import { DeletePostInput, Post } from './post.model';
 
 @Resolver((of) => String)
 export class PostResolver {
   constructor(
-    @Inject(NATS_MONGO_CLIENT) private readonly natsMongoClient: ClientProxy
+    @Inject(RABBIT_CLIENT) private readonly rabbitClient: ClientProxy
   ) {}
 
   @Query((returns) => String)
@@ -18,7 +18,7 @@ export class PostResolver {
 
   @Query((returns) => [Post])
   async findAllPost(): Promise<Post[]> {
-    return this.natsMongoClient
+    return this.rabbitClient
       .send('findAllPost', [])
       .pipe(timeout(5000))
       .toPromise();
@@ -26,8 +26,16 @@ export class PostResolver {
 
   @Mutation((returns) => Post)
   async createPost(): Promise<Post> {
-    return this.natsMongoClient
+    return this.rabbitClient
       .send('createPost', [])
+      .pipe(timeout(5000))
+      .toPromise();
+  }
+
+  @Mutation((returns) => Number)
+  async deletePost(@Args('data') data: DeletePostInput): Promise<number> {
+    return this.rabbitClient
+      .send('deletePost', data.ids)
       .pipe(timeout(5000))
       .toPromise();
   }

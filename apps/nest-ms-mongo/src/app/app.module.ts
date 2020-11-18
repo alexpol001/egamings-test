@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { DatabaseModule } from './database/database.module';
+import { DbModule } from '../db/db.module';
 import { PostModule } from './post/post.module';
 
 @Module({
-  imports: [DatabaseModule, PostModule],
+  imports: [DbModule, PostModule],
   controllers: [AppController],
   providers: [AppService],
 })

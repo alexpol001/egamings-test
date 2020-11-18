@@ -1,4 +1,5 @@
-import { ObjectType, Field } from '@nestjs/graphql';
+import { Type } from '@angular/core';
+import { ObjectType, Field, InputType } from '@nestjs/graphql';
 
 @ObjectType()
 export class PostDummy {
@@ -16,4 +17,10 @@ export class Post {
 
   @Field()
   content: string;
+}
+
+@InputType()
+export class DeletePostInput {
+  @Field((type) => [Number])
+  ids: number[];
 }
