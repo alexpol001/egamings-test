@@ -3,10 +3,10 @@ import { DbModule } from '../db/db.module';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PostModule } from './post/post.module';
+import { NewsModule } from './news/news.module';
 
 @Module({
-  imports: [DbModule, PostModule],
+  imports: [DbModule, NewsModule],
   controllers: [AppController],
   providers: [AppService],
 })

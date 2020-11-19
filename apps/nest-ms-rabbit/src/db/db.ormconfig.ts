@@ -1,6 +1,6 @@
 import { ConnectionOptions } from 'typeorm';
 import * as path from 'path';
-import { Post } from '../app/post/post.entity';
+import { News } from '../app/news/news.entity';
 
 const config: ConnectionOptions = {
   type: 'postgres',
@@ -9,7 +9,7 @@ const config: ConnectionOptions = {
   username: 'root',
   password: 'example',
   database: 'postgres',
-  entities: [Post],
+  entities: [News],
   synchronize: false,
   migrations: [path.join(__dirname, './migrations/*.ts')],
 };
