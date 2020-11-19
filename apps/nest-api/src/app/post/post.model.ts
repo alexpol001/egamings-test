@@ -14,12 +14,6 @@ export class Post {
 }
 
 @InputType()
-export class PostDeleteInput {
-  @Field((type) => [Number])
-  ids: number[];
-}
-
-@InputType()
 export class PostCreateInput {
   @Field()
   title: string;
@@ -40,5 +34,5 @@ export class PostUpdateInput {
 @InputType()
 export class PostWhereUniqueInput {
   @Field()
-  id: number;
+  id: string;
 }

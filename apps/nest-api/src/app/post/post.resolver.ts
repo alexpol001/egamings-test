@@ -2,7 +2,7 @@ import { Inject } from '@nestjs/common';
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { ClientProxy } from '@nestjs/microservices';
 import { timeout } from 'rxjs/operators';
-import { RABBIT_CLIENT } from '../shared/clients/clients.constants';
+import { NATS_MONGO_CLIENT, RABBIT_CLIENT } from '../shared/clients/clients.constants';
 import {
   PostCreateInput,
   Post,
@@ -13,7 +13,7 @@ import {
 @Resolver((of) => String)
 export class PostResolver {
   constructor(
-    @Inject(RABBIT_CLIENT) private readonly rabbitClient: ClientProxy
+    @Inject(NATS_MONGO_CLIENT) private readonly rabbitClient: ClientProxy
   ) {}
 
   @Query((returns) => [Post])
@@ -47,9 +47,7 @@ export class PostResolver {
   }
 
   @Mutation((returns) => Post)
-  async deletePost(
-    @Args('where') where: PostWhereUniqueInput
-  ): Promise<Post> {
+  async deletePost(@Args('where') where: PostWhereUniqueInput): Promise<Post> {
     return this.rabbitClient
       .send('deletePost', where)
       .pipe(timeout(5000))
