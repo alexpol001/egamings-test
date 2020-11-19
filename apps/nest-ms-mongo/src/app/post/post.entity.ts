@@ -1,16 +1,10 @@
-import {
-  Column,
-  Entity,
-  ObjectID,
-  ObjectIdColumn,
-  PrimaryColumn,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, ObjectIdColumn } from 'typeorm';
+import { Post as IPost } from '@egamings/shared/server/common';
 
 @Entity()
-export class Post {
+export class Post implements IPost {
   @ObjectIdColumn()
-  id: number;
+  id: string;
 
   @Column()
   title: string;

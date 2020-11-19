@@ -1,5 +1,5 @@
-export interface Post {
-  id: string;
+export interface News {
+  id: number;
 
   title: string;
 

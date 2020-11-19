@@ -1,46 +1,19 @@
-import {
-  Controller,
-  Get,
-  Inject,
-  OnApplicationBootstrap,
-} from '@nestjs/common';
+import { Controller, Get, Inject } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { debounce } from 'helpful-decorators';
 
 import { ApiData } from '@egamings/shared/common';
-import {
-  NATS_MONGO_CLIENT,
-  RABBIT_CLIENT,
-  REDIS_CLIENT,
-} from './shared/clients/clients.constants';
+import { REDIS_CLIENT } from './shared/clients/clients.constants';
 
 @Controller()
-export class AppController implements OnApplicationBootstrap {
+export class AppController {
   constructor(
-    @Inject(REDIS_CLIENT) private readonly redisClient: ClientProxy,
-    @Inject(RABBIT_CLIENT) private readonly rabbitClient: ClientProxy,
-    @Inject(NATS_MONGO_CLIENT) private readonly natsMongoClient: ClientProxy
+    @Inject(REDIS_CLIENT) private readonly redisClient: ClientProxy
   ) {}
-
-  async onApplicationBootstrap() {
-    // this.connectToClient(this.redisClient);
-    // this.connectToClient(this.rabbitClient);
-    // this.connectToClient(this.natsMongoClient);
-  }
 
   @Get()
   async getData(): Promise<ApiData> {
     return this.redisClient.send('get_data', []).toPromise();
-  }
-
-  @Get('rabbit')
-  async getRabbitData(): Promise<ApiData> {
-    return this.rabbitClient.send('get_data', []).toPromise();
-  }
-
-  @Get('mongo')
-  async getMongoData(): Promise<ApiData> {
-    return await this.natsMongoClient.send('get_data', []).toPromise();
   }
 
   @debounce(5000)

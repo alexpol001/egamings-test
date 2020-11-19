@@ -1,7 +1,8 @@
-import { Column, Entity, ObjectID, ObjectIdColumn, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { News as INews } from '@egamings/shared/server/common';
 
 @Entity()
-export class News {
+export class News implements INews {
   @PrimaryGeneratedColumn()
   id: number;
 

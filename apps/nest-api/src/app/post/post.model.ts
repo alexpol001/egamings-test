@@ -1,8 +1,8 @@
-import { Type } from '@angular/core';
 import { ObjectType, Field, InputType } from '@nestjs/graphql';
+import { Post as IPost } from '@egamings/shared/server/common';
 
 @ObjectType()
-export class Post {
+export class Post implements IPost {
   @Field()
   id: string;
 

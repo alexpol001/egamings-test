@@ -1,7 +1,8 @@
 import { ObjectType, Field, InputType } from '@nestjs/graphql';
+import { News as INews } from '@egamings/shared/server/common';
 
 @ObjectType()
-export class News {
+export class News implements INews {
   @Field()
   id: number;
 
