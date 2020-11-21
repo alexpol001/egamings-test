@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { StoreConfig, Store } from '@datorama/akita';
 
-import { GamesPagination } from '@egamings/shared/common';
+import { GamesPagination } from '@egamings/shared/domain';
 
 import { PaginationConfig } from './pagination.types';
 import { PAGINATION_CONFIG_TOKEN } from './pagination.token';

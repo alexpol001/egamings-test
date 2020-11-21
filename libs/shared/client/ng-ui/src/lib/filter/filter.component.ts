@@ -13,7 +13,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { debounce } from 'helpful-decorators';
 
-import { Merchant, Category, GamesFilters } from '@egamings/shared/common';
+import { Merchant, Category, GamesFilters } from '@egamings/shared/domain';
 
 @Component({
   selector: 'egamings-ui-filter',

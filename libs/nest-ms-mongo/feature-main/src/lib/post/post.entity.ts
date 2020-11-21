@@ -1,5 +1,5 @@
 import { Column, Entity, ObjectIdColumn } from 'typeorm';
-import { Post as IPost } from '@egamings/shared/server/common';
+import { Post as IPost } from '@egamings/shared/domain';
 
 @Entity()
 export class Post implements IPost {

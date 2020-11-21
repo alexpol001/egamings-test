@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { News as INews } from '@egamings/shared/server/common';
+import { News as INews } from '@egamings/shared/domain';
 
 @Entity()
 export class News implements INews {

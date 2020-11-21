@@ -5,7 +5,7 @@ import { Sort } from '@angular/material/sort';
 import { Order, QueryConfig, QueryEntity } from '@datorama/akita';
 import { map, mergeMap } from 'rxjs/operators';
 
-import { Game, GamesFilters } from '@egamings/shared/common';
+import { Game, GamesFilters } from '@egamings/shared/domain';
 
 import { GamesStore, GamesState } from './games.store';
 import { GamesPaginationQuery } from './pagination/pagination.query';

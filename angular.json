@@ -1,36 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "shared-common": {
-      "projectType": "library",
-      "root": "libs/shared/common",
-      "sourceRoot": "libs/shared/common/src",
-      "prefix": "egamings",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/common/tsconfig.lib.json",
-              "libs/shared/common/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/common/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/common/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "nest-api": {
       "root": "apps/nest-api",
       "sourceRoot": "apps/nest-api/src",
@@ -769,31 +739,6 @@
         }
       }
     },
-    "shared-server-common": {
-      "root": "libs/shared/server/common",
-      "sourceRoot": "libs/shared/server/common/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/server/common/tsconfig.lib.json",
-              "libs/shared/server/common/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/server/common/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/server/common/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "nest-api-feature-main": {
       "root": "libs/nest-api/feature-main",
       "sourceRoot": "libs/nest-api/feature-main/src",
@@ -903,6 +848,36 @@
             "jestConfig": "libs/nest-ms-rabbit/feature-main/jest.config.js",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "shared-domain": {
+      "projectType": "library",
+      "root": "libs/shared/domain",
+      "sourceRoot": "libs/shared/domain/src",
+      "prefix": "egamings",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/domain/tsconfig.lib.json",
+              "libs/shared/domain/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/domain/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

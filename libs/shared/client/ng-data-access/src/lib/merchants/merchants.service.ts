@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { Injectable } from '@angular/core';
 
-import { ApiMerchant, Merchant } from '@egamings/shared/common';
+import { ApiMerchant, Merchant } from '@egamings/shared/domain';
 
 import { MerchantsStore } from './merchants.store';
 

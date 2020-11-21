@@ -6,7 +6,7 @@ import {
   EntityStore,
 } from '@datorama/akita';
 
-import { Merchant } from '@egamings/shared/common';
+import { Merchant } from '@egamings/shared/domain';
 
 export interface MerchantsState extends EntityState<Merchant>, ActiveState {}
 

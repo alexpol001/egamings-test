@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
 import { GamesQuery } from '@egamings/shared/client/ng-data-access';
-import { Game } from '@egamings/shared/common';
+import { Game } from '@egamings/shared/domain';
 
 @Component({
   selector: 'egamings-main-game',

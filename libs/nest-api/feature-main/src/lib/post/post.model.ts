@@ -1,5 +1,5 @@
 import { ObjectType, Field, InputType } from '@nestjs/graphql';
-import { Post as IPost } from '@egamings/shared/server/common';
+import { Post as IPost } from '@egamings/shared/domain';
 
 @ObjectType()
 export class Post implements IPost {

@@ -13,7 +13,7 @@ import {
   GamesService,
   MerchantsQuery,
 } from '@egamings/shared/client/ng-data-access';
-import { GamesFilters, GamesOptions } from '@egamings/shared/common';
+import { GamesFilters, GamesOptions } from '@egamings/shared/domain';
 import { StepEvent } from '@egamings/shared/client/ng-ui';
 
 @Component({

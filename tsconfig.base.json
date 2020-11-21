@@ -19,7 +19,6 @@
       "@egamings/frontend/server-module": [
         "apps/frontend/src/app/app.server.module.ts"
       ],
-      "@egamings/shared/common": ["libs/shared/common/src/index.ts"],
       "@egamings/shared/client/ng-data-access": [
         "libs/shared/client/ng-data-access/src/index.ts"
       ],
@@ -36,9 +35,6 @@
         "libs/shared/client/common/src/index.ts"
       ],
       "@egamings/a-webpack": ["libs/a-webpack/src/index.ts"],
-      "@egamings/shared/server/common": [
-        "libs/shared/server/common/src/index.ts"
-      ],
       "@egamings/nest-api/feature-main": [
         "libs/nest-api/feature-main/src/index.ts"
       ],
@@ -50,7 +46,8 @@
       ],
       "@egamings/nest-ms-rabbit/feature-main": [
         "libs/nest-ms-rabbit/feature-main/src/index.ts"
-      ]
+      ],
+      "@egamings/shared/domain": ["libs/shared/domain/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
