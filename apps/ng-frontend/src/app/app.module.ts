@@ -20,8 +20,8 @@ import { AppComponent } from './app.component';
     ThemeModule.forRoot({
       themes: THEMES,
       defaultThemeId: 'light',
-      themeStorage: {
-        storage: CookieStorageService,
+      themeStorageOpts: {
+        storageService: CookieStorageService,
       },
     }),
   ],

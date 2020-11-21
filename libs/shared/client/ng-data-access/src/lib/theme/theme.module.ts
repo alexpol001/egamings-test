@@ -24,7 +24,7 @@ export class ThemeModule {
         ThemeService,
         {
           provide: StorageService,
-          useExisting: themeOpts.themeStorage.storage,
+          useExisting: themeOpts.themeStorageOpts.storageService,
         },
         { provide: THEME_OPTS_TOKEN, useValue: themeOpts },
       ],
