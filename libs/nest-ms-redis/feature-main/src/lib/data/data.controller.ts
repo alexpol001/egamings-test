@@ -1,13 +1,13 @@
 import { Controller } from '@nestjs/common';
-import { Ctx, EventPattern, MessagePattern, Payload, RedisContext } from '@nestjs/microservices';
+import { MessagePattern, Payload } from '@nestjs/microservices';
 
 import { ApiData } from '@egamings/shared/common';
 
-import { AppService } from './app.service';
+import { DataService } from './data.service';
 
 @Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+export class DataController {
+  constructor(private readonly appService: DataService) {}
 
   @MessagePattern('get_data')
   getData(@Payload() data: any): ApiData {

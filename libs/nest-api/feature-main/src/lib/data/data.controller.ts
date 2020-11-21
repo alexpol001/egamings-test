@@ -3,10 +3,10 @@ import { ClientProxy } from '@nestjs/microservices';
 import { debounce } from 'helpful-decorators';
 
 import { ApiData } from '@egamings/shared/common';
-import { REDIS_CLIENT } from './shared/clients/clients.constants';
+import { REDIS_CLIENT } from '../shared/clients/clients.constants';
 
 @Controller()
-export class AppController {
+export class DataController {
   constructor(
     @Inject(REDIS_CLIENT) private readonly redisClient: ClientProxy
   ) {}

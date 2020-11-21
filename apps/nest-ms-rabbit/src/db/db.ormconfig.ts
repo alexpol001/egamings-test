@@ -1,6 +1,6 @@
 import { ConnectionOptions } from 'typeorm';
 import * as path from 'path';
-import { News } from '../app/news/news.entity';
+import { News } from '@egamings/nest-ms-rabbit/feature-main';
 
 const config: ConnectionOptions = {
   type: 'postgres',

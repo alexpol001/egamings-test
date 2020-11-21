@@ -71,6 +71,18 @@
     },
     "shared-server-common": {
       "tags": []
+    },
+    "nest-api-feature-main": {
+      "tags": []
+    },
+    "nest-ms-mongo-feature-main": {
+      "tags": []
+    },
+    "nest-ms-redis-feature-main": {
+      "tags": []
+    },
+    "nest-ms-rabbit-feature-main": {
+      "tags": []
     }
   }
 }

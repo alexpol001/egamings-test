@@ -793,6 +793,118 @@
           }
         }
       }
+    },
+    "nest-api-feature-main": {
+      "root": "libs/nest-api/feature-main",
+      "sourceRoot": "libs/nest-api/feature-main/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nest-api/feature-main/tsconfig.lib.json",
+              "libs/nest-api/feature-main/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/nest-api/feature-main/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nest-api/feature-main/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nest-ms-mongo-feature-main": {
+      "root": "libs/nest-ms-mongo/feature-main",
+      "sourceRoot": "libs/nest-ms-mongo/feature-main/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nest-ms-mongo/feature-main/tsconfig.lib.json",
+              "libs/nest-ms-mongo/feature-main/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/nest-ms-mongo/feature-main/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nest-ms-mongo/feature-main/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nest-ms-redis-feature-main": {
+      "root": "libs/nest-ms-redis/feature-main",
+      "sourceRoot": "libs/nest-ms-redis/feature-main/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nest-ms-redis/feature-main/tsconfig.lib.json",
+              "libs/nest-ms-redis/feature-main/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/nest-ms-redis/feature-main/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nest-ms-redis/feature-main/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "nest-ms-rabbit-feature-main": {
+      "root": "libs/nest-ms-rabbit/feature-main",
+      "sourceRoot": "libs/nest-ms-rabbit/feature-main/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nest-ms-rabbit/feature-main/tsconfig.lib.json",
+              "libs/nest-ms-rabbit/feature-main/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/nest-ms-rabbit/feature-main/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nest-ms-rabbit/feature-main/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

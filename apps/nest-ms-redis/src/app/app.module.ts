@@ -1,11 +1,8 @@
 import { Module } from '@nestjs/common';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { DataModule } from '@egamings/nest-ms-redis/feature-main'
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [DataModule],
 })
 export class AppModule {}

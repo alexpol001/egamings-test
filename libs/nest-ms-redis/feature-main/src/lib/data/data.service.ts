@@ -4,7 +4,7 @@ import { join } from 'path';
 
 import { ApiData } from '@egamings/shared/common';
 @Injectable()
-export class AppService {
+export class DataService {
   getData(): ApiData {
     return JSON.parse(
       fs.readFileSync(join(__dirname, 'assets/api.json')).toString()
