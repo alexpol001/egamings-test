@@ -12,9 +12,9 @@ import {
   GamesQuery,
   GamesService,
   MerchantsQuery,
-} from '@egamings/shared/client/ng-data-access';
+} from '@egamings/shared/ng/data-access';
 import { GamesFilters, GamesOptions } from '@egamings/shared/domain';
-import { StepEvent } from '@egamings/shared/client/ng-ui';
+import { StepEvent } from '@egamings/shared/ng/ui';
 
 @Component({
   selector: 'egamings-main-home',

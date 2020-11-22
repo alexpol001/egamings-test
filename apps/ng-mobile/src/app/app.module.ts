@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { ThemeModule } from '@egamings/shared/client/ng-data-access';
-import { CommonCoreModule, THEMES } from '@egamings/shared/client/ng-environment';
+import { ThemeModule } from '@egamings/shared/ng/data-access';
+import { CommonCoreModule, THEMES } from '@egamings/shared/ng/environment';
 
 import { AppComponent } from './app.component';
 

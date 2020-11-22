@@ -1,6 +1,6 @@
 import { enableProdMode } from '@angular/core';
 
-import { environment } from '@egamings/shared/client/ng-environment';
+import { environment } from '@egamings/shared/ng/environment';
 
 if (environment.production) {
   enableProdMode();

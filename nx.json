@@ -48,18 +48,6 @@
     "ng-mobile": {
       "tags": []
     },
-    "shared-client-ng-data-access": {
-      "tags": []
-    },
-    "shared-client-ng-feature-main": {
-      "tags": []
-    },
-    "shared-client-ng-ui": {
-      "tags": []
-    },
-    "shared-client-ng-utils": {
-      "tags": []
-    },
     "a-webpack": {
       "tags": []
     },
@@ -87,7 +75,19 @@
     "shared-domain": {
       "tags": []
     },
-    "shared-client-ng-environment": {
+    "shared-ng-data-access": {
+      "tags": []
+    },
+    "shared-ng-feature-main": {
+      "tags": []
+    },
+    "shared-ng-ui": {
+      "tags": []
+    },
+    "shared-ng-environment": {
+      "tags": []
+    },
+    "shared-ng-utils": {
       "tags": []
     }
   }

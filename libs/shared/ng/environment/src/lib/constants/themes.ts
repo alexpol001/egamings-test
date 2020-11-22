@@ -1,6 +1,6 @@
 // import { Routes } from '@angular/router';
 
-// import { Theme } from '@egamings/shared/client/ng-data-access';
+// import { Theme } from '@egamings/shared/ng/data-access';
 
 // export const THEMES: Theme[] = [
 //   {

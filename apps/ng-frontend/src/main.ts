@@ -2,7 +2,7 @@ import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
-import { environment } from '@egamings/shared/client/ng-environment';
+import { environment } from '@egamings/shared/ng/environment';
 
 if (environment.production) {
   enableProdMode();

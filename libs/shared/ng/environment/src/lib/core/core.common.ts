@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { EgamingsMainComponent } from '@egamings/shared/client/ng-feature-main';
-import { Theme } from '@egamings/shared/client/ng-data-access';
+import { EgamingsMainComponent } from '@egamings/shared/ng/feature-main';
+import { Theme } from '@egamings/shared/ng/data-access';
 
 export const ROUTES: Routes = [
   {

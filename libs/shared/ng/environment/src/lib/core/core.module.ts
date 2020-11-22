@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CoreModule } from '@egamings/shared/client/ng-data-access';
-import { EgamingsMainModule } from '@egamings/shared/client/ng-feature-main';
+import { CoreModule } from '@egamings/shared/ng/data-access';
+import { EgamingsMainModule } from '@egamings/shared/ng/feature-main';
 
 import { ROUTES } from './core.common';
 import { environment } from '../environment';

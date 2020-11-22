@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CoreModule } from '@egamings/shared/client/ng-data-access';
+import { CoreModule } from '@egamings/shared/ng/data-access';
 import {
   FilterModule,
   GamesModule,
   LayoutsModule,
   PaginatorModule,
   SortingModule,
-} from '@egamings/shared/client/ng-ui';
+} from '@egamings/shared/ng/ui';
 
 import { HomeComponent } from './home/home.component';
 import { EgamingsMainComponent } from './main.component';

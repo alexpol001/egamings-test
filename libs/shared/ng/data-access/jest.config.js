@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'shared-client-ng-ui',
+  name: 'shared-ng-data-access',
   preset: '../../../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -12,7 +12,7 @@ module.exports = {
       ],
     },
   },
-  coverageDirectory: '../../../../coverage/libs/shared/client/ng-ui',
+  coverageDirectory: '../../../../coverage/libs/shared/ng/data-access',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

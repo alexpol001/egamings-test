@@ -5,9 +5,9 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import {
   CookieStorageService,
   ThemeModule,
-} from '@egamings/shared/client/ng-data-access';
+} from '@egamings/shared/ng/data-access';
 
-import { CommonCoreModule, THEMES } from '@egamings/shared/client/ng-environment';
+import { CommonCoreModule, THEMES } from '@egamings/shared/ng/environment';
 
 import { AppComponent } from './app.component';
 

@@ -24,18 +24,6 @@
       "@egamings/frontend/server-module": [
         "apps/frontend/src/app/app.server.module.ts"
       ],
-      "@egamings/shared/client/ng-data-access": [
-        "libs/shared/client/ng-data-access/src/index.ts"
-      ],
-      "@egamings/shared/client/ng-feature-main": [
-        "libs/shared/client/ng-feature-main/src/index.ts"
-      ],
-      "@egamings/shared/client/ng-ui": [
-        "libs/shared/client/ng-ui/src/index.ts"
-      ],
-      "@egamings/shared/client/ng-utils": [
-        "libs/shared/client/ng-utils/src/index.ts"
-      ],
       "@egamings/a-webpack": [
         "libs/a-webpack/src/index.ts"
       ],
@@ -54,8 +42,20 @@
       "@egamings/shared/domain": [
         "libs/shared/domain/src/index.ts"
       ],
-      "@egamings/shared/client/ng-environment": [
-        "libs/shared/client/ng-environment/src/index.ts"
+      "@egamings/shared/ng/data-access": [
+        "libs/shared/ng/data-access/src/index.ts"
+      ],
+      "@egamings/shared/ng/feature-main": [
+        "libs/shared/ng/feature-main/src/index.ts"
+      ],
+      "@egamings/shared/ng/ui": [
+        "libs/shared/ng/ui/src/index.ts"
+      ],
+      "@egamings/shared/ng/environment": [
+        "libs/shared/ng/environment/src/index.ts"
+      ],
+      "@egamings/shared/ng/utils": [
+        "libs/shared/ng/utils/src/index.ts"
       ]
     }
   },
