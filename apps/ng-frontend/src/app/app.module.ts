@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import {
@@ -7,14 +8,19 @@ import {
   ThemeModule,
 } from '@egamings/shared/ng/data-access';
 
-import { CommonCoreModule, THEMES } from '@egamings/shared/ng/environment';
+import { THEMES } from '@egamings/shared/ng/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EgamingsMainModule } from '@egamings/shared/ng/feature-main';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    CommonCoreModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule,
+    EgamingsMainModule,
     BrowserModule.withServerTransition({ appId: 'frontendApp' }),
     TransferHttpCacheModule,
     ThemeModule.forRoot({

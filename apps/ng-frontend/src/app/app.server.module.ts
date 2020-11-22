@@ -5,7 +5,7 @@ import {
   ServerTransferStateModule,
 } from '@angular/platform-server';
 
-import { CoreServerModule } from '@egamings/shared/ng/data-access';
+import { EgamingsMainServerModule } from '@egamings/shared/ng/feature-main';
 
 import { ServerStateInterceptor } from './interseptors/serverstate.interseptor';
 import { AppModule } from './app.module';
@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
     AppModule,
     ServerModule,
     ServerTransferStateModule,
-    CoreServerModule,
+    EgamingsMainServerModule,
   ],
   providers: [
     {
