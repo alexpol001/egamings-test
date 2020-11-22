@@ -115,8 +115,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "libs/shared/client/ng-environment/src/lib/environments/environment.ts",
-                  "with": "libs/shared/client/ng-environment/src/lib/environments/environment.prod.ts"
+                  "replace": "libs/shared/client/ng-environment/src/lib/environment.ts",
+                  "with": "libs/shared/client/ng-environment/src/lib/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -171,8 +171,8 @@
               "bundleDependencies": true,
               "fileReplacements": [
                 {
-                  "replace": "libs/shared/client/ng-environment/src/lib/environments/environment.ts",
-                  "with": "libs/shared/client/ng-environment/src/lib/environments/environment.prod.ts"
+                  "replace": "libs/shared/client/ng-environment/src/lib/environment.ts",
+                  "with": "libs/shared/client/ng-environment/src/lib/environment.prod.ts"
                 }
               ],
               "sourceMap": false,
@@ -353,8 +353,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "libs/shared/client/ng-environment/src/lib/environments/environment.ts",
-                  "with": "libs/shared/client/ng-environment/src/lib/environments/environment.prod.ts"
+                  "replace": "libs/shared/client/ng-environment/src/lib/environment.ts",
+                  "with": "libs/shared/client/ng-environment/src/lib/environment.prod.ts"
                 }
               ],
               "optimization": true,
