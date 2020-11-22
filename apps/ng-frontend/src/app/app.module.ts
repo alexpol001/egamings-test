@@ -7,7 +7,7 @@ import {
   ThemeModule,
 } from '@egamings/shared/client/ng-data-access';
 
-import { CommonCoreModule, THEMES } from '@egamings/shared/client/common';
+import { CommonCoreModule, THEMES } from '@egamings/shared/client/ng-environment';
 
 import { AppComponent } from './app.component';
 

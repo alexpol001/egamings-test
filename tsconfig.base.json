@@ -10,8 +10,13 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -31,10 +36,9 @@
       "@egamings/shared/client/ng-utils": [
         "libs/shared/client/ng-utils/src/index.ts"
       ],
-      "@egamings/shared/client/common": [
-        "libs/shared/client/common/src/index.ts"
+      "@egamings/a-webpack": [
+        "libs/a-webpack/src/index.ts"
       ],
-      "@egamings/a-webpack": ["libs/a-webpack/src/index.ts"],
       "@egamings/nest-api/feature-main": [
         "libs/nest-api/feature-main/src/index.ts"
       ],
@@ -47,8 +51,16 @@
       "@egamings/nest-ms-rabbit/feature-main": [
         "libs/nest-ms-rabbit/feature-main/src/index.ts"
       ],
-      "@egamings/shared/domain": ["libs/shared/domain/src/index.ts"]
+      "@egamings/shared/domain": [
+        "libs/shared/domain/src/index.ts"
+      ],
+      "@egamings/shared/client/ng-environment": [
+        "libs/shared/client/ng-environment/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
