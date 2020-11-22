@@ -7,7 +7,7 @@ import { ThemeOpts } from './theme-opts.types';
 import { THEME_OPTS_TOKEN } from './theme-opts.token';
 import { ThemeStore } from './theme.store';
 import { ThemeQuery } from './theme.query';
-import { Theme } from './theme.model';
+import { Theme } from '@egamings/shared/domain';
 import { StorageService } from '../storage/storage.types';
 
 @Injectable()

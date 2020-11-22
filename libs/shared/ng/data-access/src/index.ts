@@ -29,7 +29,6 @@ export * from './lib/storage/cookie-storage/cookie-storage.types';
 export * from './lib/storage/memory-storage/memory-storage.service';
 
 export * from './lib/theme/theme-opts.types';
-export * from './lib/theme/theme.model';
 export * from './lib/theme/theme.module';
 export * from './lib/theme/theme.query';
 export * from './lib/theme/theme.service';

@@ -1,22 +1,23 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+
 import {
   ServerModule,
   ServerTransferStateModule,
 } from '@angular/platform-server';
 
-import { EgamingsMainServerModule } from '@egamings/shared/ng/feature-main';
+import { CoreServerModule } from '@egamings/shared/ng/data-access';
 
 import { ServerStateInterceptor } from './interseptors/serverstate.interseptor';
-import { AppModule } from './app.module';
-import { AppComponent } from './app.component';
+import { ShellComponent } from './shell.component';
+import { ShellModule } from './shell.module';
 
 @NgModule({
   imports: [
-    AppModule,
+    CoreServerModule,
     ServerModule,
     ServerTransferStateModule,
-    EgamingsMainServerModule,
+    ShellModule,
   ],
   providers: [
     {
@@ -25,6 +26,6 @@ import { AppComponent } from './app.component';
       multi: true,
     },
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [ShellComponent],
 })
-export class AppServerModule {}
+export class ShellServerModule {}

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CoreModule } from '@egamings/shared/ng/data-access';
 import {
   FilterModule,
   GamesModule,
@@ -10,8 +9,6 @@ import {
   PaginatorModule,
   SortingModule,
 } from '@egamings/shared/ng/ui';
-
-import { environment } from '@egamings/shared/ng/environment';
 
 import { HomeComponent } from './home/home.component';
 import { EgamingsMainComponent } from './main.component';
@@ -32,23 +29,12 @@ const ROUTES: Routes = [
       },
     ],
   },
-  {
-    path: '**',
-    redirectTo: '',
-  },
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(ROUTES),
-    CoreModule.forRoot({
-      apiUrl: environment.apiUrl,
-      pagination: {
-        pageSize: 25,
-        pageSizeOptions: [25, 50, 75, 100],
-      },
-    }),
+    RouterModule.forChild(ROUTES),
     LayoutsModule,
     GamesModule,
     FilterModule,
@@ -56,6 +42,5 @@ const ROUTES: Routes = [
     PaginatorModule,
   ],
   declarations: [EgamingsMainComponent, GameComponent, HomeComponent],
-  exports: [EgamingsMainComponent],
 })
 export class EgamingsMainModule {}

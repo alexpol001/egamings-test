@@ -1,6 +1,8 @@
 import { Type } from '@angular/core';
+
+import { Theme } from '@egamings/shared/domain';
+
 import { StorageService } from '../storage/storage.types';
-import { Theme } from './theme.model';
 
 export interface ThemeStorageOpts {
   storageService: Type<StorageService>;

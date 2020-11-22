@@ -17,12 +17,7 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
@@ -35,15 +30,11 @@
     },
     "ng-frontend-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "ng-frontend"
-      ]
+      "implicitDependencies": ["ng-frontend"]
     },
     "ng-mobile-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "ng-mobile"
-      ]
+      "implicitDependencies": ["ng-mobile"]
     },
     "ng-mobile": {
       "tags": []
@@ -88,6 +79,12 @@
       "tags": []
     },
     "shared-ng-utils": {
+      "tags": []
+    },
+    "ng-frontend-shell": {
+      "tags": []
+    },
+    "ng-mobile-shell": {
       "tags": []
     }
   }

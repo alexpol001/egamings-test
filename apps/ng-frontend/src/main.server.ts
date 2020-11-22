@@ -1,10 +1,10 @@
 import { enableProdMode } from '@angular/core';
 
-import { environment } from '@egamings/shared/ng/environment';
+import { environment } from '@egamings/ng-frontend/shell';
 
 if (environment.production) {
   enableProdMode();
 }
 
-export { AppServerModule } from './app/app.server.module';
+export { ShellServerModule } from '@egamings/ng-frontend/shell';
 export { renderModule, renderModuleFactory } from '@angular/platform-server';
