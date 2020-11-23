@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule, ThemeModule } from '@egamings/shared/ng/data-access';
-import { environment, THEMES } from '@egamings/shared/ng/environment';
+import { environment, THEMES } from '@egamings/shared/ng/data';
 
 import { ShellComponent } from './shell.component';
 
@@ -27,6 +27,8 @@ const ROUTES: Routes = [
   declarations: [ShellComponent],
   imports: [
     CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
     CoreModule.forRoot({
       apiUrl: environment.apiUrl,
@@ -40,11 +42,6 @@ const ROUTES: Routes = [
       defaultThemeId: 'light',
     }),
   ],
-  exports: [
-    RouterModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    ShellComponent,
-  ],
+  bootstrap: [ShellComponent],
 })
 export class ShellModule {}

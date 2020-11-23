@@ -14,7 +14,9 @@
             "outputPath": "dist/apps/nest-api",
             "main": "apps/nest-api/src/main.ts",
             "tsConfig": "apps/nest-api/tsconfig.json",
-            "assets": ["apps/nest-api/src/assets"]
+            "assets": [
+              "apps/nest-api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -43,7 +45,10 @@
               "apps/nest-api/tsconfig.app.json",
               "apps/nest-api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/nest-api/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-api/**/*"
+            ]
           }
         },
         "test": {
@@ -72,7 +77,10 @@
             "customWebpackConfig": {
               "path": "libs/a-webpack/src/lib/webpack.config.ts"
             },
-            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
+            "allowedCommonJsDependencies": [
+              "helpful-decorators",
+              "lodash"
+            ],
             "outputPath": "dist/apps/ng-frontend/browser",
             "index": "apps/ng-frontend/src/index.html",
             "main": "apps/ng-frontend/src/main.ts",
@@ -82,20 +90,20 @@
             "assets": [
               "apps/ng-frontend/src/favicon.ico",
               {
-                "input": "libs/shared/ng/environment/assets",
+                "input": "libs/shared/ng/data/assets",
                 "glob": "**/*",
                 "output": "assets"
               }
             ],
             "styles": [
-              "libs/shared/ng/environment/styles/styles.scss",
+              "libs/shared/ng/data/styles/styles.scss",
               {
-                "input": "libs/shared/ng/environment/styles/themes/light-theme.scss",
+                "input": "libs/shared/ng/data/styles/themes/light-theme.scss",
                 "lazy": true,
                 "bundleName": "light-theme"
               },
               {
-                "input": "libs/shared/ng/environment/styles/themes/dark-theme.scss",
+                "input": "libs/shared/ng/data/styles/themes/dark-theme.scss",
                 "lazy": true,
                 "bundleName": "dark-theme"
               }
@@ -107,8 +115,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "libs/shared/ng/environment/src/lib/environment.ts",
-                  "with": "libs/shared/ng/environment/src/lib/environment.prod.ts"
+                  "replace": "libs/shared/ng/data/src/lib/environments/environment.ts",
+                  "with": "libs/shared/ng/data/src/lib/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -163,8 +171,8 @@
               "bundleDependencies": true,
               "fileReplacements": [
                 {
-                  "replace": "libs/shared/ng/environment/src/lib/environment.ts",
-                  "with": "libs/shared/ng/environment/src/lib/environment.prod.ts"
+                  "replace": "libs/shared/ng/data/src/lib/environments/environment.ts",
+                  "with": "libs/shared/ng/data/src/lib/environments/environment.prod.ts"
                 }
               ],
               "sourceMap": false,
@@ -198,7 +206,10 @@
               "apps/ng-frontend/tsconfig.app.json",
               "apps/ng-frontend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/ng-frontend/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-frontend/**/*"
+            ]
           }
         },
         "test": {
@@ -213,7 +224,9 @@
           "options": {
             "browserTarget": "ng-frontend:build:production",
             "serverTarget": "nest-api:build:production",
-            "routes": ["/"]
+            "routes": [
+              "/"
+            ]
           },
           "configurations": {
             "production": {}
@@ -242,8 +255,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/ng-frontend-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ng-frontend-e2e/**/*"]
+            "tsConfig": [
+              "apps/ng-frontend-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-frontend-e2e/**/*"
+            ]
           }
         }
       }
@@ -269,8 +287,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/ng-mobile-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ng-mobile-e2e/**/*"]
+            "tsConfig": [
+              "apps/ng-mobile-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-mobile-e2e/**/*"
+            ]
           }
         }
       }
@@ -292,7 +315,10 @@
             "customWebpackConfig": {
               "path": "libs/a-webpack/src/lib/webpack.config.ts"
             },
-            "allowedCommonJsDependencies": ["helpful-decorators", "lodash"],
+            "allowedCommonJsDependencies": [
+              "helpful-decorators",
+              "lodash"
+            ],
             "outputPath": "dist/apps/ng-mobile",
             "index": "apps/ng-mobile/src/index.html",
             "main": "apps/ng-mobile/src/main.ts",
@@ -302,20 +328,20 @@
             "assets": [
               "apps/ng-mobile/src/favicon.ico",
               {
-                "input": "libs/shared/ng/environment/assets",
+                "input": "libs/shared/ng/data/assets",
                 "glob": "**/*",
                 "output": "assets"
               }
             ],
             "styles": [
-              "libs/shared/ng/environment/styles/styles.scss",
+              "libs/shared/ng/data/styles/styles.scss",
               {
-                "input": "libs/shared/ng/environment/styles/themes/light-theme.scss",
+                "input": "libs/shared/ng/data/styles/themes/light-theme.scss",
                 "lazy": true,
                 "bundleName": "light-theme"
               },
               {
-                "input": "libs/shared/ng/environment/styles/themes/dark-theme.scss",
+                "input": "libs/shared/ng/data/styles/themes/dark-theme.scss",
                 "lazy": true,
                 "bundleName": "dark-theme"
               }
@@ -327,8 +353,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "libs/shared/ng/environment/src/lib/environment.ts",
-                  "with": "libs/shared/ng/environment/src/lib/environment.prod.ts"
+                  "replace": "libs/shared/ng/data/src/lib/environments/environment.ts",
+                  "with": "libs/shared/ng/data/src/lib/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -381,7 +407,10 @@
               "apps/ng-mobile/tsconfig.app.json",
               "apps/ng-mobile/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/ng-mobile/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-mobile/**/*"
+            ]
           }
         },
         "test": {
@@ -406,7 +435,10 @@
               "libs/a-webpack/tsconfig.lib.json",
               "libs/a-webpack/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/a-webpack/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/a-webpack/**/*"
+            ]
           }
         },
         "test": {
@@ -431,7 +463,9 @@
             "outputPath": "dist/apps/nest-ms-rabbit",
             "main": "apps/nest-ms-rabbit/src/main.ts",
             "tsConfig": "apps/nest-ms-rabbit/tsconfig.app.json",
-            "assets": ["apps/nest-ms-rabbit/src/assets"]
+            "assets": [
+              "apps/nest-ms-rabbit/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -460,7 +494,10 @@
               "apps/nest-ms-rabbit/tsconfig.app.json",
               "apps/nest-ms-rabbit/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/nest-ms-rabbit/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-ms-rabbit/**/*"
+            ]
           }
         },
         "test": {
@@ -485,7 +522,9 @@
             "outputPath": "dist/apps/nest-ms-redis",
             "main": "apps/nest-ms-redis/src/main.ts",
             "tsConfig": "apps/nest-ms-redis/tsconfig.app.json",
-            "assets": ["apps/nest-ms-redis/src/assets"]
+            "assets": [
+              "apps/nest-ms-redis/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -514,7 +553,10 @@
               "apps/nest-ms-redis/tsconfig.app.json",
               "apps/nest-ms-redis/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/nest-ms-redis/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-ms-redis/**/*"
+            ]
           }
         },
         "test": {
@@ -539,7 +581,9 @@
             "outputPath": "dist/apps/nest-ms-mongo",
             "main": "apps/nest-ms-mongo/src/main.ts",
             "tsConfig": "apps/nest-ms-mongo/tsconfig.app.json",
-            "assets": ["apps/nest-ms-mongo/src/assets"]
+            "assets": [
+              "apps/nest-ms-mongo/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -568,7 +612,10 @@
               "apps/nest-ms-mongo/tsconfig.app.json",
               "apps/nest-ms-mongo/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/nest-ms-mongo/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-ms-mongo/**/*"
+            ]
           }
         },
         "test": {
@@ -705,7 +752,10 @@
               "libs/shared/domain/tsconfig.lib.json",
               "libs/shared/domain/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/domain/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/domain/**/*"
+            ]
           }
         },
         "test": {
@@ -801,46 +851,16 @@
               "libs/shared/ng/ui/tsconfig.lib.json",
               "libs/shared/ng/ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ng/ui/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/ng/ui/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "shared-ng-environment": {
-      "projectType": "library",
-      "root": "libs/shared/ng/environment",
-      "sourceRoot": "libs/shared/ng/environment/src",
-      "prefix": "egamings",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/ng/environment/tsconfig.lib.json",
-              "libs/shared/ng/environment/tsconfig.spec.json"
-            ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/shared/ng/environment/**/*"
+              "!libs/shared/ng/ui/**/*"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/shared/ng/environment/jest.config.js",
+            "jestConfig": "libs/shared/ng/ui/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -864,7 +884,10 @@
               "libs/shared/ng/utils/tsconfig.lib.json",
               "libs/shared/ng/utils/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ng/utils/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ng/utils/**/*"
+            ]
           }
         },
         "test": {
@@ -894,7 +917,10 @@
               "libs/ng-frontend/shell/tsconfig.lib.json",
               "libs/ng-frontend/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ng-frontend/shell/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng-frontend/shell/**/*"
+            ]
           }
         },
         "test": {
@@ -924,13 +950,49 @@
               "libs/ng-mobile/shell/tsconfig.lib.json",
               "libs/ng-mobile/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ng-mobile/shell/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng-mobile/shell/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/ng-mobile/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-ng-data": {
+      "projectType": "library",
+      "root": "libs/shared/ng/data",
+      "sourceRoot": "libs/shared/ng/data/src",
+      "prefix": "egamings",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ng/data/tsconfig.lib.json",
+              "libs/shared/ng/data/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ng/data/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ng/data/jest.config.js",
             "passWithNoTests": true
           }
         }

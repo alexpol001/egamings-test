@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'shared-ng-environment',
+  name: 'shared-ng-data',
   preset: '../../../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -12,7 +12,7 @@ module.exports = {
       ],
     },
   },
-  coverageDirectory: '../../../../coverage/libs/shared/ng/environment',
+  coverageDirectory: '../../../../coverage/libs/shared/ng/data',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

@@ -4,7 +4,7 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { join } from 'path';
 
-import { ShellServerModule } from './src/main.server';
+import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
@@ -20,7 +20,7 @@ export function app() {
   server.engine(
     'html',
     ngExpressEngine({
-      bootstrap: ShellServerModule,
+      bootstrap: AppServerModule,
     })
   );
 

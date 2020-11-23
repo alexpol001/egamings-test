@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
-import { TransferHttpCacheModule } from '@nguniversal/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
   CookieStorageService,
   CoreModule,
   ThemeModule,
 } from '@egamings/shared/ng/data-access';
-import { environment, THEMES } from '@egamings/shared/ng/environment';
+import { environment, THEMES } from '@egamings/shared/ng/data';
 
 import { ShellComponent } from './shell.component';
 
@@ -31,12 +28,8 @@ const ROUTES: Routes = [
 @NgModule({
   declarations: [ShellComponent],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    BrowserModule.withServerTransition({ appId: 'frontendApp' }),
-    TransferHttpCacheModule,
     CommonModule,
-    RouterModule.forRoot(ROUTES),
+    RouterModule.forRoot(ROUTES, { initialNavigation: 'enabled' }),
     CoreModule.forRoot({
       apiUrl: environment.apiUrl,
       pagination: {
@@ -52,6 +45,5 @@ const ROUTES: Routes = [
       defaultThemeId: 'light',
     }),
   ],
-  bootstrap: [ShellComponent],
 })
 export class ShellModule {}
