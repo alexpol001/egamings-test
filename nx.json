@@ -60,18 +60,6 @@
     "nest-ms-mongo": {
       "tags": []
     },
-    "nest-api-feature-main": {
-      "tags": []
-    },
-    "nest-ms-mongo-feature-main": {
-      "tags": []
-    },
-    "nest-ms-redis-feature-main": {
-      "tags": []
-    },
-    "nest-ms-rabbit-feature-main": {
-      "tags": []
-    },
     "shared-domain": {
       "tags": []
     },
@@ -94,6 +82,18 @@
       "tags": []
     },
     "shared-ng-data": {
+      "tags": []
+    },
+    "nest-ms-mongo-shell": {
+      "tags": []
+    },
+    "nest-api-shell": {
+      "tags": []
+    },
+    "nest-ms-rabbit-shell": {
+      "tags": []
+    },
+    "nest-ms-redis-shell": {
       "tags": []
     }
   }

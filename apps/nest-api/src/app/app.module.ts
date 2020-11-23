@@ -5,7 +5,7 @@ import {
   GraphqlModule,
   NewsModule,
   PostModule,
-} from '@egamings/nest-api/feature-main';
+} from '@egamings/nest-api/shell';
 
 @Module({
   imports: [GraphqlModule.forRoot(PostModule, NewsModule), DataModule],

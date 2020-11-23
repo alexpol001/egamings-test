@@ -27,18 +27,6 @@
       "@egamings/a-webpack": [
         "libs/a-webpack/src/index.ts"
       ],
-      "@egamings/nest-api/feature-main": [
-        "libs/nest-api/feature-main/src/index.ts"
-      ],
-      "@egamings/nest-ms-mongo/feature-main": [
-        "libs/nest-ms-mongo/feature-main/src/index.ts"
-      ],
-      "@egamings/nest-ms-redis/feature-main": [
-        "libs/nest-ms-redis/feature-main/src/index.ts"
-      ],
-      "@egamings/nest-ms-rabbit/feature-main": [
-        "libs/nest-ms-rabbit/feature-main/src/index.ts"
-      ],
       "@egamings/shared/domain": [
         "libs/shared/domain/src/index.ts"
       ],
@@ -62,6 +50,18 @@
       ],
       "@egamings/shared/ng/data": [
         "libs/shared/ng/data/src/index.ts"
+      ],
+      "@egamings/nest-ms-mongo/shell": [
+        "libs/nest-ms-mongo/shell/src/index.ts"
+      ],
+      "@egamings/nest-api/shell": [
+        "libs/nest-api/shell/src/index.ts"
+      ],
+      "@egamings/nest-ms-rabbit/shell": [
+        "libs/nest-ms-rabbit/shell/src/index.ts"
+      ],
+      "@egamings/nest-ms-redis/shell": [
+        "libs/nest-ms-redis/shell/src/index.ts"
       ]
     }
   },

@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'nest-api-feature-main',
+  name: 'nest-ms-redis-shell',
   preset: '../../../jest.config.js',
   globals: {
     'ts-jest': {
@@ -11,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../coverage/libs/nest-api/feature-main',
+  coverageDirectory: '../../../coverage/libs/nest-ms-redis/shell',
 };
