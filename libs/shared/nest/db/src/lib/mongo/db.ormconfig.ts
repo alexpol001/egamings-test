@@ -1,6 +1,6 @@
 import { ConnectionOptions } from 'typeorm';
 import * as path from 'path';
-import { Post } from '@egamings/nest-ms-mongo/shell';
+import { Post } from '@egamings/shared/nest/domain';
 
 const config: ConnectionOptions = {
   type: 'mongodb',

@@ -1,1 +1,1 @@
-export * from './lib/data/data.module';
+export * from './lib/shell.module';

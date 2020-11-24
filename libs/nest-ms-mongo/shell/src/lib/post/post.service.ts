@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+
+import { Post } from '@egamings/shared/nest/domain';
+
 import {
   PostCreateInputDto,
   PostUpdateInputDto,
   PostWhereUniqueInputDto,
 } from './post.dto';
-import { Post } from './post.entity';
 
 @Injectable()
 export class PostService {

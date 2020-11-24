@@ -10,13 +10,8 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -24,52 +19,32 @@
       "@egamings/frontend/server-module": [
         "apps/frontend/src/app/app.server.module.ts"
       ],
-      "@egamings/a-webpack": [
-        "libs/a-webpack/src/index.ts"
-      ],
-      "@egamings/shared/domain": [
-        "libs/shared/domain/src/index.ts"
-      ],
+      "@egamings/a-webpack": ["libs/a-webpack/src/index.ts"],
+      "@egamings/shared/domain": ["libs/shared/domain/src/index.ts"],
       "@egamings/shared/ng/data-access": [
         "libs/shared/ng/data-access/src/index.ts"
       ],
       "@egamings/shared/ng/feature-main": [
         "libs/shared/ng/feature-main/src/index.ts"
       ],
-      "@egamings/shared/ng/ui": [
-        "libs/shared/ng/ui/src/index.ts"
-      ],
-      "@egamings/shared/ng/utils": [
-        "libs/shared/ng/utils/src/index.ts"
-      ],
-      "@egamings/ng-frontend/shell": [
-        "libs/ng-frontend/shell/src/index.ts"
-      ],
-      "@egamings/ng-mobile/shell": [
-        "libs/ng-mobile/shell/src/index.ts"
-      ],
-      "@egamings/shared/ng/data": [
-        "libs/shared/ng/data/src/index.ts"
-      ],
+      "@egamings/shared/ng/ui": ["libs/shared/ng/ui/src/index.ts"],
+      "@egamings/shared/ng/utils": ["libs/shared/ng/utils/src/index.ts"],
+      "@egamings/ng-frontend/shell": ["libs/ng-frontend/shell/src/index.ts"],
+      "@egamings/ng-mobile/shell": ["libs/ng-mobile/shell/src/index.ts"],
+      "@egamings/shared/ng/data": ["libs/shared/ng/data/src/index.ts"],
       "@egamings/nest-ms-mongo/shell": [
         "libs/nest-ms-mongo/shell/src/index.ts"
       ],
-      "@egamings/nest-api/shell": [
-        "libs/nest-api/shell/src/index.ts"
-      ],
+      "@egamings/nest-api/shell": ["libs/nest-api/shell/src/index.ts"],
       "@egamings/nest-ms-rabbit/shell": [
         "libs/nest-ms-rabbit/shell/src/index.ts"
       ],
       "@egamings/nest-ms-redis/shell": [
         "libs/nest-ms-redis/shell/src/index.ts"
       ],
-      "@egamings/shared/nest/db": [
-        "libs/shared/nest/db/src/index.ts"
-      ]
+      "@egamings/shared/nest/db": ["libs/shared/nest/db/src/index.ts"],
+      "@egamings/shared/nest/domain": ["libs/shared/nest/domain/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

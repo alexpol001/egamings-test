@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 
-import { DataModule } from '@egamings/nest-ms-redis/shell'
+import { ShellModule } from '@egamings/nest-ms-redis/shell';
 
 @Module({
-  imports: [DataModule],
+  imports: [ShellModule],
 })
 export class AppModule {}

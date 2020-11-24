@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+
+import { News } from '@egamings/shared/nest/domain';
+
 import {
   NewsCreateInputDto,
   NewsUpdateInputDto,
   NewsWhereUniqueInputDto,
 } from './news.dto';
-import { News } from './news.entity';
 
 @Injectable()
 export class NewsService {

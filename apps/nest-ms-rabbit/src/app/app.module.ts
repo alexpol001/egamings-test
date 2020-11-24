@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
-import { DbModule } from '../db/db.module';
 
-import { NewsModule } from '@egamings/nest-ms-rabbit/shell';
+import { ShellModule } from '@egamings/nest-ms-rabbit/shell';
 
 @Module({
-  imports: [DbModule, NewsModule],
+  imports: [ShellModule],
 })
 export class AppModule {}

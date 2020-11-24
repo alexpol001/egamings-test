@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
 
-import { DbModule } from '../db/db.module';
-import { PostModule } from '@egamings/nest-ms-mongo/shell';
+import { ShellModule } from '@egamings/nest-ms-mongo/shell';
 
 @Module({
-  imports: [DbModule, PostModule],
+  imports: [ShellModule],
 })
 export class AppModule {}
