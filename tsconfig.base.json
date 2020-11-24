@@ -62,6 +62,9 @@
       ],
       "@egamings/nest-ms-redis/shell": [
         "libs/nest-ms-redis/shell/src/index.ts"
+      ],
+      "@egamings/shared/nest/db": [
+        "libs/shared/nest/db/src/index.ts"
       ]
     }
   },

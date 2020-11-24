@@ -1002,6 +1002,34 @@
           }
         }
       }
+    },
+    "shared-nest-db": {
+      "root": "libs/shared/nest/db",
+      "sourceRoot": "libs/shared/nest/db/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/nest/db/tsconfig.lib.json",
+              "libs/shared/nest/db/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/nest/db/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/nest/db/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

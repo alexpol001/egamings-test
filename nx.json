@@ -95,6 +95,9 @@
     },
     "nest-ms-redis-shell": {
       "tags": []
+    },
+    "shared-nest-db": {
+      "tags": []
     }
   }
 }
