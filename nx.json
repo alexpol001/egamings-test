@@ -114,9 +114,6 @@
     "nest-ms-redis-services": {
       "tags": []
     },
-    "nest-api-services": {
-      "tags": []
-    },
     "nest-api-ui": {
       "tags": []
     }
