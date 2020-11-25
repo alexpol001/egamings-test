@@ -107,6 +107,12 @@
     },
     "nest-ms-rabbit-ui": {
       "tags": []
+    },
+    "nest-ms-redis-ui": {
+      "tags": []
+    },
+    "nest-ms-redis-services": {
+      "tags": []
     }
   }
 }

@@ -52,7 +52,11 @@
       "@egamings/nest-ms-rabbit/services": [
         "libs/nest-ms-rabbit/services/src/index.ts"
       ],
-      "@egamings/nest-ms-rabbit/ui": ["libs/nest-ms-rabbit/ui/src/index.ts"]
+      "@egamings/nest-ms-rabbit/ui": ["libs/nest-ms-rabbit/ui/src/index.ts"],
+      "@egamings/nest-ms-redis/ui": ["libs/nest-ms-redis/ui/src/index.ts"],
+      "@egamings/nest-ms-redis/services": [
+        "libs/nest-ms-redis/services/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
