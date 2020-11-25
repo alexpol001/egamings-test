@@ -1,1 +1,1 @@
-export * from './lib/nest-ms-rabbit-ui.module';
+export * from './lib/news/news.module';

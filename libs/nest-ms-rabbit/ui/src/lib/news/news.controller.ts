@@ -1,13 +1,13 @@
 import { Controller } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 
+import { NewsService } from '@egamings/nest-ms-rabbit/services';
+
 import {
   NewsCreateInputDto,
   NewsUpdateInputDto,
   NewsWhereUniqueInputDto,
-} from './news.dto';
-
-import { NewsService } from './news.service';
+} from '@egamings/shared/nest/domain';
 
 @Controller()
 export class NewsController {

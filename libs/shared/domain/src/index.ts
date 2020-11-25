@@ -1,3 +1,4 @@
+export * from './lib/dto/news.dto';
 export * from './lib/dto/post.dto';
 
 export * from './lib/models/api-data.model';
