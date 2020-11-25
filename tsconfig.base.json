@@ -43,7 +43,11 @@
         "libs/nest-ms-redis/shell/src/index.ts"
       ],
       "@egamings/shared/nest/db": ["libs/shared/nest/db/src/index.ts"],
-      "@egamings/shared/nest/domain": ["libs/shared/nest/domain/src/index.ts"]
+      "@egamings/shared/nest/domain": ["libs/shared/nest/domain/src/index.ts"],
+      "@egamings/nest-ms-mongo/services": [
+        "libs/nest-ms-mongo/services/src/index.ts"
+      ],
+      "@egamings/nest-ms-mongo/ui": ["libs/nest-ms-mongo/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,6 +1,6 @@
 import { ConnectionOptions } from 'typeorm';
 import * as path from 'path';
-import { Post } from '@egamings/shared/nest/domain';
+import { PostEntity } from '@egamings/shared/nest/domain';
 
 const config: ConnectionOptions = {
   type: 'mongodb',
@@ -10,7 +10,7 @@ const config: ConnectionOptions = {
   authSource: 'admin',
   username: 'root',
   password: 'example',
-  entities: [Post],
+  entities: [PostEntity],
   synchronize: false,
   migrations: [path.join(__dirname, './migrations/*.ts')],
 };

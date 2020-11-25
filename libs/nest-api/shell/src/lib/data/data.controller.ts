@@ -2,7 +2,7 @@ import { Controller, Get, Inject } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { debounce } from 'helpful-decorators';
 
-import { ApiData } from '@egamings/shared/domain';
+import { ApiData } from '@egamings/shared/nest/domain';
 import { REDIS_CLIENT } from '../shared/clients/clients.constants';
 
 @Controller()

@@ -1,8 +1,10 @@
 import { Column, Entity, ObjectIdColumn } from 'typeorm';
 import { Post as IPost } from '@egamings/shared/domain';
 
-@Entity()
-export class Post implements IPost {
+@Entity({
+  name: 'post',
+})
+export class PostEntity implements IPost {
   @ObjectIdColumn()
   id: string;
 

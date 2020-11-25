@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { News } from '@egamings/shared/nest/domain';
+import { NewsEntity } from '@egamings/shared/nest/domain';
 
 import {
   NewsCreateInputDto,
@@ -13,11 +13,11 @@ import {
 @Injectable()
 export class NewsService {
   constructor(
-    @InjectRepository(News)
-    private readonly newsRepository: Repository<News>
+    @InjectRepository(NewsEntity)
+    private readonly newsRepository: Repository<NewsEntity>
   ) {}
 
-  async findAll(): Promise<News[]> {
+  async findAll(): Promise<NewsEntity[]> {
     return this.newsRepository.find();
   }
 
@@ -27,7 +27,7 @@ export class NewsService {
     );
   }
 
-  async update(newsUpdateInputDto: NewsUpdateInputDto): Promise<News> {
+  async update(newsUpdateInputDto: NewsUpdateInputDto): Promise<NewsEntity> {
     const id = newsUpdateInputDto.where.id;
 
     await this.newsRepository.update(id, newsUpdateInputDto.data);
@@ -36,7 +36,7 @@ export class NewsService {
 
   async delete(
     newsWhereUniqueInputDto: NewsWhereUniqueInputDto
-  ): Promise<News> {
+  ): Promise<NewsEntity> {
     const news = await this.newsRepository.findOneOrFail(
       newsWhereUniqueInputDto.id
     );

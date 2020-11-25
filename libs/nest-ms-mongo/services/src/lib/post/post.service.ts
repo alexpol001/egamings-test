@@ -2,22 +2,22 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { Post } from '@egamings/shared/nest/domain';
+import { PostEntity } from '@egamings/shared/nest/domain';
 
 import {
   PostCreateInputDto,
   PostUpdateInputDto,
   PostWhereUniqueInputDto,
-} from './post.dto';
+} from '@egamings/shared/nest/domain';
 
 @Injectable()
 export class PostService {
   constructor(
-    @InjectRepository(Post)
-    private readonly postRepository: Repository<Post>
+    @InjectRepository(PostEntity)
+    private readonly postRepository: Repository<PostEntity>
   ) {}
 
-  async findAll(): Promise<Post[]> {
+  async findAll(): Promise<PostEntity[]> {
     return this.postRepository.find();
   }
 
@@ -27,7 +27,7 @@ export class PostService {
     );
   }
 
-  async update(postUpdateInputDto: PostUpdateInputDto): Promise<Post> {
+  async update(postUpdateInputDto: PostUpdateInputDto): Promise<PostEntity> {
     const id = postUpdateInputDto.where.id;
 
     await this.postRepository.update(id, postUpdateInputDto.data);
@@ -36,7 +36,7 @@ export class PostService {
 
   async delete(
     postWhereUniqueInputDto: PostWhereUniqueInputDto
-  ): Promise<Post> {
+  ): Promise<PostEntity> {
     const post = await this.postRepository.findOneOrFail(
       postWhereUniqueInputDto.id
     );

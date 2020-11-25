@@ -92,6 +92,12 @@
     },
     "shared-nest-domain": {
       "tags": []
+    },
+    "nest-ms-mongo-services": {
+      "tags": []
+    },
+    "nest-ms-mongo-ui": {
+      "tags": []
     }
   }
 }

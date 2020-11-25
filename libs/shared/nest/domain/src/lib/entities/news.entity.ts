@@ -1,8 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { News as INews } from '@egamings/shared/domain';
 
-@Entity()
-export class News implements INews {
+@Entity({
+  name: "news"
+})
+export class NewsEntity implements INews {
   @PrimaryGeneratedColumn()
   id: number;
 

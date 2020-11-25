@@ -1,13 +1,13 @@
 import { Controller } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 
+import { PostService } from '@egamings/nest-ms-mongo/services';
+
 import {
   PostCreateInputDto,
   PostUpdateInputDto,
   PostWhereUniqueInputDto,
-} from './post.dto';
-
-import { PostService } from './post.service';
+} from '@egamings/shared/nest/domain';
 
 @Controller()
 export class PostController {
