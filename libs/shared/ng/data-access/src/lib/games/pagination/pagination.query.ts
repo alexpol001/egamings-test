@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
 
-import { Game, GamesPagination } from '@egamings/shared/domain';
+import { Game, GamesPagination } from '@egamings/shared/ng/domain';
 
 import * as _ from 'lodash';
 

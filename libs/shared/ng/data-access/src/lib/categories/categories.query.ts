@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Order, QueryConfig, QueryEntity } from '@datorama/akita';
 
-import { Category } from '@egamings/shared/domain';
+import { Category } from '@egamings/shared/ng/domain';
 
 import { CategoriesStore, CategoriesState } from './categories.store';
 

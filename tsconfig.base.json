@@ -47,7 +47,8 @@
       "@egamings/nest-ms-mongo/services": [
         "libs/nest-ms-mongo/services/src/index.ts"
       ],
-      "@egamings/nest-ms-mongo/ui": ["libs/nest-ms-mongo/ui/src/index.ts"]
+      "@egamings/nest-ms-mongo/ui": ["libs/nest-ms-mongo/ui/src/index.ts"],
+      "@egamings/shared/ng/domain": ["libs/shared/ng/domain/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

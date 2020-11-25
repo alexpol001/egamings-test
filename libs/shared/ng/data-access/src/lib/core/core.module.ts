@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-import { ApiData } from '@egamings/shared/domain';
+import { ApiData } from '@egamings/shared/ng/domain';
 
 import { PAGINATION_CONFIG_TOKEN } from '../games/pagination/pagination.token';
 import { StorageModule } from '../storage/storage.module';

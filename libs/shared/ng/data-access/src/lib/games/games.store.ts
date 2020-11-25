@@ -7,7 +7,7 @@ import {
   MultiActiveState,
 } from '@datorama/akita';
 
-import { Game } from '@egamings/shared/domain';
+import { Game } from '@egamings/shared/ng/domain';
 
 const initialState = { active: [] };
 

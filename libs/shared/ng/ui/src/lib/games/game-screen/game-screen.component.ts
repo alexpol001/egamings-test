@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Game } from '@egamings/shared/domain';
+import { Game } from '@egamings/shared/ng/domain';
 
 @Component({
   selector: 'egamings-ui-game-screen',

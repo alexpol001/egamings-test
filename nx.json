@@ -98,6 +98,9 @@
     },
     "nest-ms-mongo-ui": {
       "tags": []
+    },
+    "shared-ng-domain": {
+      "tags": []
     }
   }
 }

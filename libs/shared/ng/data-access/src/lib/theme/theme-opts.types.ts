@@ -1,6 +1,6 @@
 import { Type } from '@angular/core';
 
-import { Theme } from '@egamings/shared/domain';
+import { Theme } from '@egamings/shared/ng/domain';
 
 import { StorageService } from '../storage/storage.types';
 

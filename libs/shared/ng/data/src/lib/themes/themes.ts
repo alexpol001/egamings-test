@@ -1,4 +1,4 @@
-import { Theme } from '@egamings/shared/domain';
+import { Theme } from '@egamings/shared/ng/domain';
 
 export const THEMES: Theme[] = [
   {

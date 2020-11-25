@@ -1028,6 +1028,36 @@
           }
         }
       }
+    },
+    "shared-ng-domain": {
+      "projectType": "library",
+      "root": "libs/shared/ng/domain",
+      "sourceRoot": "libs/shared/ng/domain/src",
+      "prefix": "egamings",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ng/domain/tsconfig.lib.json",
+              "libs/shared/ng/domain/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/ng/domain/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ng/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
