@@ -101,6 +101,12 @@
     },
     "shared-ng-domain": {
       "tags": []
+    },
+    "nest-ms-rabbit-services": {
+      "tags": []
+    },
+    "nest-ms-rabbit-ui": {
+      "tags": []
     }
   }
 }

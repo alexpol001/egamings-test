@@ -48,7 +48,11 @@
         "libs/nest-ms-mongo/services/src/index.ts"
       ],
       "@egamings/nest-ms-mongo/ui": ["libs/nest-ms-mongo/ui/src/index.ts"],
-      "@egamings/shared/ng/domain": ["libs/shared/ng/domain/src/index.ts"]
+      "@egamings/shared/ng/domain": ["libs/shared/ng/domain/src/index.ts"],
+      "@egamings/nest-ms-rabbit/services": [
+        "libs/nest-ms-rabbit/services/src/index.ts"
+      ],
+      "@egamings/nest-ms-rabbit/ui": ["libs/nest-ms-rabbit/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
