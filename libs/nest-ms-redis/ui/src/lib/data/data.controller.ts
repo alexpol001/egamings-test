@@ -3,7 +3,7 @@ import { MessagePattern, Payload } from '@nestjs/microservices';
 
 import { ApiData } from '@egamings/shared/nest/domain';
 
-import { DataService } from './data.service';
+import { DataService } from '@egamings/nest-ms-redis/services';
 
 @Controller()
 export class DataController {

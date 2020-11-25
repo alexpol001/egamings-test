@@ -1,1 +1,1 @@
-export * from './lib/nest-ms-redis-ui.module';
+export * from './lib/data/data.module';
