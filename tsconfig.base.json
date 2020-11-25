@@ -56,7 +56,9 @@
       "@egamings/nest-ms-redis/ui": ["libs/nest-ms-redis/ui/src/index.ts"],
       "@egamings/nest-ms-redis/services": [
         "libs/nest-ms-redis/services/src/index.ts"
-      ]
+      ],
+      "@egamings/nest-api/services": ["libs/nest-api/services/src/index.ts"],
+      "@egamings/nest-api/ui": ["libs/nest-api/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
