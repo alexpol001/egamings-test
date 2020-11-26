@@ -6,7 +6,7 @@ import {
   CookieStorageService,
   CoreModule,
   ThemeModule,
-} from '@egamings/shared/ng/data-access';
+} from '@egamings/shared/ng/services';
 import { environment, THEMES } from '@egamings/shared/ng/data';
 
 import { ShellComponent } from './shell.component';

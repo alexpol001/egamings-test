@@ -12,7 +12,7 @@ import {
   GamesQuery,
   GamesService,
   MerchantsQuery,
-} from '@egamings/shared/ng/data-access';
+} from '@egamings/shared/ng/services';
 import { GamesFilters, GamesOptions } from '@egamings/shared/ng/domain';
 import { StepEvent } from '@egamings/shared/ng/ui';
 

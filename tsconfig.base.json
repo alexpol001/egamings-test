@@ -27,17 +27,11 @@
       "@egamings/shared/domain": [
         "libs/shared/domain/src/index.ts"
       ],
-      "@egamings/shared/ng/data-access": [
-        "libs/shared/ng/data-access/src/index.ts"
-      ],
       "@egamings/shared/ng/feature-main": [
         "libs/shared/ng/feature-main/src/index.ts"
       ],
       "@egamings/shared/ng/ui": [
         "libs/shared/ng/ui/src/index.ts"
-      ],
-      "@egamings/shared/ng/utils": [
-        "libs/shared/ng/utils/src/index.ts"
       ],
       "@egamings/ng-frontend/shell": [
         "libs/ng-frontend/shell/src/index.ts"
@@ -92,6 +86,9 @@
       ],
       "@egamings/extra/webpack": [
         "libs/extra/webpack/src/index.ts"
+      ],
+      "@egamings/shared/ng/services": [
+        "libs/shared/ng/services/src/index.ts"
       ]
     }
   },

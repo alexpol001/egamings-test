@@ -60,16 +60,10 @@
     "shared-domain": {
       "tags": []
     },
-    "shared-ng-data-access": {
-      "tags": []
-    },
     "shared-ng-feature-main": {
       "tags": []
     },
     "shared-ng-ui": {
-      "tags": []
-    },
-    "shared-ng-utils": {
       "tags": []
     },
     "ng-frontend-shell": {
@@ -124,6 +118,9 @@
       "tags": []
     },
     "extra-webpack": {
+      "tags": []
+    },
+    "shared-ng-services": {
       "tags": []
     }
   }

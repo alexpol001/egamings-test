@@ -21,6 +21,8 @@ export * from './lib/merchants/merchants.module';
 export * from './lib/merchants/merchants.query';
 export * from './lib/merchants/merchants.service';
 
+export * from './lib/renderer/renderer.service';
+
 export * from './lib/storage/storage.module';
 export * from './lib/storage/storage.server.module';
 export * from './lib/storage/storage.types';

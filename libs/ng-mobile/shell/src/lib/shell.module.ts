@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CoreModule, ThemeModule } from '@egamings/shared/ng/data-access';
+import { CoreModule, ThemeModule } from '@egamings/shared/ng/services';
 import { environment, THEMES } from '@egamings/shared/ng/data';
 
 import { ShellComponent } from './shell.component';

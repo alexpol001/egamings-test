@@ -632,39 +632,6 @@
         }
       }
     },
-    "shared-ng-data-access": {
-      "projectType": "library",
-      "root": "libs/shared/ng/data-access",
-      "sourceRoot": "libs/shared/ng/data-access/src",
-      "prefix": "egamings",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/ng/data-access/tsconfig.lib.json",
-              "libs/shared/ng/data-access/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/ng/data-access/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/ng/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "shared-ng-feature-main": {
       "projectType": "library",
       "root": "libs/shared/ng/feature-main",
@@ -721,39 +688,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/ng/ui/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "shared-ng-utils": {
-      "projectType": "library",
-      "root": "libs/shared/ng/utils",
-      "sourceRoot": "libs/shared/ng/utils/src",
-      "prefix": "egamings",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/ng/utils/tsconfig.lib.json",
-              "libs/shared/ng/utils/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/ng/utils/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/ng/utils/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -1285,6 +1219,39 @@
             "jestConfig": "libs/extra/webpack/jest.config.js",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "shared-ng-services": {
+      "projectType": "library",
+      "root": "libs/shared/ng/services",
+      "sourceRoot": "libs/shared/ng/services/src",
+      "prefix": "egamings",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ng/services/tsconfig.lib.json",
+              "libs/shared/ng/services/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ng/services/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ng/services/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-import { GamesQuery, ThemeQuery, ThemeService } from '@egamings/shared/ng/data-access';
+import { GamesQuery, ThemeQuery, ThemeService } from '@egamings/shared/ng/services';
 
 @Component({
   selector: 'egamings-main',

@@ -1,14 +1,14 @@
 import { Injectable, Inject, PLATFORM_ID, Optional } from '@angular/core';
 import { DOCUMENT, isPlatformServer } from '@angular/common';
 
-import { RendererService } from '@egamings/shared/ng/utils';
+import { Theme } from '@egamings/shared/ng/domain';
 
 import { ThemeOpts } from './theme-opts.types';
 import { THEME_OPTS_TOKEN } from './theme-opts.token';
 import { ThemeStore } from './theme.store';
 import { ThemeQuery } from './theme.query';
-import { Theme } from '@egamings/shared/ng/domain';
 import { StorageService } from '../storage/storage.types';
+import { RendererService } from '../renderer/renderer.service';
 
 @Injectable()
 export class ThemeService {
