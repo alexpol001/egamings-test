@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { PostEntity } from '@egamings/shared/nest/domain';
+import { PostEntity } from '@egamings/shared/nest/db-mongo';
 
 import { PostService } from './post.service';
 

@@ -1,7 +1,7 @@
 import { Injectable, Inject, PLATFORM_ID, Optional } from '@angular/core';
 import { DOCUMENT, isPlatformServer } from '@angular/common';
 
-import { Theme } from '@egamings/shared/ng/domain';
+import { Theme } from '@egamings/shared/domain';
 
 import { ThemeOpts } from './theme-opts.types';
 import { THEME_OPTS_TOKEN } from './theme-opts.token';

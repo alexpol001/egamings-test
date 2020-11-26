@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { NewsEntity } from '@egamings/shared/nest/domain';
+import { NewsEntity } from '@egamings/shared/nest/db-postgres';
 
 import { NewsService } from './news.service';
 

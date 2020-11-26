@@ -2,13 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { PostEntity } from '@egamings/shared/nest/domain';
+import { PostEntity } from '@egamings/shared/nest/db-mongo';
 
 import {
   PostCreateInputDto,
   PostUpdateInputDto,
   PostWhereUniqueInputDto,
-} from '@egamings/shared/nest/domain';
+} from '@egamings/shared/domain';
 
 @Injectable()
 export class PostService {

@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'shared-nest-db',
+  name: 'shared-nest-db-mongo',
   preset: '../../../../jest.config.js',
   globals: {
     'ts-jest': {
@@ -11,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../../coverage/libs/shared/nest/db',
+  coverageDirectory: '../../../../coverage/libs/shared/nest/db-mongo',
 };

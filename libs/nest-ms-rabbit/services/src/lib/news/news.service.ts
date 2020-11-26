@@ -3,11 +3,12 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import {
-  NewsEntity,
   NewsCreateInputDto,
   NewsUpdateInputDto,
   NewsWhereUniqueInputDto,
-} from '@egamings/shared/nest/domain';
+} from '@egamings/shared/domain';
+
+import { NewsEntity } from '@egamings/shared/nest/db-postgres';
 
 @Injectable()
 export class NewsService {

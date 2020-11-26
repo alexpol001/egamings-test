@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import * as fs from 'fs';
 import { join } from 'path';
 
-import { ApiData } from '@egamings/shared/nest/domain';
+import { ApiData } from '@egamings/shared/domain';
 @Injectable()
 export class DataService {
   getData(): ApiData {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Order, QueryConfig, QueryEntity } from '@datorama/akita';
 
-import { Merchant } from '@egamings/shared/ng/domain';
+import { Merchant } from '@egamings/shared/domain';
 
 import { MerchantsStore, MerchantsState } from './merchants.store';
 

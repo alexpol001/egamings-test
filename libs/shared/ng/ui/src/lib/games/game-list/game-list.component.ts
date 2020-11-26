@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ID } from '@datorama/akita';
 
-import { Game } from '@egamings/shared/ng/domain';
+import { Game } from '@egamings/shared/domain';
 
 import { StepEvent } from './game-list.types';
 

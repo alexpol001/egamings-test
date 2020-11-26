@@ -7,7 +7,7 @@ import {
   EntityStore,
 } from '@datorama/akita';
 
-import { Category } from '@egamings/shared/ng/domain';
+import { Category } from '@egamings/shared/domain';
 
 export interface CategoriesState extends EntityState<Category>, ActiveState {}
 

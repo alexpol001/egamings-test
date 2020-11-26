@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { ApiCategory, Category } from '@egamings/shared/ng/domain';
+import { ApiCategory, Category } from '@egamings/shared/domain';
 
 import { CategoriesStore } from './categories.store';
 

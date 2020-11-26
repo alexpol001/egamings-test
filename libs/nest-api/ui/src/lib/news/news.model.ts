@@ -1,5 +1,5 @@
 import { ObjectType, Field, InputType } from '@nestjs/graphql';
-import { News as INews } from '@egamings/shared/nest/domain';
+import { News as INews } from '@egamings/shared/domain';
 
 @ObjectType()
 export class News implements INews {

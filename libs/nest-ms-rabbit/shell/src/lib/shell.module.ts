@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 
-import { DbPostgresModule } from '@egamings/shared/nest/db';
+import { DbPostgresModule } from '@egamings/shared/nest/db-postgres';
 
 import { NewsModule } from '@egamings/nest-ms-rabbit/ui';
 

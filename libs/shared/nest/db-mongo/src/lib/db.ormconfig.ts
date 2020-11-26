@@ -1,15 +1,17 @@
 import { ConnectionOptions } from 'typeorm';
 import * as path from 'path';
-import { NewsEntity } from '@egamings/shared/nest/domain';
+
+import { PostEntity } from './entities/post.entity';
 
 const config: ConnectionOptions = {
-  type: 'postgres',
+  type: 'mongodb',
   host: 'localhost',
-  port: 5432,
+  database: 'mongo',
+  port: 27017,
+  authSource: 'admin',
   username: 'root',
   password: 'example',
-  database: 'postgres',
-  entities: [NewsEntity],
+  entities: [PostEntity],
   synchronize: false,
   migrations: [path.join(__dirname, './migrations/*.ts')],
 };

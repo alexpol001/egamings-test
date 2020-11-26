@@ -17,12 +17,7 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
@@ -35,15 +30,11 @@
     },
     "ng-frontend-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "ng-frontend"
-      ]
+      "implicitDependencies": ["ng-frontend"]
     },
     "ng-mobile-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "ng-mobile"
-      ]
+      "implicitDependencies": ["ng-mobile"]
     },
     "ng-mobile": {
       "tags": []
@@ -87,19 +78,10 @@
     "nest-ms-redis-shell": {
       "tags": []
     },
-    "shared-nest-db": {
-      "tags": []
-    },
-    "shared-nest-domain": {
-      "tags": []
-    },
     "nest-ms-mongo-services": {
       "tags": []
     },
     "nest-ms-mongo-ui": {
-      "tags": []
-    },
-    "shared-ng-domain": {
       "tags": []
     },
     "nest-ms-rabbit-services": {
@@ -121,6 +103,12 @@
       "tags": []
     },
     "shared-ng-services": {
+      "tags": []
+    },
+    "shared-nest-db-mongo": {
+      "tags": []
+    },
+    "shared-nest-db-postgres": {
       "tags": []
     }
   }

@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'shared-nest-domain',
+  name: 'shared-nest-db-postgres',
   preset: '../../../../jest.config.js',
   globals: {
     'ts-jest': {
@@ -11,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../../coverage/libs/shared/nest/domain',
+  coverageDirectory: '../../../../coverage/libs/shared/nest/db-postgres',
 };

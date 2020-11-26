@@ -7,7 +7,7 @@ import {
   PostCreateInputDto,
   PostUpdateInputDto,
   PostWhereUniqueInputDto,
-} from '@egamings/shared/nest/domain';
+} from '@egamings/shared/domain';
 
 @Controller()
 export class PostController {

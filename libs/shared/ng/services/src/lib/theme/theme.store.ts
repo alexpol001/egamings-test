@@ -7,7 +7,7 @@ import {
   EntityStore,
 } from '@datorama/akita';
 
-import { Theme } from '@egamings/shared/ng/domain';
+import { Theme } from '@egamings/shared/domain';
 
 export interface ThemeState extends EntityState<Theme>, ActiveState {}
 

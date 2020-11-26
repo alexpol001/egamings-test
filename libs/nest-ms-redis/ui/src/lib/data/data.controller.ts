@@ -1,7 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 
-import { ApiData } from '@egamings/shared/nest/domain';
+import { ApiData } from '@egamings/shared/domain';
 
 import { DataService } from '@egamings/nest-ms-redis/services';
 

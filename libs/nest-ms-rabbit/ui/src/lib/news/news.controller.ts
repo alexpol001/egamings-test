@@ -7,7 +7,7 @@ import {
   NewsCreateInputDto,
   NewsUpdateInputDto,
   NewsWhereUniqueInputDto,
-} from '@egamings/shared/nest/domain';
+} from '@egamings/shared/domain';
 
 @Controller()
 export class NewsController {
