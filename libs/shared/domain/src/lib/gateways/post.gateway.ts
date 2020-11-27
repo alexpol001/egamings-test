@@ -9,9 +9,9 @@ import { Post } from '../models/post.model';
 export interface PostGateway {
   findAllPost(): Promise<Post[]>;
 
-  createPost(args: PostCreateArgs): Promise<Post>;
+  createPost(data: PostCreateArgs): Promise<Post>;
 
   updatePost(args: PostUpdateArgs): Promise<Post>;
 
-  deletePost(args: PostWhereUniqueArgs): Promise<Post>;
+  deletePost(where: PostWhereUniqueArgs): Promise<Post>;
 }

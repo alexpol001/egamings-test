@@ -2,16 +2,20 @@ import { Inject } from '@nestjs/common';
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { ClientProxy } from '@nestjs/microservices';
 import { timeout } from 'rxjs/operators';
+
+import { PostGateway } from '@egamings/shared/domain';
+
 import { NATS_MONGO_CLIENT } from '../shared/clients/clients.constants';
 import {
   PostCreateInput,
   Post,
   PostUpdateInput,
   PostWhereUniqueInput,
+  PostUpdateDataArgs,
 } from './post.model';
 
 @Resolver((of) => String)
-export class PostResolver {
+export class PostResolver implements PostGateway {
   constructor(
     @Inject(NATS_MONGO_CLIENT) private readonly natsMongoClient: ClientProxy
   ) {}
@@ -33,15 +37,9 @@ export class PostResolver {
   }
 
   @Mutation((returns) => Post)
-  async updatePost(
-    @Args('data') data: PostUpdateInput,
-    @Args('where') where: PostWhereUniqueInput
-  ): Promise<Post> {
+  async updatePost(@Args() args: PostUpdateDataArgs): Promise<Post> {
     return this.natsMongoClient
-      .send('updatePost', {
-        data,
-        where,
-      })
+      .send('updatePost', args)
       .pipe(timeout(5000))
       .toPromise();
   }

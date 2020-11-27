@@ -1,4 +1,4 @@
-import { ObjectType, Field, InputType } from '@nestjs/graphql';
+import { ObjectType, Field, InputType, ArgsType } from '@nestjs/graphql';
 import { Post as IPost } from '@egamings/shared/domain';
 
 @ObjectType()
@@ -35,4 +35,13 @@ export class PostUpdateInput {
 export class PostWhereUniqueInput {
   @Field()
   id: string;
+}
+
+@ArgsType()
+export class PostUpdateDataArgs {
+  @Field()
+  data: PostUpdateInput;
+
+  @Field()
+  where: PostWhereUniqueInput;
 }
