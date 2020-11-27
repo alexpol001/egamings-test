@@ -2,11 +2,11 @@ import { Controller, Get, Inject } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { debounce } from 'helpful-decorators';
 
-import { ApiData } from '@egamings/shared/domain';
+import { ApiData, DataGateway } from '@egamings/shared/domain';
 import { REDIS_CLIENT } from '../shared/clients/clients.constants';
 
 @Controller()
-export class DataController {
+export class DataController implements DataGateway {
   constructor(
     @Inject(REDIS_CLIENT) private readonly redisClient: ClientProxy
   ) {}
