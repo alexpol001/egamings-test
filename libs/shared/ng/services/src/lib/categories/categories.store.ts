@@ -7,13 +7,13 @@ import {
   EntityStore,
 } from '@datorama/akita';
 
-import { Category } from '@egamings/shared/domain';
+import { ICategory } from '@egamings/shared/domain';
 
-export interface CategoriesState extends EntityState<Category>, ActiveState {}
+export interface CategoriesState extends EntityState<ICategory>, ActiveState {}
 
 @Injectable()
 @StoreConfig({ name: 'categories' })
-export class CategoriesStore extends EntityStore<CategoriesState, Category> {
+export class CategoriesStore extends EntityStore<CategoriesState, ICategory> {
   constructor() {
     super();
   }

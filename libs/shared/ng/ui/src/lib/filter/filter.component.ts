@@ -13,7 +13,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { debounce } from 'helpful-decorators';
 
-import { Merchant, Category, GamesFilters } from '@egamings/shared/domain';
+import { Merchant, ICategory, GamesFilters } from '@egamings/shared/domain';
 
 @Component({
   selector: 'egamings-ui-filter',
@@ -21,10 +21,10 @@ import { Merchant, Category, GamesFilters } from '@egamings/shared/domain';
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit, OnDestroy {
-  @Input() categories: Category[];
+  @Input() categories: ICategory[];
   @Input() merchants: Merchant[];
 
-  @Input() search: string = '';
+  @Input() search = '';
   @Input() selectedCategories: number[] = [];
   @Input() selectedMerchants: number[] = [];
 
