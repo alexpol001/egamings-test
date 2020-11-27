@@ -3,44 +3,46 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import {
-  NewsCreateArgs,
-  NewsUpdateArgs,
-  NewsWhereUniqueArgs,
+  INews,
+  INewsCreateInput,
+  INewsGateway,
+  INewsUpdateArgs,
+  INewsWhereUniqueInput,
+  // NewsCreateArgs,
+  // NewsUpdateArgs,
+  // NewsWhereUniqueArgs,
 } from '@egamings/shared/domain';
 
 import { News } from '@egamings/shared/nest/db-postgres';
 
 @Injectable()
-export class NewsService {
+export class NewsService implements INewsGateway {
   constructor(
     @InjectRepository(News)
     private readonly newsRepository: Repository<News>
   ) {}
 
-  async findAll(): Promise<News[]> {
+  findAllNews(): Promise<INews[]> {
     return this.newsRepository.find();
   }
-
-  async create(newsCreateInputDto: NewsCreateArgs) {
-    return this.newsRepository.save(
-      this.newsRepository.create(newsCreateInputDto)
-    );
+  createNews(data: INewsCreateInput): Promise<INews> {
+    return this.newsRepository.save(this.newsRepository.create(data));
   }
 
-  async update(newsUpdateInputDto: NewsUpdateArgs): Promise<News> {
-    const id = newsUpdateInputDto.where.id;
+  async updateNews(args: INewsUpdateArgs): Promise<INews> {
+    const id = args.where.id;
 
-    await this.newsRepository.update(id, newsUpdateInputDto.data);
+    await this.newsRepository.update(id, args.data);
     return this.newsRepository.findOne(id);
   }
 
-  async delete(
-    newsWhereUniqueInputDto: NewsWhereUniqueArgs
-  ): Promise<News> {
-    const news = await this.newsRepository.findOneOrFail(
-      newsWhereUniqueInputDto.id
-    );
-    await this.newsRepository.delete(newsWhereUniqueInputDto.id);
+  async deleteNews(where: INewsWhereUniqueInput): Promise<INews> {
+    const id = where.id;
+
+    const news = await this.newsRepository.findOneOrFail(id);
+
+    await this.newsRepository.delete(id);
+
     return news;
   }
 }

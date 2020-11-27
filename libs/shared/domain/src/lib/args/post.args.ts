@@ -1,21 +1,21 @@
-export interface PostCreateArgs {
+export interface IPostCreateInput {
   readonly title: string;
 
   readonly content: string;
 }
 
-export interface PostWhereUniqueArgs {
+export interface IPostWhereUniqueInput {
   readonly id: string;
 }
 
-export interface PostUpdateDataArgs {
+export interface IPostUpdateInput {
   readonly title: string;
 
   readonly content: string;
 }
 
-export interface PostUpdateArgs {
-  readonly data: PostUpdateDataArgs;
+export interface IPostUpdateArgs {
+  readonly data: IPostUpdateInput;
 
-  readonly where: PostWhereUniqueArgs;
+  readonly where: IPostWhereUniqueInput;
 }

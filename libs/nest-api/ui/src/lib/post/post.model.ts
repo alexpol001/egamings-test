@@ -1,5 +1,12 @@
 import { ObjectType, Field, InputType, ArgsType } from '@nestjs/graphql';
-import { Post as IPost } from '@egamings/shared/domain';
+
+import {
+  IPost,
+  IPostCreateInput,
+  IPostUpdateArgs,
+  IPostUpdateInput,
+  IPostWhereUniqueInput,
+} from '@egamings/shared/domain';
 
 @ObjectType()
 export class Post implements IPost {
@@ -14,7 +21,7 @@ export class Post implements IPost {
 }
 
 @InputType()
-export class PostCreateInput {
+export class PostCreateInput implements IPostCreateInput {
   @Field()
   title: string;
 
@@ -23,7 +30,7 @@ export class PostCreateInput {
 }
 
 @InputType()
-export class PostUpdateInput {
+export class PostUpdateInput implements IPostUpdateInput {
   @Field({ nullable: true })
   title: string;
 
@@ -32,13 +39,13 @@ export class PostUpdateInput {
 }
 
 @InputType()
-export class PostWhereUniqueInput {
+export class PostWhereUniqueInput implements IPostWhereUniqueInput {
   @Field()
   id: string;
 }
 
 @ArgsType()
-export class PostUpdateDataArgs {
+export class PostUpdateArgs implements IPostUpdateArgs {
   @Field()
   data: PostUpdateInput;
 

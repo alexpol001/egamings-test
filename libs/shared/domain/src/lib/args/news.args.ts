@@ -1,21 +1,21 @@
-export interface NewsCreateArgs {
+export interface INewsCreateInput {
   readonly title: string;
 
   readonly content: string;
 }
 
-export interface NewsWhereUniqueArgs {
+export interface INewsWhereUniqueInput {
   readonly id: number;
 }
 
-export interface NewsUpdateDataArgs {
+export interface INewsUpdateInput {
   readonly title: string;
 
   readonly content: string;
 }
 
-export interface NewsUpdateArgs {
-  readonly data: NewsUpdateDataArgs;
+export interface INewsUpdateArgs {
+  readonly data: INewsUpdateInput;
 
-  readonly where: NewsWhereUniqueArgs;
+  readonly where: INewsWhereUniqueInput;
 }

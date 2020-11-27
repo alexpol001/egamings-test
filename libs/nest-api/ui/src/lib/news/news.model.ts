@@ -1,5 +1,11 @@
-import { ObjectType, Field, InputType } from '@nestjs/graphql';
-import { News as INews } from '@egamings/shared/domain';
+import { ObjectType, Field, InputType, ArgsType } from '@nestjs/graphql';
+import {
+  INewsCreateInput,
+  INewsUpdateArgs,
+  INewsUpdateInput,
+  INewsWhereUniqueInput,
+  INews,
+} from '@egamings/shared/domain';
 
 @ObjectType()
 export class News implements INews {
@@ -14,7 +20,7 @@ export class News implements INews {
 }
 
 @InputType()
-export class NewsCreateInput {
+export class NewsCreateInput implements INewsCreateInput {
   @Field()
   title: string;
 
@@ -23,16 +29,25 @@ export class NewsCreateInput {
 }
 
 @InputType()
-export class NewsUpdateInput {
-  @Field({ nullable: true })
-  title: string;
-
-  @Field({ nullable: true })
-  content: string;
-}
-
-@InputType()
-export class NewsWhereUniqueInput {
+export class NewsWhereUniqueInput implements INewsWhereUniqueInput {
   @Field()
   id: number;
+}
+
+@InputType()
+export class NewsUpdateInput implements INewsUpdateInput {
+  @Field({ nullable: true })
+  title: string;
+
+  @Field({ nullable: true })
+  content: string;
+}
+
+@ArgsType()
+export class NewsUpdateArgs implements INewsUpdateArgs {
+  @Field()
+  data: NewsUpdateInput;
+
+  @Field()
+  where: NewsWhereUniqueInput;
 }

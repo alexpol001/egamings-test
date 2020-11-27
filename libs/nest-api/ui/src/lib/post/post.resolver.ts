@@ -3,25 +3,25 @@ import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { ClientProxy } from '@nestjs/microservices';
 import { timeout } from 'rxjs/operators';
 
-import { PostGateway } from '@egamings/shared/domain';
+import { IPost, IPostGateway } from '@egamings/shared/domain';
 
 import { NATS_MONGO_CLIENT } from '../shared/clients/clients.constants';
+
 import {
   PostCreateInput,
   Post,
-  PostUpdateInput,
   PostWhereUniqueInput,
-  PostUpdateDataArgs,
+  PostUpdateArgs,
 } from './post.model';
 
 @Resolver((of) => String)
-export class PostResolver implements PostGateway {
+export class PostResolver implements IPostGateway {
   constructor(
     @Inject(NATS_MONGO_CLIENT) private readonly natsMongoClient: ClientProxy
   ) {}
 
   @Query((returns) => [Post])
-  async findAllPost(): Promise<Post[]> {
+  findAllPost(): Promise<IPost[]> {
     return this.natsMongoClient
       .send('findAllPost', [])
       .pipe(timeout(5000))
@@ -29,7 +29,7 @@ export class PostResolver implements PostGateway {
   }
 
   @Mutation((returns) => Post)
-  async createPost(@Args('data') data: PostCreateInput): Promise<Post> {
+  createPost(@Args('data') data: PostCreateInput): Promise<IPost> {
     return this.natsMongoClient
       .send('createPost', data)
       .pipe(timeout(5000))
@@ -37,7 +37,7 @@ export class PostResolver implements PostGateway {
   }
 
   @Mutation((returns) => Post)
-  async updatePost(@Args() args: PostUpdateDataArgs): Promise<Post> {
+  updatePost(@Args() args: PostUpdateArgs): Promise<IPost> {
     return this.natsMongoClient
       .send('updatePost', args)
       .pipe(timeout(5000))
@@ -45,7 +45,7 @@ export class PostResolver implements PostGateway {
   }
 
   @Mutation((returns) => Post)
-  async deletePost(@Args('where') where: PostWhereUniqueInput): Promise<Post> {
+  deletePost(@Args('where') where: PostWhereUniqueInput): Promise<IPost> {
     return this.natsMongoClient
       .send('deletePost', where)
       .pipe(timeout(5000))

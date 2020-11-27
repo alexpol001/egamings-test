@@ -1,17 +1,17 @@
 import {
-  PostCreateArgs,
-  PostUpdateArgs,
-  PostWhereUniqueArgs,
+  IPostCreateInput,
+  IPostUpdateArgs,
+  IPostWhereUniqueInput,
 } from '../args/post.args';
 
-import { Post } from '../models/post.model';
+import { IPost } from '../models/post.model';
 
-export interface PostGateway {
-  findAllPost(): Promise<Post[]>;
+export interface IPostGateway {
+  findAllPost(): Promise<IPost[]>;
 
-  createPost(data: PostCreateArgs): Promise<Post>;
+  createPost(data: IPostCreateInput): Promise<IPost>;
 
-  updatePost(args: PostUpdateArgs): Promise<Post>;
+  updatePost(args: IPostUpdateArgs): Promise<IPost>;
 
-  deletePost(where: PostWhereUniqueArgs): Promise<Post>;
+  deletePost(where: IPostWhereUniqueInput): Promise<IPost>;
 }

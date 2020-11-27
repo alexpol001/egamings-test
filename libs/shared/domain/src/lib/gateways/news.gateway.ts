@@ -1,17 +1,17 @@
 import {
-  NewsCreateArgs,
-  NewsUpdateArgs,
-  NewsWhereUniqueArgs,
+  INewsCreateInput,
+  INewsUpdateArgs,
+  INewsWhereUniqueInput,
 } from '../args/news.args';
 
-import { News } from '../models/news.model';
+import { INews } from '../models/news.model';
 
-export interface NewsGateway {
-  findAllNews(): Promise<News[]>;
+export interface INewsGateway {
+  findAllNews(): Promise<INews[]>;
 
-  createNews(args: NewsCreateArgs): Promise<News>;
+  createNews(data: INewsCreateInput): Promise<INews>;
 
-  updateNews(args: NewsUpdateArgs): Promise<News>;
+  updateNews(args: INewsUpdateArgs): Promise<INews>;
 
-  deleteNews(args: NewsWhereUniqueArgs): Promise<News>;
+  deleteNews(where: INewsWhereUniqueInput): Promise<INews>;
 }

@@ -1,5 +1,5 @@
 import { ApiData } from '../models/api-data.model';
 
-export interface DataGateway {
+export interface IDataGateway {
   getData(): Promise<ApiData>;
 }
