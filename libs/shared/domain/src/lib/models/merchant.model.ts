@@ -1,6 +1,6 @@
 import { ID } from '@datorama/akita';
 
-export interface Merchant {
+export interface IMerchant {
   id: ID;
   name: string;
 }

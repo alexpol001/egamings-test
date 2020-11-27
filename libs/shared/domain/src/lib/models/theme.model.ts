@@ -1,4 +1,4 @@
-export interface Theme {
+export interface ITheme {
   themeId: string;
 
   cssClass?: string;

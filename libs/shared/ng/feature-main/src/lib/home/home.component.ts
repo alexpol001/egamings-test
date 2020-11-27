@@ -13,7 +13,7 @@ import {
   GamesService,
   MerchantsQuery,
 } from '@egamings/shared/ng/services';
-import { GamesFilters, GamesOptions } from '@egamings/shared/domain';
+import { IGamesFilters, IGamesOptions } from '@egamings/shared/domain';
 import { StepEvent } from '@egamings/shared/ng/ui';
 
 @Component({
@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
     this.updateParams({ sortFavorite });
   }
 
-  onFilters(filters: GamesFilters) {
+  onFilters(filters: IGamesFilters) {
     this.updateParams({ filters });
   }
 
@@ -94,7 +94,7 @@ export class HomeComponent implements OnInit {
     this.gamesService.setStep(id, step);
   }
 
-  private updateParams(params: Partial<GamesOptions>) {
+  private updateParams(params: Partial<IGamesOptions>) {
     this.gamesOptionsService.update(params);
   }
 }

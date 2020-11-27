@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
 import { GamesQuery } from '@egamings/shared/ng/services';
-import { Game } from '@egamings/shared/domain';
+import { IGame } from '@egamings/shared/domain';
 
 @Component({
   selector: 'egamings-main-game',
@@ -13,7 +13,7 @@ import { Game } from '@egamings/shared/domain';
   styleUrls: ['./game.component.scss'],
 })
 export class GameComponent implements OnInit {
-  game$: Observable<Game>;
+  game$: Observable<IGame>;
 
   constructor(
     private titleService: Title,

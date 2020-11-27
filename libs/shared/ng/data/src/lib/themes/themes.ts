@@ -1,6 +1,6 @@
-import { Theme } from '@egamings/shared/domain';
+import { ITheme } from '@egamings/shared/domain';
 
-export const THEMES: Theme[] = [
+export const THEMES: ITheme[] = [
   {
     themeId: 'light',
     cssFile: 'light-theme.css',

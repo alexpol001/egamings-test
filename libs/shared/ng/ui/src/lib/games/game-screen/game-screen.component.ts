@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Game } from '@egamings/shared/domain';
+import { IGame } from '@egamings/shared/domain';
 
 @Component({
   selector: 'egamings-ui-game-screen',
@@ -9,7 +9,7 @@ import { Game } from '@egamings/shared/domain';
   styleUrls: ['./game-screen.component.scss'],
 })
 export class GameScreenComponent implements OnInit {
-  @Input() set game(game: Game) {
+  @Input() set game(game: IGame) {
     if (game) {
       this.categories = _.join(
         game.categories?.map((category) => category.name),
@@ -21,7 +21,7 @@ export class GameScreenComponent implements OnInit {
   get game() {
     return this._game;
   }
-  private _game: Game;
+  private _game: IGame;
 
   categories: string;
 

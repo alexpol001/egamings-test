@@ -2,12 +2,12 @@ import * as _ from 'lodash';
 import { Injectable } from '@angular/core';
 import { Query } from '@datorama/akita';
 
-import { GamesOptions } from '@egamings/shared/domain';
+import { IGamesOptions } from '@egamings/shared/domain';
 
 import { GamesOptionsStore } from './options.store';
 
 @Injectable()
-export class GamesOptionsQuery extends Query<GamesOptions> {
+export class GamesOptionsQuery extends Query<IGamesOptions> {
   constructor(protected store: GamesOptionsStore) {
     super(store);
   }

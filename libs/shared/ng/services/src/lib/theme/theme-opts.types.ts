@@ -1,6 +1,6 @@
 import { Type } from '@angular/core';
 
-import { Theme } from '@egamings/shared/domain';
+import { ITheme } from '@egamings/shared/domain';
 
 import { StorageService } from '../storage/storage.types';
 
@@ -11,6 +11,6 @@ export interface ThemeStorageOpts {
 
 export interface ThemeOpts {
   themeStorageOpts?: Partial<ThemeStorageOpts>;
-  themes?: Theme[];
+  themes?: ITheme[];
   defaultThemeId?: string;
 }

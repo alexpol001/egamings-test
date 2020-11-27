@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ID } from '@datorama/akita';
 
-import { Game } from '@egamings/shared/domain';
+import { IGame } from '@egamings/shared/domain';
 
 import { StepEvent } from './game-list.types';
 
@@ -11,7 +11,7 @@ import { StepEvent } from './game-list.types';
   styleUrls: ['./game-list.component.scss'],
 })
 export class GameListComponent implements OnInit {
-  @Input() games: Game[] = [];
+  @Input() games: IGame[] = [];
 
   @Input() favorites: ID[] = [];
 

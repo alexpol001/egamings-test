@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { Injectable } from '@angular/core';
 
-import { GamesOptions } from '@egamings/shared/domain';
+import { IGamesOptions } from '@egamings/shared/domain';
 
 import { GamesPaginationService } from '../pagination/pagination.service';
 import { GamesOptionsStore } from './options.store';
@@ -13,7 +13,7 @@ export class GamesOptionsService {
     private gamesPaginationService: GamesPaginationService
   ) {}
 
-  update(params: Partial<GamesOptions>) {
+  update(params: Partial<IGamesOptions>) {
     this.store.update(params);
     this.gamesPaginationService.reset();
   }
