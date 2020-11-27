@@ -1,17 +1,17 @@
 import { Dictionary, NumericDictionary } from 'lodash';
 
-export interface ApiData {
-  categories: ApiCategory[];
-  games: ApiGame[];
-  merchants: NumericDictionary<ApiMerchant>;
+export interface IApiData {
+  categories: IApiCategory[];
+  games: IApiGame[];
+  merchants: NumericDictionary<IApiMerchant>;
 }
 
-export interface ApiCategory {
+export interface IApiCategory {
   ID: number;
   Name: Dictionary<string>;
 }
 
-export interface ApiGame {
+export interface IApiGame {
   ID: number;
   Name: Dictionary<string>;
   CategoryID: number[];
@@ -19,7 +19,7 @@ export interface ApiGame {
   ImageFullPath: string;
 }
 
-export interface ApiMerchant {
+export interface IApiMerchant {
   ID: number;
   Name: string;
   MenuId: string;

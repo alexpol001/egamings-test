@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-import { ApiData } from '@egamings/shared/domain';
+import { IApiData } from '@egamings/shared/domain';
 
 import { PAGINATION_CONFIG_TOKEN } from '../games/pagination/pagination.token';
 import { StorageModule } from '../storage/storage.module';
@@ -46,7 +46,7 @@ export class CoreModule {
       );
     }
 
-    this.httpClient.get(apiUrl).subscribe((apiData: ApiData) => {
+    this.httpClient.get(apiUrl).subscribe((apiData: IApiData) => {
       this.categoriesService.initCategories(apiData.categories);
       this.merchantsService.initMerchants(_.values(apiData.merchants));
       this.gamesService.initGames(apiData.games);
