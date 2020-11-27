@@ -1,6 +1,6 @@
 import { ID } from '@datorama/akita';
 
-export interface ICategory {
+export interface Category {
   id: ID;
   name: string;
 }

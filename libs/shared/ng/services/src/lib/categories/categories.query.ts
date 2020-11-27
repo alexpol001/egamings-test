@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Order, QueryConfig, QueryEntity } from '@datorama/akita';
 
-import { ICategory } from '@egamings/shared/domain';
+import { Category } from '@egamings/shared/domain';
 
 import { CategoriesStore, CategoriesState } from './categories.store';
 
@@ -10,7 +10,7 @@ import { CategoriesStore, CategoriesState } from './categories.store';
   sortBy: 'name',
   sortByOrder: Order.ASC,
 })
-export class CategoriesQuery extends QueryEntity<CategoriesState, ICategory> {
+export class CategoriesQuery extends QueryEntity<CategoriesState, Category> {
   constructor(protected store: CategoriesStore) {
     super(store);
   }
