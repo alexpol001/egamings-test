@@ -1,5 +1,9 @@
-export * from './lib/dto/news.dto';
-export * from './lib/dto/post.dto';
+export * from './lib/args/news.args';
+export * from './lib/args/post.args';
+
+export * from './lib/gateways/data.gateway';
+export * from './lib/gateways/news.gateway';
+export * from './lib/gateways/post.gateway';
 
 export * from './lib/models/api-data.model';
 export * from './lib/models/category.model';

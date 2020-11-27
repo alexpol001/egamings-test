@@ -1,35 +1,37 @@
 import { Controller } from '@nestjs/common';
-import { MessagePattern, Payload } from '@nestjs/microservices';
+import { MessagePattern } from '@nestjs/microservices';
 
 import { NewsService } from '@egamings/nest-ms-rabbit/services';
 
 import {
-  NewsCreateInputDto,
-  NewsUpdateInputDto,
-  NewsWhereUniqueInputDto,
+  News,
+  NewsCreateArgs,
+  NewsGateway,
+  NewsUpdateArgs,
+  NewsWhereUniqueArgs,
 } from '@egamings/shared/domain';
 
 @Controller()
-export class NewsController {
+export class NewsController implements NewsGateway {
   constructor(private readonly newsService: NewsService) {}
 
   @MessagePattern('findAllNews')
-  findAll() {
+  findAllNews(): Promise<News[]> {
     return this.newsService.findAll();
   }
 
   @MessagePattern('createNews')
-  create(@Payload() newsCreateInputDto: NewsCreateInputDto) {
-    return this.newsService.create(newsCreateInputDto);
+  createNews(args: NewsCreateArgs): Promise<News> {
+    return this.newsService.create(args);
   }
 
   @MessagePattern('updateNews')
-  update(@Payload() newsUpdateInputDto: NewsUpdateInputDto) {
-    return this.newsService.update(newsUpdateInputDto);
+  updateNews(args: NewsUpdateArgs): Promise<News> {
+    return this.newsService.update(args);
   }
 
   @MessagePattern('deleteNews')
-  delete(@Payload() newsWhereUniqueInputDto: NewsWhereUniqueInputDto) {
-    return this.newsService.delete(newsWhereUniqueInputDto);
+  deleteNews(args: NewsWhereUniqueArgs): Promise<News> {
+    return this.newsService.delete(args);
   }
 }

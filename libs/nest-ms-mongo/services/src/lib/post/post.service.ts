@@ -2,45 +2,39 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { PostEntity } from '@egamings/shared/nest/db-mongo';
+import { Post } from '@egamings/shared/nest/db-mongo';
 
 import {
-  PostCreateInputDto,
-  PostUpdateInputDto,
-  PostWhereUniqueInputDto,
+  PostCreateArgs,
+  PostUpdateArgs,
+  PostWhereUniqueArgs,
 } from '@egamings/shared/domain';
 
 @Injectable()
 export class PostService {
   constructor(
-    @InjectRepository(PostEntity)
-    private readonly postRepository: Repository<PostEntity>
+    @InjectRepository(Post)
+    private readonly postRepository: Repository<Post>
   ) {}
 
-  async findAll(): Promise<PostEntity[]> {
+  async findAll(): Promise<Post[]> {
     return this.postRepository.find();
   }
 
-  async create(postCreateInputDto: PostCreateInputDto) {
-    return this.postRepository.save(
-      this.postRepository.create(postCreateInputDto)
-    );
+  async create(args: PostCreateArgs) {
+    return this.postRepository.save(this.postRepository.create(args));
   }
 
-  async update(postUpdateInputDto: PostUpdateInputDto): Promise<PostEntity> {
-    const id = postUpdateInputDto.where.id;
+  async update(args: PostUpdateArgs): Promise<Post> {
+    const id = args.where.id;
 
-    await this.postRepository.update(id, postUpdateInputDto.data);
+    await this.postRepository.update(id, args.data);
     return this.postRepository.findOne(id);
   }
 
-  async delete(
-    postWhereUniqueInputDto: PostWhereUniqueInputDto
-  ): Promise<PostEntity> {
-    const post = await this.postRepository.findOneOrFail(
-      postWhereUniqueInputDto.id
-    );
-    await this.postRepository.delete(postWhereUniqueInputDto.id);
+  async delete(args: PostWhereUniqueArgs): Promise<Post> {
+    const post = await this.postRepository.findOneOrFail(args.id);
+    await this.postRepository.delete(args.id);
     return post;
   }
 }

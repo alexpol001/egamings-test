@@ -7,10 +7,10 @@ import { DataService } from '@egamings/nest-ms-redis/services';
 
 @Controller()
 export class DataController {
-  constructor(private readonly appService: DataService) {}
+  constructor(private readonly dataService: DataService) {}
 
   @MessagePattern('get_data')
   getData(@Payload() data: any): ApiData {
-    return this.appService.getData();
+    return this.dataService.getData();
   }
 }

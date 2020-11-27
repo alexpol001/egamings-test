@@ -4,32 +4,34 @@ import { MessagePattern, Payload } from '@nestjs/microservices';
 import { PostService } from '@egamings/nest-ms-mongo/services';
 
 import {
-  PostCreateInputDto,
-  PostUpdateInputDto,
-  PostWhereUniqueInputDto,
+  Post,
+  PostCreateArgs,
+  PostGateway,
+  PostUpdateArgs,
+  PostWhereUniqueArgs,
 } from '@egamings/shared/domain';
 
-@Controller()
-export class PostController {
+@Controller('post')
+export class PostController implements PostGateway {
   constructor(private readonly postService: PostService) {}
 
   @MessagePattern('findAllPost')
-  findAll() {
+  findAllPost(): Promise<Post[]> {
     return this.postService.findAll();
   }
 
   @MessagePattern('createPost')
-  create(@Payload() postCreateInputDto: PostCreateInputDto) {
-    return this.postService.create(postCreateInputDto);
+  createPost(args: PostCreateArgs): Promise<Post> {
+    return this.postService.create(args);
   }
 
   @MessagePattern('updatePost')
-  update(@Payload() postUpdateInputDto: PostUpdateInputDto) {
-    return this.postService.update(postUpdateInputDto);
+  updatePost(args: PostUpdateArgs): Promise<Post> {
+    return this.postService.update(args);
   }
 
   @MessagePattern('deletePost')
-  delete(@Payload() postWhereUniqueInputDto: PostWhereUniqueInputDto) {
-    return this.postService.delete(postWhereUniqueInputDto);
+  deletePost(args: PostWhereUniqueArgs): Promise<Post> {
+    return this.postService.delete(args);
   }
 }

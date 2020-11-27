@@ -12,7 +12,7 @@ export class DataController {
   ) {}
 
   @Get()
-  async getData(): Promise<ApiData> {
+  getData(): Promise<ApiData> {
     return this.redisClient.send('get_data', []).toPromise();
   }
 
