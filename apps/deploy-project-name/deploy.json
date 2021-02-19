@@ -1,0 +1,9 @@
+{
+  "project": [
+     "nest-api",
+     "nest-ms-mongo",
+     "nest-ms-rabbit",
+     "nest-ms-redis",
+     "ng-frontend"
+  ]
+}
